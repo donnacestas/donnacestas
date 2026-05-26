@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donna Cestas | Presentes personalizados</title>
+    <link
+      rel="shortcut icon"
+      href="assets/logo-donna-cestas.jpg"
+      type="image/x-icon"
+    />
+    <meta
+      name="description"
+      content="Cestas personalizadas para Dia dos Namorados, café da manhã, aniversários, datas comemorativas e presentes corporativos."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="sales-bar">
+      <div class="letreiro-container">
+        <div class="letreiro-track">
+          <span>💬 Atendimento pelo WhatsApp</span>
+          <span>🎁 Cestas personalizadas</span>
+          <span>📍 Consulte entrega na sua região</span>
+        </div>
+
+        <div class="letreiro-track">
+          <span>💬 Atendimento pelo WhatsApp</span>
+          <span>🎁 Cestas personalizadas</span>
+          <span>📍 Consulte entrega na sua região</span>
+        </div>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="header-galeria">
+        <img src="assets/cesta-14.jpg" alt="" />
+        <img src="assets/cesta-15.jpg" alt="" />
+        <img src="assets/cesta-17.jpg" alt="" />
+        <img src="assets/tabua-casal.jpg" alt="" />
+        <img src="assets/tabua-mimo.jpg" alt="" />
+      </div>
+      
+      <div class="header-main">
+        <a href="#inicio" class="brand" aria-label="Donna Cestas">
+          <img src="assets/logo-donna-cestas.jpg" alt="Donna Cestas" />
+        </a>
+
+        <form class="search-box" id="searchForm">
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="O que você deseja presentear?"
+            aria-label="Buscar produto"
+          />
+          <button type="submit" aria-label="Buscar">⌕</button>
+        </form>
+
+        <a
+          class="account-link"
+          id="headerWhatsapp"
+          target="_blank"
+          rel="noopener"
+        >
+          <span>
+            <svg
+              width="24px"
+              height="24px"
+              viewBox="0 0 16 16"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="#fff"
+              class="bi bi-whatsapp"
+              stroke="#fff"
+              stroke-width="0.00016"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke="#CCCCCC"
+                stroke-width="0.032"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"
+                ></path>
+              </g>
+            </svg>
+          </span>
+
+          <strong>Fazer pedido</strong>
+          <small>pelo WhatsApp</small>
+        </a>
+
+        <button class="campaign-toggle" id="campaignToggle" type="button">
+          Desativar campanha
+        </button>
+
+        <button class="menu-button" id="menuButton" aria-label="Abrir menu">
+          ☰
+        </button>
+      </div>
+
+      <nav class="nav" id="nav">
+        <a href="#produtos" id="navProductsLink">Catálogo</a>
+        <a href="#como-funciona">Como comprar</a>
+        <a href="#area-entrega">Área de entrega</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#instagram">Instagram</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="campaign-hero" id="inicio">
+        <div class="hero-copy">
+          <span class="campaign-pill" id="campaignTag">Dia dos Namorados</span>
+
+          <h1 id="campaignTitle">
+            Presenteie com uma cesta feita para emocionar.
+          </h1>
+
+          <p id="campaignText">
+            Cestas românticas, personalizadas e preparadas com carinho para
+            surpreender quem você ama no Dia dos Namorados.
+          </p>
+
+          <div class="hero-actions">
+            <a
+              class="btn primary"
+              id="heroWhatsapp"
+              target="_blank"
+              rel="noopener"
+            >
+              Encomendar pelo WhatsApp
+            </a>
+
+            <a class="btn secondary" href="#produtos">Ver opções de cestas</a>
+          </div>
+
+          <div class="hero-selling-points" id="campaignHighlights">
+            <div>
+              <strong>12 de junho</strong>
+              <span>Campanha especial</span>
+            </div>
+
+            <div>
+              <strong>Personalizada</strong>
+              <span>Cartão e embalagem</span>
+            </div>
+
+            <div>
+              <strong>Entrega</strong>
+              <span>Consulte horários</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-product">
+          <img
+            id="campaignImage"
+            src="assets/cesta-17.jpg"
+            alt="Cesta especial Dia dos Namorados"
+          />
+
+          <div class="price-badge" id="priceBadge">
+            <span>A partir de</span>
+            <strong id="campaignPrice">Sob consulta</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="purchase-strip" id="beneficios">
+        <div>
+          <strong>Pedido rápido</strong>
+          <span>Chame no WhatsApp</span>
+        </div>
+
+        <div>
+          <strong>Cartão incluso</strong>
+          <span>Mensagem personalizada</span>
+        </div>
+
+        <div>
+          <strong>Embalagem especial</strong>
+          <span>Visual elegante</span>
+        </div>
+
+        <div>
+          <strong>Data marcada</strong>
+          <span>Organize com antecedência</span>
+        </div>
+      </section>
+
+      <section class="section products-section" id="produtos">
+        <div class="section-heading">
+          <span class="eyebrow">vitrine especial</span>
+
+          <h2 id="productsTitle">Cestas para o Dia dos Namorados</h2>
+
+          <p id="productsSubtitle">
+            Escolha uma opção e fale direto no WhatsApp com uma mensagem pronta.
+          </p>
+        </div>
+
+        <div class="category-tabs" id="categoryTabs"></div>
+
+        <div class="products-grid" id="productsGrid"></div>
+      </section>
+
+      <section class="section promo-banner">
+        <div class="promo-card">
+          <div>
+            <span class="eyebrow">campanha limitada</span>
+
+            <h2>Garanta sua cesta com antecedência</h2>
+
+            <p>
+              Em datas comemorativas, nossas quantidades são limitadas. Entre em
+              contato pelo WhatsApp, escolha a sua cesta e garanta o seu
+              presente.
+            </p>
+          </div>
+
+          <a
+            class="btn primary"
+            id="promoWhatsapp"
+            target="_blank"
+            rel="noopener"
+          >
+            Reservar minha cesta
+          </a>
+        </div>
+      </section>
+
+      <section class="section steps" id="como-funciona">
+        <div class="section-heading">
+          <span class="eyebrow">como funciona</span>
+          <h2>Compra simples, direta e personalizada</h2>
+        </div>
+
+        <div class="steps-grid">
+          <article class="step">
+            <strong>01</strong>
+
+            <h3>Escolha a cesta</h3>
+
+            <p>
+              Veja as opções da vitrine e escolha a que combina melhor com a
+              pessoa presenteada.
+            </p>
+          </article>
+
+          <article class="step">
+            <strong>02</strong>
+
+            <h3>Personalize</h3>
+
+            <p>
+              Combine cartão, mensagem, itens da cesta, embalagem e detalhes
+              especiais pelo WhatsApp.
+            </p>
+          </article>
+
+          <article class="step">
+            <strong>03</strong>
+
+            <h3>Finalize o pedido</h3>
+
+            <p>
+              Confirme disponibilidade, pagamento, retirada ou entrega para a
+              data desejada.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section delivery-area-section" id="area-entrega">
+        <div class="delivery-area-card">
+          <div class="delivery-area-content">
+            <span class="eyebrow">área de entrega</span>
+
+            <h2>Entregamos em Florianópolis e região</h2>
+
+            <p>
+              Consulte a disponibilidade de entrega para sua região e combine os
+              detalhes do pedido diretamente pelo WhatsApp.
+            </p>
+
+            <div class="delivery-cities">
+              <span>Florianópolis</span>
+              <span>São José</span>
+              <span>Palhoça</span>
+              <span>Biguaçu</span>
+              <span>Tijucas</span>
+              <span>Itapema</span>
+              <span>Itajaí</span>
+              <span>Balneário Camboriú</span>
+              <span>Lages</span>
+              <span>Região</span>
+            </div>
+
+            <strong class="delivery-note"> * Consulte taxa de entrega. </strong>
+          </div>
+
+          <div class="delivery-area-visual">
+            <div class="delivery-icon">🚚</div>
+            <img
+              src="assets/cesta-24.jpg"
+              alt="Cesta Donna Cestas para entrega"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="section gallery-section" id="galeria">
+        <div class="section-heading">
+          <span class="eyebrow">inspirações</span>
+
+          <h2>Presentes que encantam nos detalhes</h2>
+
+          <p>Algumas produções da Donna Cestas para você se inspirar.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <img src="assets/cesta-01.jpg" alt="Cesta personalizada" />
+          <img src="assets/cesta-06.jpg" alt="Cesta Dia das Mães" />
+          <img src="assets/cesta-12.jpg" alt="Cesta infantil personalizada" />
+          <img src="assets/cesta-21.jpg" alt="Cesta especial de presente" />
+        </div>
+      </section>
+
+      <section class="section instagram-section" id="instagram">
+        <div class="instagram-card">
+          <div class="instagram-content">
+            <span class="eyebrow">acompanhe no instagram</span>
+
+            <h2>Veja novidades, bastidores e cestas prontas</h2>
+
+            <p>
+              No Instagram da Donna Cestas você acompanha modelos disponíveis,
+              datas comemorativas, ideias de presentes e produções feitas com
+              carinho.
+            </p>
+
+            <a
+              href="#"
+              class="btn primary"
+              data-instagram
+              target="_blank"
+              rel="noopener"
+            >
+              Seguir no Instagram
+            </a>
+          </div>
+
+          <div class="instagram-preview">
+            <img src="assets/cesta-06.jpg" alt="Cesta Donna Cestas" />
+            <img src="assets/cesta-17.jpg" alt="Cesta especial Donna Cestas" />
+            <img src="assets/cesta-24.jpg" alt="Produção Donna Cestas" />
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta section" id="contato">
+        <span class="eyebrow">pedido personalizado</span>
+
+        <h2>Quer montar uma cesta do seu jeito?</h2>
+
+        <p>
+          Fale com a Donna Cestas pelo WhatsApp e monte uma opção especial para
+          Dia dos Namorados, aniversários, empresas ou qualquer momento
+          importante.
+        </p>
+
+        <a
+          class="btn primary"
+          id="finalWhatsapp"
+          target="_blank"
+          rel="noopener"
+        >
+          Falar com a Donna Cestas
+        </a>
+      </section>
+    </main>
+
+    <section class="institutional-page hidden" id="institutionalPage">
+      <div class="institutional-container">
+        <button class="back-home-button" id="backHomeButton" type="button">
+          ← Voltar para o início
+        </button>
+
+        <article class="institutional-content hidden" id="page-sobre">
+          <span class="eyebrow">institucional</span>
+          <h1>Sobre a empresa</h1>
+          <p></p>
+        </article>
+
+        <article class="institutional-content hidden" id="page-envio">
+          <span class="eyebrow">institucional</span>
+          <h1>Envio</h1>
+
+          <p>
+            A Donna Cestas trabalha com entregas programadas para garantir que
+            cada presente chegue com cuidado, organização e dentro do horário
+            combinado.
+          </p>
+
+          <p>
+            As entregas são realizadas conforme disponibilidade de agenda e
+            região atendida. Antes da finalização do pedido, nossa equipe
+            confirma o local, data, faixa de horário e valor da entrega, quando
+            houver.
+          </p>
+
+          <p>
+            Para datas comemorativas e períodos de alta demanda, recomendamos
+            que o pedido seja feito com antecedência, pois os horários de
+            entrega podem ser limitados.
+          </p>
+
+          <p>
+            Também é possível combinar retirada, conforme disponibilidade
+            informada no atendimento pelo WhatsApp.
+          </p>
+        </article>
+
+        <article class="institutional-content hidden" id="page-pagamento">
+          <span class="eyebrow">institucional</span>
+          <h1>Pagamento</h1>
+
+          <p>
+            Os pedidos da Donna Cestas são confirmados após a definição dos
+            itens, personalizações, data de entrega ou retirada e forma de
+            pagamento.
+          </p>
+
+          <p>
+            As formas de pagamento disponíveis são informadas diretamente no
+            atendimento pelo WhatsApp, podendo variar conforme o tipo de pedido,
+            valor e disponibilidade no momento da compra.
+          </p>
+
+          <p>
+            Para garantir a reserva da cesta e da data desejada, o pedido poderá
+            exigir confirmação antecipada de pagamento.
+          </p>
+
+          <p>
+            Após a confirmação, a produção é organizada com cuidado para que o
+            presente seja preparado conforme combinado.
+          </p>
+        </article>
+
+        <article class="institutional-content hidden" id="page-trocas">
+          <span class="eyebrow">institucional</span>
+          <h1>Trocas e devoluções</h1>
+
+          <p>
+            Por se tratarem de produtos personalizados, artesanais e, em muitos
+            casos, compostos por alimentos perecíveis, as cestas da Donna Cestas
+            são produzidas conforme as informações combinadas no momento do
+            pedido.
+          </p>
+
+          <p>
+            Caso ocorra algum problema com o pedido recebido, recomendamos que o
+            cliente entre em contato pelo WhatsApp assim que possível, enviando
+            fotos e detalhes da situação para que possamos avaliar o ocorrido.
+          </p>
+
+          <p>
+            Solicitações de troca, ajuste ou devolução serão analisadas
+            individualmente, considerando o tipo de produto, as condições de
+            entrega e as informações previamente acordadas.
+          </p>
+
+          <p>
+            Não realizamos trocas por arrependimento após a produção ou entrega
+            de itens personalizados, salvo em casos de erro confirmado no pedido
+            ou problema identificado no produto.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <img src="assets/logo-donna-cestas.jpg" alt="Donna Cestas" />
+
+      <div class="footer-content">
+        <strong>Donna Cestas</strong>
+
+        <p>© Donna Cestas — presentes personalizados com carinho.</p>
+
+        <div class="footer-developed">
+          <span>Desenvolvido por:</span>
+
+          <a
+            href="https://br.linkedin.com/in/fabio-thieres-00b320265"
+            target="_blank"
+            rel="noopener"
+          >
+            Fabio Thieres
+          </a>
+
+          <span>e</span>
+
+          <a
+            href="https://br.linkedin.com/in/nicolas-pietro-paglioni-0287a2369"
+            target="_blank"
+            rel="noopener"
+          >
+            Nicolas Paglioni
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-institutional">
+        <strong>Institucional</strong>
+
+        <a href="#" data-page-link="sobre">Sobre a empresa</a>
+        <a href="#" data-page-link="envio">Envio</a>
+        <a href="#" data-page-link="pagamento">Pagamento</a>
+        <a href="#" data-page-link="trocas">Trocas e devoluções</a>
+      </div>
+    </footer>
+
+    <div class="floating-social">
+      <div class="social-options" id="socialOptions">
+        <a
+          class="instagram-float"
+          data-instagram
+          target="_blank"
+          rel="noopener"
+          aria-label="Abrir Instagram"
+        >
+          <svg width="40px" height="40px" viewBox="0 0 24 24" fill="none">
+            <path
+              fill="#fff"
+              d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2Zm0 2A3.75 3.75 0 0 0 4 7.75v8.5A3.75 3.75 0 0 0 7.75 20h8.5A3.75 3.75 0 0 0 20 16.25v-8.5A3.75 3.75 0 0 0 16.25 4h-8.5Zm8.75 2.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"
+            />
+          </svg>
+        </a>
+
+        <a
+          class="whatsapp-float"
+          id="floatWhatsapp"
+          target="_blank"
+          rel="noopener"
+          aria-label="Falar no WhatsApp"
+        >
+          <svg
+            width="24px"
+            height="24px"
+            viewBox="0 0 16 16"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="#fff"
+            class="bi bi-whatsapp"
+            stroke="#fff"
+            stroke-width="0.00016"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke="#CCCCCC"
+              stroke-width="0.032"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"
+              ></path>
+            </g>
+          </svg>
+        </a>
+      </div>
+
+      <button
+        class="social-toggle"
+        id="socialToggle"
+        aria-label="Abrir contatos"
+        type="button"
+      >
+        <span class="social-toggle-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
