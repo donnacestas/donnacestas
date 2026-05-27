@@ -2165,6 +2165,16 @@ body[data-theme="loja"] .site-header {
   background-image: none !important;
 }
 
+/* Ajuste do título "Como funciona" no modo Dia dos Namorados */
+body[data-theme="dia-dos-namorados"] .steps .section-heading h2 {
+  color: #5e0718;
+}
+
+body[data-theme="dia-dos-namorados"] .steps .section-heading .eyebrow {
+  background: rgba(127, 16, 34, 0.12);
+  color: #7f1022;
+}
+
 .header-galeria {
   display: none !important;
 }
