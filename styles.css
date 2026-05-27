@@ -2128,3 +2128,29 @@ body[data-theme="dia-dos-namorados"] .header-photo-marquee::after {
     width: 44px;
   }
 }
+
+/* Remove fotos/imagens de fundo antigas do header */
+.site-header,
+.header-main,
+.nav {
+  background-image: none !important;
+}
+
+.site-header::before,
+.site-header::after,
+.header-main::before,
+.header-main::after,
+.nav::before,
+.nav::after {
+  content: none !important;
+  display: none !important;
+  background-image: none !important;
+}
+
+body[data-theme="loja"] .site-header {
+  background: #31452d !important;
+}
+
+body[data-theme="dia-dos-namorados"] .site-header {
+  background: #5e0718 !important;
+}
