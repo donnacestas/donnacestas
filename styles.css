@@ -2178,3 +2178,207 @@ body[data-theme="dia-dos-namorados"] .steps .section-heading .eyebrow {
 .header-galeria {
   display: none !important;
 }
+
+.feedbacks-section {
+  background:
+    radial-gradient(circle at top left, rgba(201, 162, 11, 0.16), transparent 340px),
+    #fffdf8;
+}
+
+.feedbacks-grid {
+  max-width: 1180px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.feedback-card {
+  background: #fff;
+  border-radius: 28px;
+  padding: clamp(24px, 4vw, 36px);
+  border: 1px solid rgba(88, 114, 79, 0.12);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.feedback-card::before {
+  content: "“";
+  position: absolute;
+  right: 24px;
+  top: 8px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 8rem;
+  line-height: 1;
+  color: rgba(201, 162, 11, 0.14);
+  pointer-events: none;
+}
+
+.feedback-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+  z-index: 2;
+}
+
+.feedback-avatar {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.28), transparent 28px),
+    linear-gradient(135deg, var(--green), var(--green-dark));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  font-weight: 900;
+  box-shadow: 0 14px 32px rgba(49, 69, 45, 0.22);
+}
+
+.feedback-card h3 {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  color: var(--green-dark);
+}
+
+.feedback-stars {
+  margin-top: 4px;
+  color: var(--gold);
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+}
+
+.feedback-card p {
+  margin: 0;
+  color: var(--brown-soft);
+  font-size: 0.98rem;
+  line-height: 1.72;
+  position: relative;
+  z-index: 2;
+}
+
+.feedback-card strong {
+  margin-top: auto;
+  color: var(--green-dark);
+  font-size: 1rem;
+  font-weight: 900;
+  position: relative;
+  z-index: 2;
+}
+
+body[data-theme="dia-dos-namorados"] .feedback-card {
+  border-color: rgba(127, 16, 34, 0.14);
+}
+
+body[data-theme="dia-dos-namorados"] .feedback-avatar {
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.28), transparent 28px),
+    linear-gradient(135deg, #7f1022, #5e0718);
+}
+
+body[data-theme="dia-dos-namorados"] .feedback-card h3,
+body[data-theme="dia-dos-namorados"] .feedback-card strong {
+  color: #7f1022;
+}
+
+body[data-theme="dia-dos-namorados"] .feedback-stars {
+  color: #d8b84e;
+}
+
+@media (max-width: 900px) {
+  .feedbacks-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .feedback-card {
+    border-radius: 22px;
+    padding: 24px;
+  }
+
+  .feedback-header {
+    align-items: flex-start;
+  }
+
+  .feedback-avatar {
+    width: 52px;
+    height: 52px;
+    font-size: 1.2rem;
+  }
+
+  .feedback-card::before {
+    font-size: 6rem;
+    right: 18px;
+    top: 10px;
+  }
+}
+
+.google-rating-card {
+  max-width: 760px;
+  margin: 0 auto 34px;
+  padding: 22px 28px;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at top left, rgba(201, 162, 11, 0.2), transparent 260px),
+    #fff;
+  border: 1px solid rgba(201, 162, 11, 0.24);
+  box-shadow: 0 18px 46px rgba(49, 69, 45, 0.12);
+  text-align: center;
+}
+
+.google-rating-card div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.google-rating-card span {
+  color: var(--gold);
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+}
+
+.google-rating-card strong {
+  color: var(--green-dark);
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+.google-rating-card p {
+  max-width: 620px;
+  margin: 10px auto 0;
+  color: var(--brown-soft);
+  font-size: 0.96rem;
+}
+
+.feedbacks-grid {
+  max-width: 1180px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+@media (max-width: 900px) {
+  .feedbacks-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .google-rating-card {
+    margin-bottom: 26px;
+    padding: 20px;
+  }
+}
