@@ -2129,11 +2129,28 @@ body[data-theme="dia-dos-namorados"] .header-photo-marquee::after {
   }
 }
 
-/* Remove fotos/imagens de fundo antigas do header */
-.site-header,
+/* Remove fotos grandes de fundo do header, mantendo a esteira pequena */
+.site-header {
+  background: #31452d !important;
+  background-image: none !important;
+}
+
+body[data-theme="dia-dos-namorados"] .site-header {
+  background: #5e0718 !important;
+  background-image: none !important;
+}
+
+body[data-theme="loja"] .site-header {
+  background: #31452d !important;
+  background-image: none !important;
+}
+
 .header-main,
 .nav {
+  background: transparent !important;
   background-image: none !important;
+  position: relative;
+  z-index: 2;
 }
 
 .site-header::before,
@@ -2144,13 +2161,6 @@ body[data-theme="dia-dos-namorados"] .header-photo-marquee::after {
 .nav::after {
   content: none !important;
   display: none !important;
+  background: none !important;
   background-image: none !important;
-}
-
-body[data-theme="loja"] .site-header {
-  background: #31452d !important;
-}
-
-body[data-theme="dia-dos-namorados"] .site-header {
-  background: #5e0718 !important;
 }
