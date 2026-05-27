@@ -2016,3 +2016,115 @@ footer {
     transform: none;
   }
 }
+
+.header-photo-marquee {
+  width: 100%;
+  overflow: hidden;
+  padding: 12px 0 16px;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(49, 69, 45, 0.98),
+      rgba(49, 69, 45, 0.86),
+      rgba(49, 69, 45, 0.98)
+    );
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  position: relative;
+}
+
+.header-photo-marquee::before,
+.header-photo-marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 90px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.header-photo-marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, #31452d, transparent);
+}
+
+.header-photo-marquee::after {
+  right: 0;
+  background: linear-gradient(270deg, #31452d, transparent);
+}
+
+.header-photo-track {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: max-content;
+  animation: headerPhotosScroll 42s linear infinite;
+}
+
+.header-photo-track img {
+  width: 116px;
+  height: 74px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 2px solid rgba(255, 253, 248, 0.38);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.2);
+  opacity: 0.88;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.header-photo-track img:hover {
+  transform: scale(1.06);
+  opacity: 1;
+}
+
+@keyframes headerPhotosScroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+body[data-theme="dia-dos-namorados"] .header-photo-marquee {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(94, 7, 24, 0.98),
+      rgba(127, 16, 34, 0.88),
+      rgba(94, 7, 24, 0.98)
+    );
+}
+
+body[data-theme="dia-dos-namorados"] .header-photo-marquee::before {
+  background: linear-gradient(90deg, #5e0718, transparent);
+}
+
+body[data-theme="dia-dos-namorados"] .header-photo-marquee::after {
+  background: linear-gradient(270deg, #5e0718, transparent);
+}
+
+@media (max-width: 720px) {
+  .header-photo-marquee {
+    padding: 10px 0 12px;
+  }
+
+  .header-photo-track {
+    gap: 10px;
+    animation-duration: 34s;
+  }
+
+  .header-photo-track img {
+    width: 92px;
+    height: 62px;
+    border-radius: 13px;
+  }
+
+  .header-photo-marquee::before,
+  .header-photo-marquee::after {
+    width: 44px;
+  }
+}
