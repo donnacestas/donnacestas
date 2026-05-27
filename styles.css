@@ -2164,3 +2164,7 @@ body[data-theme="loja"] .site-header {
   background: none !important;
   background-image: none !important;
 }
+
+.header-galeria {
+  display: none !important;
+}
