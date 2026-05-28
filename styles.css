@@ -2382,3 +2382,9 @@ body[data-theme="dia-dos-namorados"] .feedback-stars {
     padding: 20px;
   }
 }
+
+body[data-theme="dia-dos-namorados"] .products-section .section-heading .eyebrow {
+  background: #fff4e8;
+  color: #7f1022;
+  border: 1px solid rgba(127, 16, 34, 0.16);
+}
