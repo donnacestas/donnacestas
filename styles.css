@@ -177,7 +177,7 @@ input {
 }
 
 .account-link small {
-  color: rgba(255, 230, 230, 0.78);
+  color: white;
   font-size: 0.76rem;
 }
 
@@ -2021,13 +2021,12 @@ footer {
   width: 100%;
   overflow: hidden;
   padding: 12px 0 16px;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(49, 69, 45, 0.98),
-      rgba(49, 69, 45, 0.86),
-      rgba(49, 69, 45, 0.98)
-    );
+  background: linear-gradient(
+    90deg,
+    rgba(49, 69, 45, 0.98),
+    rgba(49, 69, 45, 0.86),
+    rgba(49, 69, 45, 0.98)
+  );
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   position: relative;
 }
@@ -2090,13 +2089,12 @@ footer {
 }
 
 body[data-theme="dia-dos-namorados"] .header-photo-marquee {
-  background:
-    linear-gradient(
-      90deg,
-      rgba(94, 7, 24, 0.98),
-      rgba(127, 16, 34, 0.88),
-      rgba(94, 7, 24, 0.98)
-    );
+  background: linear-gradient(
+    90deg,
+    rgba(94, 7, 24, 0.98),
+    rgba(127, 16, 34, 0.88),
+    rgba(94, 7, 24, 0.98)
+  );
 }
 
 body[data-theme="dia-dos-namorados"] .header-photo-marquee::before {
@@ -2181,7 +2179,11 @@ body[data-theme="dia-dos-namorados"] .steps .section-heading .eyebrow {
 
 .feedbacks-section {
   background:
-    radial-gradient(circle at top left, rgba(201, 162, 11, 0.16), transparent 340px),
+    radial-gradient(
+      circle at top left,
+      rgba(201, 162, 11, 0.16),
+      transparent 340px
+    ),
     #fffdf8;
 }
 
@@ -2232,7 +2234,11 @@ body[data-theme="dia-dos-namorados"] .steps .section-heading .eyebrow {
   height: 58px;
   border-radius: 50%;
   background:
-    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.28), transparent 28px),
+    radial-gradient(
+      circle at 30% 25%,
+      rgba(255, 255, 255, 0.28),
+      transparent 28px
+    ),
     linear-gradient(135deg, var(--green), var(--green-dark));
   color: #fff;
   display: flex;
@@ -2281,7 +2287,11 @@ body[data-theme="dia-dos-namorados"] .feedback-card {
 
 body[data-theme="dia-dos-namorados"] .feedback-avatar {
   background:
-    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.28), transparent 28px),
+    radial-gradient(
+      circle at 30% 25%,
+      rgba(255, 255, 255, 0.28),
+      transparent 28px
+    ),
     linear-gradient(135deg, #7f1022, #5e0718);
 }
 
@@ -2329,7 +2339,11 @@ body[data-theme="dia-dos-namorados"] .feedback-stars {
   padding: 22px 28px;
   border-radius: 24px;
   background:
-    radial-gradient(circle at top left, rgba(201, 162, 11, 0.2), transparent 260px),
+    radial-gradient(
+      circle at top left,
+      rgba(201, 162, 11, 0.2),
+      transparent 260px
+    ),
     #fff;
   border: 1px solid rgba(201, 162, 11, 0.24);
   box-shadow: 0 18px 46px rgba(49, 69, 45, 0.12);
@@ -2383,8 +2397,133 @@ body[data-theme="dia-dos-namorados"] .feedback-stars {
   }
 }
 
-body[data-theme="dia-dos-namorados"] .products-section .section-heading .eyebrow {
+body[data-theme="dia-dos-namorados"]
+  .products-section
+  .section-heading
+  .eyebrow {
   background: #fff4e8;
   color: #7f1022;
   border: 1px solid rgba(127, 16, 34, 0.16);
+}
+
+/* =========================
+   CARROSSEL INFINITO DE FEEDBACKS
+   ========================= */
+.feedbacks-marquee {
+  width: min(96vw, 1360px);
+  max-width: 1360px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  padding: 8px 0 18px;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 4%,
+    #000 96%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 4%,
+    #000 96%,
+    transparent 100%
+  );
+}
+
+.feedbacks-track {
+  display: flex;
+  width: max-content;
+  gap: 26px;
+  animation: feedbackScroll 36s linear infinite;
+  will-change: transform;
+}
+
+.feedbacks-marquee:hover .feedbacks-track,
+.feedbacks-marquee:focus-within .feedbacks-track {
+  animation-play-state: paused;
+}
+
+.feedbacks-track .feedback-card {
+  width: 520px;
+  max-width: 520px;
+  flex: 0 0 520px;
+}
+
+@keyframes feedbackScroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 13px));
+  }
+}
+
+@media (max-width: 900px) {
+  .feedbacks-track .feedback-card {
+    width: 360px;
+    max-width: 360px;
+    flex-basis: 360px;
+  }
+}
+
+@media (max-width: 720px) {
+  .feedbacks-marquee {
+    -webkit-mask-image: none;
+    mask-image: none;
+    overflow: hidden;
+  }
+
+  .feedbacks-track {
+    gap: 14px;
+    animation-duration: 34s;
+  }
+
+  .feedbacks-track .feedback-card {
+    width: min(74vw, 300px);
+    max-width: min(74vw, 300px);
+    flex-basis: min(74vw, 300px);
+  }
+
+  .feedbacks-track .feedback-card {
+    padding: 18px;
+    border-radius: 18px;
+    gap: 10px;
+  }
+
+  .feedbacks-track .feedback-card p {
+    font-size: 0.84rem;
+    line-height: 1.52;
+  }
+
+  .feedbacks-track .feedback-card p:nth-of-type(n + 2) {
+    display: none;
+  }
+
+  .feedbacks-track .feedback-card strong {
+    font-size: 0.86rem;
+    line-height: 1.35;
+  }
+
+  .feedbacks-track .feedback-card h3 {
+    font-size: 0.92rem;
+  }
+
+  .feedbacks-track .feedback-stars {
+    font-size: 0.82rem;
+  }
+
+  .feedbacks-track .feedback-avatar {
+    width: 42px;
+    height: 42px;
+    font-size: 1rem;
+  }
+
+  .feedbacks-track .feedback-card::before {
+    font-size: 4.8rem;
+    right: 12px;
+    top: 6px;
+  }
 }
