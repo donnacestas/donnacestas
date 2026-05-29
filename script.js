@@ -160,6 +160,66 @@ const PRODUCTS = [
     preco: "R$ 315,00",
     imagem: "assets/presentes.jpg",
     mensagem: "Olá! Tenho interesse em Box Presentear do catálogo, no valor de R$ 315,00."
+  },
+  {
+    nome: "Mini bolinho bentô cake",
+    categoria: "Adicionais",
+    etiqueta: "Adicional",
+    selo: "Bentô",
+    descricao: "Mini bolinho bentô cake personalizado para complementar a cesta.",
+    preco: "R$ 100,00",
+    imagem: "assets/bento-cake.png",
+    mensagem: "Olá! Tenho interesse no adicional Mini bolinho bentô cake, no valor de R$ 100,00."
+  },
+  {
+    nome: "Balão bubble",
+    categoria: "Adicionais",
+    etiqueta: "Adicional",
+    selo: "Balão",
+    descricao: "Balão bubble para deixar o presente ainda mais especial.",
+    preco: "R$ 80,00",
+    imagem: "assets/balao.png",
+    mensagem: "Olá! Tenho interesse no adicional Balão bubble, no valor de R$ 80,00."
+  },
+  {
+    nome: "Orquídea uma haste",
+    categoria: "Adicionais",
+    etiqueta: "Adicional",
+    selo: "Flor",
+    descricao: "Orquídea de uma haste para complementar a cesta com um toque elegante.",
+    preco: "R$ 110,00",
+    imagem: "assets/orquidea.png",
+    mensagem: "Olá! Tenho interesse no adicional Orquídea uma haste, no valor de R$ 110,00."
+  },
+  {
+    nome: "Girassol",
+    categoria: "Adicionais",
+    etiqueta: "Adicional",
+    selo: "Flor",
+    descricao: "Girassol para complementar o presente com delicadeza e carinho.",
+    preco: "R$ 50,00",
+    imagem: "assets/girassol.png",
+    mensagem: "Olá! Tenho interesse no adicional Girassol, no valor de R$ 50,00."
+  },
+  {
+    nome: "Foto polaroide",
+    categoria: "Adicionais",
+    etiqueta: "Adicional",
+    selo: "Foto",
+    descricao: "Foto polaroide para deixar o presente mais pessoal e afetivo.",
+    preco: "R$ 12,00",
+    imagem: "assets/polaroid.png",
+    mensagem: "Olá! Tenho interesse no adicional Foto polaroide, no valor de R$ 12,00."
+  },
+  {
+    nome: "Buquê P flores do campo",
+    categoria: "Adicionais",
+    etiqueta: "Adicional",
+    selo: "Flores",
+    descricao: "Buquê pequeno de flores do campo para complementar a cesta.",
+    preco: "R$ 120,00",
+    imagem: "assets/buque.png",
+    mensagem: "Olá! Tenho interesse no adicional Buquê P flores do campo, no valor de R$ 120,00."
   }
 ];
 
