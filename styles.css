@@ -3025,3 +3025,42 @@ body[data-theme="dia-dos-namorados"] .social-toggle.active {
     radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.24), transparent 28px),
     linear-gradient(135deg, var(--campaign-gold), #b8894f);
 }
+
+/* Correção final do header na nova paleta Dia dos Namorados */
+body[data-theme="dia-dos-namorados"] .site-header {
+  background: #b80f1a !important;
+  background-image: none !important;
+  box-shadow: 0 12px 35px rgba(184, 15, 26, 0.28) !important;
+}
+
+body[data-theme="dia-dos-namorados"] .sales-bar {
+  background: #7f0b14 !important;
+}
+
+body[data-theme="dia-dos-namorados"] .header-main,
+body[data-theme="dia-dos-namorados"] .nav {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+body[data-theme="dia-dos-namorados"] .header-photo-marquee {
+  background: rgba(127, 11, 20, 0.24) !important;
+  border-top: 1px solid rgba(217, 179, 122, 0.28) !important;
+}
+
+body[data-theme="dia-dos-namorados"] .header-photo-marquee::before {
+  background: linear-gradient(90deg, #b80f1a, transparent) !important;
+}
+
+body[data-theme="dia-dos-namorados"] .header-photo-marquee::after {
+  background: linear-gradient(270deg, #b80f1a, transparent) !important;
+}
+
+body[data-theme="dia-dos-namorados"] .campaign-toggle {
+  background: rgba(255, 248, 244, 0.14) !important;
+  border-color: rgba(255, 248, 244, 0.32) !important;
+}
+
+body[data-theme="dia-dos-namorados"] .campaign-toggle:hover {
+  background: rgba(255, 248, 244, 0.22) !important;
+}
