@@ -248,6 +248,27 @@ function applyCampaign() {
   $("#productsTitle").textContent = data.produtosTitulo;
   $("#productsSubtitle").textContent = data.produtosSubtitulo;
 
+  const promoTag = $("#promoTag");
+  const promoTitle = $("#promoTitle");
+  const promoText = $("#promoText");
+  const promoRules = $("#promoRules");
+
+if (promoTag && promoTitle && promoText && promoRules) {
+  if (SITE_CONFIG.campanhaAtiva) {
+    promoTag.textContent = "informações importantes";
+    promoTitle.textContent = "Atenção aos prazos e condições da campanha";
+    promoText.textContent =
+      "Para garantir uma entrega organizada e um presente preparado com cuidado, confira as informações da campanha especial de Dia dos Namorados.";
+    promoRules.classList.remove("hidden");
+  } else {
+    promoTag.textContent = "campanha limitada";
+    promoTitle.textContent = "Garanta sua cesta com antecedência";
+    promoText.textContent =
+      "Em datas comemorativas, nossas quantidades são limitadas. Entre em contato pelo WhatsApp, escolha a sua cesta e garanta o seu presente.";
+    promoRules.classList.add("hidden");
+  }
+}
+
   const mainLinks = [
     "#heroWhatsapp",
     "#promoWhatsapp",
