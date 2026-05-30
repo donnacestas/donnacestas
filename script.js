@@ -523,6 +523,29 @@ function setupInstitutionalPages() {
   backHomeButton.addEventListener("click", backHome);
 }
 
+function setupCompactHeaderOnScroll() {
+  const header = document.querySelector(".site-header");
+  const hero = document.querySelector("#inicio");
+
+  if (!header || !hero) return;
+
+  function updateHeaderState() {
+    const heroBottom = hero.offsetTop + hero.offsetHeight;
+    const scrollPosition = window.scrollY;
+
+    if (scrollPosition > heroBottom - 160) {
+      header.classList.add("header-compact");
+    } else {
+      header.classList.remove("header-compact");
+    }
+  }
+
+  updateHeaderState();
+
+  window.addEventListener("scroll", updateHeaderState);
+  window.addEventListener("resize", updateHeaderState);
+}
+
 applyCampaign();
 renderCategories();
 renderProducts();
@@ -530,6 +553,7 @@ setupMenu();
 setupSearch();
 setupCampaignToggle();
 setupInstitutionalPages();
+setupCompactHeaderOnScroll();
 
 const instagramLinks = document.querySelectorAll("[data-instagram]");
 
