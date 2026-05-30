@@ -2527,3 +2527,23 @@ body[data-theme="dia-dos-namorados"]
     top: 6px;
   }
 }
+
+/* Esteira de fotos some quando o usuário sai da hero */
+.site-header.header-compact .header-photo-marquee {
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  opacity: 0;
+  overflow: hidden;
+  border-top: 0;
+  pointer-events: none;
+}
+
+.header-photo-marquee {
+  transition:
+    max-height 0.35s ease,
+    padding 0.35s ease,
+    opacity 0.25s ease,
+    border 0.25s ease;
+  max-height: 120px;
+}
