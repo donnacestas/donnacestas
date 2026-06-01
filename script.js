@@ -361,6 +361,8 @@ function applyCampaign() {
 $("#campaignTag").textContent = data.tag;
 $("#campaignTitle").textContent = data.titulo;
 $("#campaignText").textContent = data.texto;
+$("#productsTitle").textContent = data.produtosTitulo;
+$("#productsSubtitle").textContent = data.produtosSubtitulo;
 
 const campaignImage = $("#campaignImage");
 const campaignVideo = $("#campaignVideo");
