@@ -3168,3 +3168,26 @@ body[data-theme="dia-dos-namorados"] .campaign-toggle:hover {
     border-width: 5px;
   }
 }
+
+/* Ajuste dos selos/eyebrows em seções claras no modo Dia dos Namorados */
+body[data-theme="dia-dos-namorados"] .delivery-area-section .eyebrow,
+body[data-theme="dia-dos-namorados"] .feedbacks-section .eyebrow,
+body[data-theme="dia-dos-namorados"] .instagram-section .eyebrow {
+  background: #fff8f4;
+  color: #b80f1a;
+  border: 1px solid rgba(184, 15, 26, 0.16);
+}
+
+/* Ajuste dos títulos principais dessas seções */
+body[data-theme="dia-dos-namorados"] .delivery-area-section h2,
+body[data-theme="dia-dos-namorados"] .feedbacks-section h2,
+body[data-theme="dia-dos-namorados"] .instagram-section h2 {
+  color: #7f0b14;
+}
+
+/* Ajuste dos textos de apoio */
+body[data-theme="dia-dos-namorados"] .delivery-area-section p,
+body[data-theme="dia-dos-namorados"] .feedbacks-section p,
+body[data-theme="dia-dos-namorados"] .instagram-section p {
+  color: #8a6a58;
+}
