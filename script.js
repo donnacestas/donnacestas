@@ -358,42 +358,50 @@ function applyCampaign() {
     navProductsLink.textContent = data.menuProdutos;
   }
 
-$("#campaignTag").textContent = data.tag;
-$("#campaignTitle").textContent = data.titulo;
-$("#campaignText").textContent = data.texto;
-$("#productsTitle").textContent = data.produtosTitulo;
-$("#productsSubtitle").textContent = data.produtosSubtitulo;
+  const campaignTag = $("#campaignTag");
+  const campaignTitle = $("#campaignTitle");
+  const campaignText = $("#campaignText");
+  const campaignImage = $("#campaignImage");
+  const campaignVideo = $("#campaignVideo");
+  const productsTitle = $("#productsTitle");
+  const productsSubtitle = $("#productsSubtitle");
 
-const campaignImage = $("#campaignImage");
-const campaignVideo = $("#campaignVideo");
+  if (campaignTag) campaignTag.textContent = data.tag;
+  if (campaignTitle) campaignTitle.textContent = data.titulo;
+  if (campaignText) campaignText.textContent = data.texto;
 
-if (campaignImage) {
-  campaignImage.src = data.imagem;
-  campaignImage.alt = data.titulo;
-}
-
-if (campaignVideo) {
-  campaignVideo.setAttribute("aria-label", data.titulo);
-}
-
-$("#productsTitle").textContent = data.produtosTitulo;
-$("#productsSubtitle").textContent = data.produtosSubtitulo;
-
-if (promoTag && promoTitle && promoText && promoRules) {
-  if (SITE_CONFIG.campanhaAtiva) {
-    promoTag.textContent = "informações importantes";
-    promoTitle.textContent = "Atenção aos prazos e condições da campanha";
-    promoText.textContent =
-      "Para garantir uma entrega organizada e um presente preparado com cuidado, confira as informações da campanha especial de Dia dos Namorados.";
-    promoRules.classList.remove("hidden");
-  } else {
-    promoTag.textContent = "campanha limitada";
-    promoTitle.textContent = "Garanta sua cesta com antecedência";
-    promoText.textContent =
-      "Em datas comemorativas, nossas quantidades são limitadas. Entre em contato pelo WhatsApp, escolha a sua cesta e garanta o seu presente.";
-    promoRules.classList.add("hidden");
+  if (campaignImage) {
+    campaignImage.src = data.imagem;
+    campaignImage.alt = data.titulo;
   }
-}
+
+  if (campaignVideo) {
+    campaignVideo.setAttribute("aria-label", data.titulo);
+  }
+
+  if (productsTitle) productsTitle.textContent = data.produtosTitulo;
+  if (productsSubtitle) productsSubtitle.textContent = data.produtosSubtitulo;
+
+  const promoTag = $("#promoTag");
+  const promoTitle = $("#promoTitle");
+  const promoText = $("#promoText");
+  const promoRules = $("#promoRules");
+
+  if (promoTag && promoTitle && promoText && promoRules) {
+    if (SITE_CONFIG.campanhaAtiva) {
+      promoTag.textContent = "informações importantes";
+      promoTitle.textContent = "Atenção aos prazos e condições da campanha";
+      promoText.textContent =
+        "Para garantir uma entrega organizada e um presente preparado com cuidado, confira as informações da campanha especial de Dia dos Namorados.";
+      promoRules.classList.remove("hidden");
+    } else {
+      promoTag.textContent = "campanha limitada";
+      promoTitle.textContent = "Garanta sua cesta com antecedência";
+      promoText.textContent =
+        "Em datas comemorativas, nossas quantidades são limitadas. Entre em contato pelo WhatsApp, escolha a sua cesta e garanta o seu presente.";
+      promoRules.classList.add("hidden");
+    }
+  }
 
   const mainLinks = [
     "#heroWhatsapp",
@@ -408,32 +416,35 @@ if (promoTag && promoTitle && promoText && promoRules) {
     if (link) link.href = whatsappLink(data.mensagemWhatsapp);
   });
 
-  $("#heroWhatsapp").textContent = data.botao;
+  const heroWhatsapp = $("#heroWhatsapp");
+  if (heroWhatsapp) {
+    heroWhatsapp.textContent = data.botao;
+  }
 
   const campaignPrice = $("#campaignPrice");
   const priceBadge = $("#priceBadge");
 
   if (campaignPrice && priceBadge) {
-const campaignPrice = $("#campaignPrice");
-const priceBadge = $("#priceBadge");
-
-if (campaignPrice && priceBadge) {
-  if (data.preco) {
-    campaignPrice.textContent = data.preco;
-    priceBadge.classList.remove("hidden");
-  } else {
-    priceBadge.classList.add("hidden");
+    if (data.preco) {
+      campaignPrice.textContent = data.preco;
+      priceBadge.classList.remove("hidden");
+    } else {
+      priceBadge.classList.add("hidden");
+    }
   }
-}
 
-  $("#campaignHighlights").innerHTML = data.destaques
-    .map(([title, subtitle]) => `
-      <div>
-        <strong>${title}</strong>
-        <span>${subtitle}</span>
-      </div>
-    `)
-    .join("");
+  const campaignHighlights = $("#campaignHighlights");
+
+  if (campaignHighlights) {
+    campaignHighlights.innerHTML = data.destaques
+      .map(([title, subtitle]) => `
+        <div>
+          <strong>${title}</strong>
+          <span>${subtitle}</span>
+        </div>
+      `)
+      .join("");
+  }
 }
 
 function getActiveProducts() {
