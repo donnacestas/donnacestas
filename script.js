@@ -358,18 +358,24 @@ function applyCampaign() {
     navProductsLink.textContent = data.menuProdutos;
   }
 
-  $("#campaignTag").textContent = data.tag;
-  $("#campaignTitle").textContent = data.titulo;
-  $("#campaignText").textContent = data.texto;
-  $("#campaignImage").src = data.imagem;
-  $("#campaignImage").alt = data.titulo;
-  $("#productsTitle").textContent = data.produtosTitulo;
-  $("#productsSubtitle").textContent = data.produtosSubtitulo;
+$("#campaignTag").textContent = data.tag;
+$("#campaignTitle").textContent = data.titulo;
+$("#campaignText").textContent = data.texto;
 
-  const promoTag = $("#promoTag");
-  const promoTitle = $("#promoTitle");
-  const promoText = $("#promoText");
-  const promoRules = $("#promoRules");
+const campaignImage = $("#campaignImage");
+const campaignVideo = $("#campaignVideo");
+
+if (campaignImage) {
+  campaignImage.src = data.imagem;
+  campaignImage.alt = data.titulo;
+}
+
+if (campaignVideo) {
+  campaignVideo.setAttribute("aria-label", data.titulo);
+}
+
+$("#productsTitle").textContent = data.produtosTitulo;
+$("#productsSubtitle").textContent = data.produtosSubtitulo;
 
 if (promoTag && promoTitle && promoText && promoRules) {
   if (SITE_CONFIG.campanhaAtiva) {
@@ -402,12 +408,21 @@ if (promoTag && promoTitle && promoText && promoRules) {
 
   $("#heroWhatsapp").textContent = data.botao;
 
+  const campaignPrice = $("#campaignPrice");
+  const priceBadge = $("#priceBadge");
+
+  if (campaignPrice && priceBadge) {
+const campaignPrice = $("#campaignPrice");
+const priceBadge = $("#priceBadge");
+
+if (campaignPrice && priceBadge) {
   if (data.preco) {
-    $("#campaignPrice").textContent = data.preco;
-    $("#priceBadge").classList.remove("hidden");
+    campaignPrice.textContent = data.preco;
+    priceBadge.classList.remove("hidden");
   } else {
-    $("#priceBadge").classList.add("hidden");
+    priceBadge.classList.add("hidden");
   }
+}
 
   $("#campaignHighlights").innerHTML = data.destaques
     .map(([title, subtitle]) => `
