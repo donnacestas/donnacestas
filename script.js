@@ -23,7 +23,7 @@ const SITE_CONFIG = {
     texto:
       "Cestas românticas, personalizadas e preparadas com carinho para transformar o Dia dos Namorados em um momento inesquecível.",
     imagem: "assets/tabua-casal.jpg",
-    preco: "R$ 119,00",
+    preco: "R$ 164,00",
     botao: "Encomendar pelo WhatsApp",
     mensagemWhatsapp:
       "Olá! Quero encomendar uma cesta especial para o Dia dos Namorados.",
@@ -223,6 +223,124 @@ const PRODUCTS = [
   }
 ];
 
+const CAMPAIGN_PRODUCTS = [
+  {
+    nome: "Amour Royale",
+    categoria: "Dia dos Namorados",
+    etiqueta: "Dia dos Namorados",
+    selo: "1 pessoa",
+    descricao: "Croissant, mini baguete, cruffin recheado com doce de leite, pães de queijo recheados, bolacha decorada, salame, queijo Minas meia cura, geleia francesa, manteiga francesa, torradas finas, suco 300ml, café drip coffee, frutas da estação e cartão personalizado. Disposto em nicho de 20cm.",
+    preco: "R$ 239,00",
+    imagem: "assets/cesta-14.jpg",
+    ilustrativo: true,
+    aviso: "Foto ilustrativa. A composição e a montagem podem variar.",
+    mensagem: "Olá! Tenho interesse no Amour Royale do catálogo de Dia dos Namorados, no valor de R$ 239,00."
+  },
+  {
+    nome: "Cesta Romance",
+    categoria: "Dia dos Namorados",
+    etiqueta: "Dia dos Namorados",
+    selo: "2 pessoas",
+    descricao: "Croissant, mini baguetes, cruffin recheado com doce de leite, pães de queijo recheados, chipa, bolachas decoradas, salame, queijo Minas meia cura, geleia francesa, manteiga francesa, torradas finas, suco 300ml, cafés drip coffee, frutas da estação e cartão personalizado. Disposta em nicho de 25cm.",
+    preco: "R$ 289,00",
+    imagem: "assets/cesta-13.jpg",
+    ilustrativo: true,
+    aviso: "Foto ilustrativa. A composição e a montagem podem variar.",
+    mensagem: "Olá! Tenho interesse na Cesta Romance do catálogo de Dia dos Namorados, no valor de R$ 289,00."
+  },
+  {
+    nome: "Tábua Laços de Amor",
+    categoria: "Tábuas especiais",
+    etiqueta: "Tábua",
+    selo: "1-2 pessoas",
+    descricao: "Queijo brie, queijo Minas meia cura, salame italiano, baguete, pretzel, bolachas decoradas, pepita de mel, damasco, geleia de pimenta em ramekin de coração, pasta de damasco com cream cheese, frutas da estação, decoração de Dia dos Namorados e cartão personalizado. Disposta em tábua de 30cm.",
+    preco: "R$ 306,00",
+    imagem: "assets/tabua-mimo.jpg",
+    ilustrativo: true,
+    aviso: "Foto ilustrativa. A composição e a montagem podem variar.",
+    mensagem: "Olá! Tenho interesse na Tábua Laços de Amor do catálogo de Dia dos Namorados, no valor de R$ 306,00."
+  },
+  {
+    nome: "Amor Perfeito",
+    categoria: "Tábuas especiais",
+    etiqueta: "Tábua + Fondue",
+    selo: "2 pessoas",
+    descricao: "Tábua de frios Laços de Amor acompanhada de mini fondue cristal com ganache de chocolate ao leite, marshmallow e frutas da estação. Disposta em tábua de 30cm com fondue em box 750ml formato de coração.",
+    preco: "R$ 381,00",
+    imagem: "assets/tabua-casal.jpg",
+    ilustrativo: true,
+    aviso: "Foto ilustrativa. A composição e a montagem podem variar.",
+    mensagem: "Olá! Tenho interesse no Amor Perfeito do catálogo de Dia dos Namorados, no valor de R$ 381,00."
+  },
+  {
+    nome: "Box Fondue",
+    categoria: "Fondue",
+    etiqueta: "Fondue",
+    selo: "1-2 pessoas",
+    descricao: "Ganache de chocolate servido em ramekin, morangos, uvas sem sementes, gomos de bergamota, mini brownies, marshmallow e cartão personalizado. Disposto em lata dourada de 15cm com laço vermelho.",
+    preco: "R$ 164,00",
+    imagem: "assets/fondue.png",
+    ilustrativo: true,
+    aviso: "Foto ilustrativa. A composição e a montagem podem variar.",
+    mensagem: "Olá! Tenho interesse no Box Fondue do catálogo de Dia dos Namorados, no valor de R$ 164,00."
+  },
+  {
+    nome: "Box Love",
+    categoria: "Boxes especiais",
+    etiqueta: "Box",
+    selo: "1 pessoa",
+    descricao: "Vinho, chocolate importado, mini tábua com frios, balão coração Te Amo e cartão personalizado. Disposto em box cartonada off white ou preta de 12cm.",
+    preco: "R$ 299,00",
+    imagem: "assets/cesta-20.jpg",
+    ilustrativo: true,
+    aviso: "Foto ilustrativa. A composição e a montagem podem variar.",
+    mensagem: "Olá! Tenho interesse no Box Love do catálogo de Dia dos Namorados, no valor de R$ 299,00."
+  },
+  {
+    nome: "Cesta Encanto",
+    categoria: "Boxes especiais",
+    etiqueta: "Cesta",
+    selo: "1 pessoa",
+    descricao: "Urso Te Amo, caneca com inicial, café drip coffee, potiche de vidro com bolachas caseiras, balão coração Dia dos Namorados e cartão personalizado. Disposta em caixa com visor e adesivo Te Amo, embalada em saco transparente com laço vermelho.",
+    preco: "R$ 329,00",
+    imagem: "assets/cesta-13.jpg",
+    ilustrativo: true,
+    aviso: "Foto ilustrativa. A composição e a montagem podem variar.",
+    mensagem: "Olá! Tenho interesse na Cesta Encanto do catálogo de Dia dos Namorados, no valor de R$ 329,00."
+  },
+  {
+    nome: "Foto Polaroide com suporte de coração",
+    categoria: "Adicionais",
+    etiqueta: "Adicional",
+    selo: "Foto",
+    descricao: "Foto polaroide com suporte de coração para deixar o presente mais pessoal.",
+    preco: "R$ 15,00",
+    imagem: "assets/polaroide-c-base.png",
+    mensagem: "Olá! Tenho interesse no adicional Foto Polaroide com suporte de coração, no valor de R$ 15,00."
+  },
+  {
+    nome: "Balão coração",
+    categoria: "Adicionais",
+    etiqueta: "Adicional",
+    selo: "Balão",
+    descricao: "Balão em formato de coração vendido por unidade.",
+    preco: "R$ 12,00",
+    imagem: "assets/baloes.png",
+    mensagem: "Olá! Tenho interesse no adicional Balão coração, no valor de R$ 12,00."
+  },
+  {
+    nome: "Vinho chileno",
+    categoria: "Adicionais",
+    etiqueta: "Adicional",
+    selo: "Vinho",
+    descricao: "Vinho chileno vendido por unidade para complementar o presente.",
+    preco: "R$ 79,00",
+    imagem: "assets/presentes.jpg",
+    mensagem: "Olá! Tenho interesse no adicional Vinho chileno, no valor de R$ 79,00."
+  }
+];
+
+
 const $ = (selector) => document.querySelector(selector);
 
 function whatsappLink(message) {
@@ -301,8 +419,12 @@ if (promoTag && promoTitle && promoText && promoRules) {
     .join("");
 }
 
+function getActiveProducts() {
+  return SITE_CONFIG.campanhaAtiva ? CAMPAIGN_PRODUCTS : PRODUCTS;
+}
+
 function getCategories() {
-  return ["Todos", ...new Set(PRODUCTS.map((product) => product.categoria))];
+  return ["Todos", ...new Set(getActiveProducts().map((product) => product.categoria))];
 }
 
 function renderCategories() {
@@ -328,7 +450,7 @@ function renderProducts(category = "Todos", search = "") {
   const grid = $("#productsGrid");
   const searchTerm = search.trim().toLowerCase();
 
-  const filtered = PRODUCTS.filter((product) => {
+  const filtered = getActiveProducts().filter((product) => {
     const matchCategory = category === "Todos" || product.categoria === category;
     const matchSearch =
       !searchTerm ||
@@ -350,32 +472,63 @@ function renderProducts(category = "Todos", search = "") {
   }
 
   grid.innerHTML = filtered
-    .map((product) => `
-      <article class="product-card">
-        <div class="product-image">
-          <img src="${product.imagem}" alt="${product.nome}">
-          <div class="product-tags">
-            <span>${product.etiqueta}</span>
-            <span>${product.selo}</span>
-          </div>
-        </div>
+    .map((product, index) => {
+      const detailsId = `product-details-${index}`;
 
-        <div class="product-content">
-          <h3>${product.nome}</h3>
-          <p class="product-description">${product.descricao}</p>
-          <strong class="product-price">${product.preco}</strong>
-          <a
-            class="product-button"
-            href="${whatsappLink(product.mensagem)}"
-            target="_blank"
-            rel="noopener"
-          >
-            Pedir no WhatsApp
-          </a>
-        </div>
-      </article>
-    `)
+      return `
+        <article class="product-card">
+          <div class="product-image">
+            <img src="${product.imagem}" alt="${product.nome}">
+            ${product.ilustrativo ? '<span class="product-illustrative-badge">Foto ilustrativa</span>' : ''}
+            <div class="product-tags">
+              <span>${product.etiqueta}</span>
+              <span>${product.selo}</span>
+            </div>
+          </div>
+
+          <div class="product-content">
+            <h3>${product.nome}</h3>
+
+            <button
+              class="product-details-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="${detailsId}"
+            >
+              <span>Ver itens</span>
+              <span class="product-details-arrow" aria-hidden="true">⌄</span>
+            </button>
+
+            <div class="product-details" id="${detailsId}">
+              <p class="product-description">${product.descricao}</p>
+            </div>
+
+            ${product.aviso ? `<p class="product-note">${product.aviso}</p>` : '<p class="product-note product-note-placeholder">Foto real do produto.</p>'}
+
+            <strong class="product-price">${product.preco}</strong>
+
+            <a
+              class="product-button"
+              href="${whatsappLink(product.mensagem)}"
+              target="_blank"
+              rel="noopener"
+            >
+              Pedir no WhatsApp
+            </a>
+          </div>
+        </article>
+      `;
+    })
     .join("");
+
+  grid.querySelectorAll(".product-details-toggle").forEach((button) => {
+    button.addEventListener("click", () => {
+      const card = button.closest(".product-card");
+      const isOpen = card.classList.toggle("details-open");
+
+      button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+  });
 }
 
 function updateCampaignToggleText() {
@@ -399,6 +552,8 @@ function setupCampaignToggle() {
     SITE_CONFIG.campanhaAtiva = !SITE_CONFIG.campanhaAtiva;
 
     applyCampaign();
+    renderCategories();
+    renderProducts();
     updateCampaignToggleText();
   });
 }

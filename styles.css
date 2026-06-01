@@ -594,6 +594,21 @@ p {
   transform: scale(1.055);
 }
 
+.product-illustrative-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.94);
+  color: #8a100c;
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1;
+  padding: 8px 10px;
+  border-radius: 999px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
 .product-tags {
   position: absolute;
   left: 10px;
@@ -635,11 +650,75 @@ p {
   margin-bottom: 0;
 }
 
+.product-details-toggle {
+  width: 100%;
+  margin: 12px 0 5px;
+  padding: 10px 12px;
+  border: 1px solid rgba(75, 42, 18, 0.14);
+  border-radius: 12px;
+  background: #fffdf8;
+  color: #4b2a12;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.82rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.product-details-toggle:hover {
+  background: #fff4eb;
+  border-color: rgba(138, 16, 12, 0.28);
+  color: #8a100c;
+}
+
+.product-details-arrow {
+  font-size: 1.05rem;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.product-card.details-open .product-details-arrow {
+  transform: rotate(180deg);
+}
+
+.product-details {
+  display: none;
+}
+
+.product-card.details-open .product-details {
+  display: block;
+}
+
 .product-description {
-  margin: 10px 0 14px;
-  font-size: 0.88rem;
+  margin: 10px 0 10px;
+  padding: 11px 12px;
+  border-radius: 12px;
+  background: #faf7f1;
+  border: 1px solid rgba(75, 42, 18, 0.1);
+  font-size: 0.85rem;
   color: #62584f;
-  min-height: 92px;
+  line-height: 1.55;
+}
+
+.product-note {
+  margin: auto 0 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #fff4eb;
+  border: 1px solid rgba(195, 146, 84, 0.35);
+  color: #8a100c;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.product-note-placeholder {
+  visibility: hidden;
 }
 
 .product-price {
@@ -647,7 +726,7 @@ p {
   font-size: 1.35rem;
   color: #1f1a16;
   font-weight: 900;
-  margin-top: auto;
+  margin-top: 0;
   margin-bottom: 14px;
 }
 
@@ -1049,6 +1128,14 @@ p {
 }
 
 @media (max-width: 720px) {
+  .product-details-toggle {
+    font-size: 0.8rem;
+  }
+
+  .product-note {
+    font-size: 0.78rem;
+  }
+
   .sales-bar {
     font-size: 0.78rem;
   }
