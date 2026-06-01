@@ -531,33 +531,6 @@ function renderProducts(category = "Todos", search = "") {
   });
 }
 
-function updateCampaignToggleText() {
-  const button = $("#campaignToggle");
-
-  if (!button) return;
-
-  button.textContent = SITE_CONFIG.campanhaAtiva
-    ? "Desativar campanha"
-    : "Ativar campanha";
-}
-
-function setupCampaignToggle() {
-  const button = $("#campaignToggle");
-
-  if (!button) return;
-
-  updateCampaignToggleText();
-
-  button.addEventListener("click", () => {
-    SITE_CONFIG.campanhaAtiva = !SITE_CONFIG.campanhaAtiva;
-
-    applyCampaign();
-    renderCategories();
-    renderProducts();
-    updateCampaignToggleText();
-  });
-}
-
 function setupMenu() {
   const button = $("#menuButton");
   const nav = $("#nav");
@@ -727,7 +700,6 @@ renderCategories();
 renderProducts();
 setupMenu();
 setupSearch();
-setupCampaignToggle();
 setupInstitutionalPages();
 setupCompactHeaderOnScroll();
 
