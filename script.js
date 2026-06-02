@@ -202,14 +202,14 @@ const PRODUCTS = [
     mensagem: "Olá! Tenho interesse no adicional Girassol, no valor de R$ 50,00."
   },
   {
-    nome: "Foto polaroide",
+    nome: "Foto polaroid",
     categoria: "Adicionais",
     etiqueta: "Adicional",
     selo: "Foto",
-    descricao: "Foto polaroide para deixar o presente mais pessoal e afetivo.",
+    descricao: "Foto polaroid para deixar o presente mais pessoal e afetivo.",
     preco: "R$ 12,00",
     imagem: "assets/polaroid.png",
-    mensagem: "Olá! Tenho interesse no adicional Foto polaroide, no valor de R$ 12,00."
+    mensagem: "Olá! Tenho interesse no adicional Foto polaroid, no valor de R$ 12,00."
   },
   {
     nome: "Buquê P flores do campo",
@@ -243,7 +243,7 @@ const CAMPAIGN_PRODUCTS = [
     selo: "2 pessoas",
     descricao: "Croissant, mini baguetes, cruffin recheado com doce de leite, pães de queijo recheados, chipa, bolachas decoradas, salame, queijo Minas meia cura, geleia francesa, manteiga francesa, torradas finas, suco 300ml, cafés drip coffee, frutas da estação e cartão personalizado. Disposta em nicho de 25cm.",
     preco: "R$ 289,00",
-    imagem: "assets/cesta-13.jpg",
+    imagem: "assets/romance.png",
     ilustrativo: true,
     aviso: "Foto ilustrativa. A composição e a montagem podem variar.",
     mensagem: "Olá! Tenho interesse na Cesta Romance do catálogo de Dia dos Namorados, no valor de R$ 289,00."
@@ -255,7 +255,7 @@ const CAMPAIGN_PRODUCTS = [
     selo: "1-2 pessoas",
     descricao: "Queijo brie, queijo Minas meia cura, salame italiano, baguete, pretzel, bolachas decoradas, pepita de mel, damasco, geleia de pimenta em ramekin de coração, pasta de damasco com cream cheese, frutas da estação, decoração de Dia dos Namorados e cartão personalizado. Disposta em tábua de 30cm.",
     preco: "R$ 306,00",
-    imagem: "assets/tabua-mimo.jpg",
+    imagem: "assets/lacos.jpeg",
     ilustrativo: true,
     aviso: "Foto ilustrativa. A composição e a montagem podem variar.",
     mensagem: "Olá! Tenho interesse na Tábua Laços de Amor do catálogo de Dia dos Namorados, no valor de R$ 306,00."
@@ -267,7 +267,7 @@ const CAMPAIGN_PRODUCTS = [
     selo: "2 pessoas",
     descricao: "Tábua de frios Laços de Amor acompanhada de mini fondue cristal com ganache de chocolate ao leite, marshmallow e frutas da estação. Disposta em tábua de 30cm com fondue em box 750ml formato de coração.",
     preco: "R$ 381,00",
-    imagem: "assets/tabua-casal.jpg",
+    imagem: "assets/amorperfeito.jpeg",
     ilustrativo: true,
     aviso: "Foto ilustrativa. A composição e a montagem podem variar.",
     mensagem: "Olá! Tenho interesse no Amor Perfeito do catálogo de Dia dos Namorados, no valor de R$ 381,00."
@@ -291,7 +291,7 @@ const CAMPAIGN_PRODUCTS = [
     selo: "1 pessoa",
     descricao: "Vinho, chocolate importado, mini tábua com frios, balão coração Te Amo e cartão personalizado. Disposto em box cartonada off white ou preta de 12cm.",
     preco: "R$ 299,00",
-    imagem: "assets/cesta-20.jpg",
+    imagem: "assets/boxlove.jpeg",
     ilustrativo: true,
     aviso: "Foto ilustrativa. A composição e a montagem podem variar.",
     mensagem: "Olá! Tenho interesse no Box Love do catálogo de Dia dos Namorados, no valor de R$ 299,00."
@@ -303,20 +303,20 @@ const CAMPAIGN_PRODUCTS = [
     selo: "1 pessoa",
     descricao: "Urso Te Amo, caneca com inicial, café drip coffee, potiche de vidro com bolachas caseiras, balão coração Dia dos Namorados e cartão personalizado. Disposta em caixa com visor e adesivo Te Amo, embalada em saco transparente com laço vermelho.",
     preco: "R$ 329,00",
-    imagem: "assets/cesta-13.jpg",
+    imagem: "assets/encanto.jpeg",
     ilustrativo: true,
     aviso: "Foto ilustrativa. A composição e a montagem podem variar.",
     mensagem: "Olá! Tenho interesse na Cesta Encanto do catálogo de Dia dos Namorados, no valor de R$ 329,00."
   },
   {
-    nome: "Foto Polaroide com suporte de coração",
+    nome: "Foto polaroid com suporte de coração",
     categoria: "Adicionais",
     etiqueta: "Adicional",
     selo: "Foto",
-    descricao: "Foto polaroide com suporte de coração para deixar o presente mais pessoal.",
+    descricao: "Foto polaroid com suporte de coração para deixar o presente mais pessoal.",
     preco: "R$ 15,00",
     imagem: "assets/polaroide-c-base.png",
-    mensagem: "Olá! Tenho interesse no adicional Foto Polaroide com suporte de coração, no valor de R$ 15,00."
+    mensagem: "Olá! Tenho interesse no adicional Foto polaroid com suporte de coração, no valor de R$ 15,00."
   },
   {
     nome: "Balão coração",
@@ -335,7 +335,7 @@ const CAMPAIGN_PRODUCTS = [
     selo: "Vinho",
     descricao: "Vinho chileno vendido por unidade para complementar o presente.",
     preco: "R$ 79,00",
-    imagem: "assets/presentes.jpg",
+    imagem: "assets/vinho.png",
     mensagem: "Olá! Tenho interesse no adicional Vinho chileno, no valor de R$ 79,00."
   }
 ];
