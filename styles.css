@@ -3195,3 +3195,11 @@ body[data-theme="dia-dos-namorados"] .instagram-section p {
 .campaign-video {
   object-position: 50% 45%;
 }
+
+.hero-product .campaign-video {
+  width: 100%;
+  height: min(540px, 70vh);
+  object-fit: cover;
+  object-position: center center !important;
+  display: block;
+}
