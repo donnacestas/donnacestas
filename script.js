@@ -239,7 +239,7 @@ const CAMPAIGN_PRODUCTS = [
   {
     nome: "Cesta Romance",
     categoria: "Dia dos Namorados",
-    etiqueta: "Dia dos Namorados",
+    etiqueta: "Café",
     selo: "2 pessoas",
     descricao: "Croissant, mini baguetes, cruffin recheado com doce de leite, pães de queijo recheados, chipa, bolachas decoradas, salame, queijo Minas meia cura, geleia francesa, manteiga francesa, torradas finas, suco 300ml, cafés drip coffee, frutas da estação e cartão personalizado. Disposta em nicho de 25cm.",
     preco: "R$ 289,00",
