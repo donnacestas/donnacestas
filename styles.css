@@ -3191,3 +3191,7 @@ body[data-theme="dia-dos-namorados"] .feedbacks-section p,
 body[data-theme="dia-dos-namorados"] .instagram-section p {
   color: #8a6a58;
 }
+
+.campaign-video {
+  object-position: 50% 45%;
+}
