@@ -3199,7 +3199,8 @@ body[data-theme="dia-dos-namorados"] .instagram-section p {
 .hero-product .campaign-video {
   width: 100%;
   height: min(540px, 70vh);
-  object-fit: cover;
+  object-fit: contain;
   object-position: center center !important;
   display: block;
+  background: #7f0b14;
 }
