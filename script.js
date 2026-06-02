@@ -231,7 +231,7 @@ const CAMPAIGN_PRODUCTS = [
     selo: "1 pessoa",
     descricao: "Croissant, mini baguete, cruffin recheado com doce de leite, pães de queijo recheados, bolacha decorada, salame, queijo Minas meia cura, geleia francesa, manteiga francesa, torradas finas, suco 300ml, café drip coffee, frutas da estação e cartão personalizado. Disposto em nicho de 20cm.",
     preco: "R$ 239,00",
-    imagem: "assets/cesta-14.jpg",
+    imagem: "assets/amour.jpg",
     ilustrativo: true,
     aviso: "Foto ilustrativa. A composição e a montagem podem variar.",
     mensagem: "Olá! Tenho interesse no Amour Royale do catálogo de Dia dos Namorados, no valor de R$ 239,00."
@@ -267,7 +267,7 @@ const CAMPAIGN_PRODUCTS = [
     selo: "2 pessoas",
     descricao: "Tábua de frios Laços de Amor acompanhada de mini fondue cristal com ganache de chocolate ao leite, marshmallow e frutas da estação. Disposta em tábua de 30cm com fondue em box 750ml formato de coração.",
     preco: "R$ 381,00",
-    imagem: "assets/amorperfeito.jpeg",
+    imagem: "assets/amorperfeito.png",
     ilustrativo: true,
     aviso: "Foto ilustrativa. A composição e a montagem podem variar.",
     mensagem: "Olá! Tenho interesse no Amor Perfeito do catálogo de Dia dos Namorados, no valor de R$ 381,00."
