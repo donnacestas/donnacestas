@@ -227,7 +227,7 @@ const CAMPAIGN_PRODUCTS = [
   {
     nome: "Amour Royale",
     categoria: "Dia dos Namorados",
-    etiqueta: "Dia dos Namorados",
+    etiqueta: "Café",
     selo: "1 pessoa",
     descricao: "Croissant, mini baguete, cruffin recheado com doce de leite, pães de queijo recheados, bolacha decorada, salame, queijo Minas meia cura, geleia francesa, manteiga francesa, torradas finas, suco 300ml, café drip coffee, frutas da estação e cartão personalizado. Disposto em nicho de 20cm.",
     preco: "R$ 239,00",
