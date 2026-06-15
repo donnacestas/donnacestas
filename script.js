@@ -14,7 +14,7 @@ const WHATSAPP_NUMBER = "5548998279941";
 const INSTAGRAM_URL = "https://www.instagram.com/donnacestasfloripa/";
 
 const SITE_CONFIG = {
-  campanhaAtiva: true,
+  campanhaAtiva: false,
   tema: "loja",
 
   campanha: {
