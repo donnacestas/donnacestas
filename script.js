@@ -62,7 +62,7 @@ const SITE_CONFIG = {
 
 const PRODUCTS = [
   {
-    nome: "Café Mini",
+    nome: "Café Cristal",
     categoria: "Café da manhã",
     etiqueta: "Café da manhã",
     selo: "Mini",
@@ -72,7 +72,7 @@ const PRODUCTS = [
     mensagem: "Olá! Tenho interesse em Café Mini do catálogo, no valor de R$ 119,00."
   },
   {
-    nome: "Café P",
+    nome: "Cesta Amanhecer",
     categoria: "Café da manhã",
     etiqueta: "Café da manhã",
     selo: "P",
@@ -82,7 +82,7 @@ const PRODUCTS = [
     mensagem: "Olá! Tenho interesse em Café P do catálogo, no valor de R$ 218,00."
   },
   {
-    nome: "Café M",
+    nome: "Cesta Encanto",
     categoria: "Café da manhã",
     etiqueta: "Café da manhã",
     selo: "M",
@@ -92,7 +92,7 @@ const PRODUCTS = [
     mensagem: "Olá! Tenho interesse em Café M do catálogo, no valor de R$ 284,00."
   },
   {
-    nome: "Café G",
+    nome: "Cesta Elegance",
     categoria: "Café da manhã",
     etiqueta: "Café da manhã",
     selo: "G",
@@ -102,7 +102,7 @@ const PRODUCTS = [
     mensagem: "Olá! Tenho interesse em Café G do catálogo, no valor de R$ 358,00."
   },
   {
-    nome: "Feliz Aniversário",
+    nome: "Cesta Feliz Aniversário",
     categoria: "Aniversário",
     etiqueta: "Aniversário",
     selo: "Especial",
@@ -112,7 +112,7 @@ const PRODUCTS = [
     mensagem: "Olá! Tenho interesse em Feliz Aniversário do catálogo, no valor de R$ 290,00."
   },
   {
-    nome: "Box Corporativa",
+    nome: "Executive Box",
     categoria: "Corporativas",
     etiqueta: "Corporativa",
     selo: "Empresas",
@@ -120,16 +120,6 @@ const PRODUCTS = [
     preco: "R$ 180,00",
     imagem: "assets/cesta-21.jpg",
     mensagem: "Olá! Tenho interesse em Box Corporativa do catálogo, no valor de R$ 180,00."
-  },
-  {
-    nome: "Box Wine",
-    categoria: "Vinhos",
-    etiqueta: "Vinho",
-    selo: "Premium",
-    descricao: "Cesto de palha com vinho 750ml, queijo, salame italiano, amêndoas defumadas, geleia de pimenta e chocolate importado.",
-    preco: "R$ 389,00",
-    imagem: "assets/cesta-20.jpg",
-    mensagem: "Olá! Tenho interesse em Box Wine do catálogo, no valor de R$ 389,00."
   },
   {
     nome: "Tábua Mimo",
