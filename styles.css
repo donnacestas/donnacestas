@@ -465,7 +465,7 @@ p {
 .purchase-strip {
   background: #fff;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   max-width: 1180px;
   margin: 42px auto 0;
   position: relative;
