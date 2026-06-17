@@ -380,10 +380,10 @@ function applyCampaign() {
         "Para garantir uma entrega organizada e um presente preparado com cuidado, confira as informações da campanha especial de Dia dos Namorados.";
       promoRules.classList.remove("hidden");
     } else {
-      promoTag.textContent = "campanha limitada";
-      promoTitle.textContent = "Garanta sua cesta com antecedência";
+      promoTag.textContent = "cada detalhe importa";
+      promoTitle.textContent = "Garanta sua cesta!";
       promoText.textContent =
-        "Em datas comemorativas, nossas quantidades são limitadas. Entre em contato pelo WhatsApp, escolha a sua cesta e garanta o seu presente.";
+        "Entre em contato pelo WhatsApp, escolha a sua cesta e surpreenda alguém especial com um presente preparado com carinho.";
       promoRules.classList.add("hidden");
     }
   }
