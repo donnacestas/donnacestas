@@ -52,11 +52,6 @@ const SITE_CONFIG = {
     produtosSubtitulo:
       "Escolha uma opção do catálogo e fale direto no WhatsApp com uma mensagem pronta.",
     menuProdutos: "Catálogo",
-    destaques: [
-      ["Sob medida", "Monte sua cesta"],
-      ["Cartão incluso", "Mensagem especial"],
-      ["Presente único", "Feito com carinho"]
-    ]
   }
 };
 
