@@ -17,27 +17,6 @@ const SITE_CONFIG = {
   campanhaAtiva: false,
   tema: "loja",
 
-  campanha: {
-    tag: "Dia dos Namorados 2026",
-    titulo: "O presente perfeito para surpreender quem você ama.",
-    texto:
-      "Cestas românticas, personalizadas e preparadas com carinho para transformar o Dia dos Namorados em um momento inesquecível.",
-    imagem: "assets/tabua-casal.jpg",
-    preco: "R$ 164,00",
-    botao: "Encomendar pelo WhatsApp",
-    mensagemWhatsapp:
-      "Olá! Quero encomendar uma cesta especial para o Dia dos Namorados.",
-    produtosTitulo: "Cestas para o Dia dos Namorados",
-    produtosSubtitulo:
-      "Escolha uma opção da vitrine e fale direto no WhatsApp com uma mensagem pronta.",
-    menuProdutos: "Dia dos Namorados",
-    destaques: [
-      ["12 de junho", "Campanha especial"],
-      ["Personalizada", "Cartão e embalagem"],
-      ["Entrega", "Consulte horários"]
-    ]
-  },
-
   loja: {
     tag: "Donna Cestas",
     titulo: "Cestas artesanais para momentos especiais.",
