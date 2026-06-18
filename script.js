@@ -19,7 +19,7 @@ const SITE_CONFIG = {
 
   loja: {
     tag: "Donna Cestas",
-    titulo: "Cestas artesanais para momentos especiais.",
+    titulo: "Todos os dias é dia de presentear.",
     texto:
       "Presentes personalizados para aniversários, datas comemorativas, empresas e momentos únicos.",
     imagem: "assets/cesta-13.jpg",
