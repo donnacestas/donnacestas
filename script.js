@@ -201,6 +201,61 @@ function getActiveProducts() {
   return SITE_CONFIG.campanhaAtiva ? CAMPAIGN_PRODUCTS : PRODUCTS;
 }
 
+function applyCampaign() {
+  const data = SITE_CONFIG.campanhaAtiva ? SITE_CONFIG.campanha : SITE_CONFIG.loja;
+  const activeTheme = SITE_CONFIG.campanhaAtiva ? "dia-dos-namorados" : "loja";
+
+  if (!data) return;
+
+  document.body.dataset.theme = activeTheme;
+
+  const setText = (selector, value) => {
+    const el = $(selector);
+    if (el && value != null) el.textContent = value;
+  };
+
+  setText("#navProductsLink", data.menuProdutos);
+  setText("#campaignTag", data.tag);
+  setText("#campaignTitle", data.titulo);
+  setText("#campaignText", data.texto);
+  setText("#productsTitle", data.produtosTitulo);
+  setText("#productsSubtitle", data.produtosSubtitulo);
+
+  const heroButton = $("#heroWhatsapp");
+  if (heroButton && data.botao) heroButton.textContent = data.botao;
+
+  const whatsappTargets = [
+    "#headerWhatsapp",
+    "#heroWhatsapp",
+    "#promoWhatsapp",
+    "#finalWhatsapp",
+    "#floatWhatsapp"
+  ];
+
+  whatsappTargets.forEach((selector) => {
+    const link = $(selector);
+    if (link && data.mensagemWhatsapp) {
+      link.href = whatsappLink(data.mensagemWhatsapp);
+    }
+  });
+
+  const highlights = $("#campaignHighlights");
+  if (highlights) {
+    if (Array.isArray(data.destaques) && data.destaques.length) {
+      highlights.innerHTML = data.destaques
+        .map(([title, subtitle]) => `
+          <div>
+            <strong>${title}</strong>
+            <span>${subtitle}</span>
+          </div>
+        `)
+        .join("");
+    } else {
+      highlights.innerHTML = "";
+    }
+  }
+}
+
 function getCategories() {
   return ["Todos", ...new Set(getActiveProducts().map((product) => product.categoria))];
 }
