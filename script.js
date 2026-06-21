@@ -1,38 +1,14 @@
 /*
-  CONFIGURAÇÃO PLUG AND PLAY
+  CONFIGURAÇÃO
 
-  Para trocar a campanha:
-  1. Mude campanhaAtiva para true ou false.
-  2. Altere o bloco campanha.
-  3. Troque os produtos ou imagens se precisar.
-
-  Quando não tiver data comemorativa:
-  campanhaAtiva: false
+  Para editar o catálogo, altere a lista PRODUCTS abaixo
+  (nome, categoria, descrição, preço e imagem de cada cesta).
 */
 
 const WHATSAPP_NUMBER = "5548998279941";
 const INSTAGRAM_URL = "https://www.instagram.com/donnacestasfloripa/";
-
-const SITE_CONFIG = {
-  campanhaAtiva: false,
-  tema: "loja",
-
-  loja: {
-    tag: "Donna Cestas",
-    titulo: "Todos os dias é dia de presentear.",
-    texto:
-      "Presentes personalizados para aniversários, datas comemorativas, empresas e momentos únicos.",
-    imagem: "assets/cesta-13.jpg",
-    preco: null,
-    botao: "Falar no WhatsApp",
-    mensagemWhatsapp:
-      "Olá! Gostaria de conhecer as opções de cestas da Donna Cestas.",
-    produtosTitulo: "Catálogo Donna Cestas",
-    produtosSubtitulo:
-      "Escolha uma opção do catálogo e fale direto no WhatsApp com uma mensagem pronta.",
-    menuProdutos: "Catálogo",
-  }
-};
+const WHATSAPP_MESSAGE =
+  "Olá! Gostaria de conhecer as opções de cestas da Donna Cestas.";
 
 const PRODUCTS = [
   {
@@ -187,44 +163,14 @@ const PRODUCTS = [
   }
 ];
 
-const CAMPAIGN_PRODUCTS = [
-  
-];
-
 const $ = (selector) => document.querySelector(selector);
 
 function whatsappLink(message) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
-function getActiveProducts() {
-  return SITE_CONFIG.campanhaAtiva ? CAMPAIGN_PRODUCTS : PRODUCTS;
-}
-
-function applyCampaign() {
-  const data = SITE_CONFIG.campanhaAtiva ? SITE_CONFIG.campanha : SITE_CONFIG.loja;
-  const activeTheme = SITE_CONFIG.campanhaAtiva ? "dia-dos-namorados" : "loja";
-
-  if (!data) return;
-
-  document.body.dataset.theme = activeTheme;
-
-  const setText = (selector, value) => {
-    const el = $(selector);
-    if (el && value != null) el.textContent = value;
-  };
-
-  setText("#navProductsLink", data.menuProdutos);
-  setText("#campaignTag", data.tag);
-  setText("#campaignTitle", data.titulo);
-  setText("#campaignText", data.texto);
-  setText("#productsTitle", data.produtosTitulo);
-  setText("#productsSubtitle", data.produtosSubtitulo);
-
-  const heroButton = $("#heroWhatsapp");
-  if (heroButton && data.botao) heroButton.textContent = data.botao;
-
-  const whatsappTargets = [
+function setupWhatsappLinks() {
+  const targets = [
     "#headerWhatsapp",
     "#heroWhatsapp",
     "#promoWhatsapp",
@@ -232,32 +178,14 @@ function applyCampaign() {
     "#floatWhatsapp"
   ];
 
-  whatsappTargets.forEach((selector) => {
+  targets.forEach((selector) => {
     const link = $(selector);
-    if (link && data.mensagemWhatsapp) {
-      link.href = whatsappLink(data.mensagemWhatsapp);
-    }
+    if (link) link.href = whatsappLink(WHATSAPP_MESSAGE);
   });
-
-  const highlights = $("#campaignHighlights");
-  if (highlights) {
-    if (Array.isArray(data.destaques) && data.destaques.length) {
-      highlights.innerHTML = data.destaques
-        .map(([title, subtitle]) => `
-          <div>
-            <strong>${title}</strong>
-            <span>${subtitle}</span>
-          </div>
-        `)
-        .join("");
-    } else {
-      highlights.innerHTML = "";
-    }
-  }
 }
 
 function getCategories() {
-  return ["Todos", ...new Set(getActiveProducts().map((product) => product.categoria))];
+  return ["Todos", ...new Set(PRODUCTS.map((product) => product.categoria))];
 }
 
 function renderCategories() {
@@ -283,7 +211,7 @@ function renderProducts(category = "Todos", search = "") {
   const grid = $("#productsGrid");
   const searchTerm = search.trim().toLowerCase();
 
-  const filtered = getActiveProducts().filter((product) => {
+  const filtered = PRODUCTS.filter((product) => {
     const matchCategory = category === "Todos" || product.categoria === category;
     const matchSearch =
       !searchTerm ||
@@ -406,60 +334,6 @@ function setupInstitutionalPages() {
     main.classList.add("hidden");
     institutionalPage.classList.remove("hidden");
 
-    pages.forEach((page) => page.classList.add("hidden"));
-
-    const selectedPage = document.querySelector(`#page-${pageName}`);
-
-    if (selectedPage) {
-      selectedPage.classList.remove("hidden");
-    }
-
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  }
-
-  function backHome() {
-    institutionalPage.classList.add("hidden");
-    main.classList.remove("hidden");
-
-    pages.forEach((page) => page.classList.add("hidden"));
-
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  }
-
-  pageLinks.forEach((link) => {
-    link.addEventListener("click", (event) => {
-      event.preventDefault();
-
-      const pageName = link.dataset.pageLink;
-      openPage(pageName);
-
-      const nav = $("#nav");
-      if (nav) nav.classList.remove("open");
-    });
-  });
-
-  backHomeButton.addEventListener("click", backHome);
-}
-
-function setupInstitutionalPages() {
-  const main = document.querySelector("main");
-  const institutionalPage = $("#institutionalPage");
-  const backHomeButton = $("#backHomeButton");
-  const pageLinks = document.querySelectorAll("[data-page-link]");
-  const pages = document.querySelectorAll(".institutional-content");
-
-  if (!main || !institutionalPage || !backHomeButton || !pageLinks.length) return;
-
-  function openPage(pageName) {
-    main.classList.add("hidden");
-    institutionalPage.classList.remove("hidden");
-
     pages.forEach((page) => {
       page.classList.add("hidden");
     });
@@ -528,7 +402,7 @@ function setupCompactHeaderOnScroll() {
   window.addEventListener("resize", updateHeaderState);
 }
 
-applyCampaign();
+setupWhatsappLinks();
 renderCategories();
 renderProducts();
 setupMenu();
