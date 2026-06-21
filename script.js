@@ -199,14 +199,7 @@ function veioDoGoogleAds() {
 }
 
 function whatsappLink(message) {
-  let finalMessage = message;
-
-  if (veioDoGoogleAds()) {
-    finalMessage =
-      "Oii! Vi a campanha da Donna Cestas no Google e gostaria de conhecer as opções disponíveis.";
-  }
-
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(finalMessage)}`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
 function applyCampaign() {
