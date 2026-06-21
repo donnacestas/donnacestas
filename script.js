@@ -30,7 +30,7 @@ const PRODUCTS = [
     descricao: "Cesta compacta em nicho de acrílico 12cm com croissant, pães de queijo, queijo, nutella, torradas, café e frutas.",
     preco: "R$ 119,00",
     imagem: "assets/cesta-26.jpg",
-    mensagem: "Olá! Tenho interesse em Café Mini do catálogo, no valor de R$ 119,00."
+    mensagem: "Olá! Tenho interesse em Café Cristal do catálogo, no valor de R$ 119,00."
   },
   {
     nome: "Cesta Amanhecer",
@@ -40,7 +40,7 @@ const PRODUCTS = [
     descricao: "Café da manhã em nicho de madeira 25cm com croissant, mini baguete, charcutaria, queijos, suco, café e frutas.",
     preco: "R$ 218,00",
     imagem: "assets/cesta-13.jpg",
-    mensagem: "Olá! Tenho interesse em Café P do catálogo, no valor de R$ 218,00."
+    mensagem: "Olá! Tenho interesse em Cesta Amanhecer do catálogo, no valor de R$ 218,00."
   },
   {
     nome: "Cesta Encanto",
@@ -50,7 +50,7 @@ const PRODUCTS = [
     descricao: "Cesta em nicho de madeira 30cm com itens de café, caseirinho, queijos, charcutaria, suco, cappuccino e frutas.",
     preco: "R$ 284,00",
     imagem: "assets/cesta-14.jpg",
-    mensagem: "Olá! Tenho interesse em Café M do catálogo, no valor de R$ 284,00."
+    mensagem: "Olá! Tenho interesse em Cesta Encanto do catálogo, no valor de R$ 284,00."
   },
   {
     nome: "Cesta Elegance",
@@ -60,7 +60,7 @@ const PRODUCTS = [
     descricao: "Cesta maior em nicho de madeira 35cm com variedade de pães, queijos, charcutarias, suco, café, chá e frutas.",
     preco: "R$ 358,00",
     imagem: "assets/cesta-15.jpg",
-    mensagem: "Olá! Tenho interesse em Café G do catálogo, no valor de R$ 358,00."
+    mensagem: "Olá! Tenho interesse em Cesta Elegance do catálogo, no valor de R$ 358,00."
   },
   {
     nome: "Cesta Feliz Aniversário",
@@ -70,7 +70,7 @@ const PRODUCTS = [
     descricao: "Cesta em nicho de madeira 35cm com mini bolinho bentô, croissant, queijos, charcutaria, suco, café e frutas.",
     preco: "R$ 290,00",
     imagem: "assets/cesta-17.jpg",
-    mensagem: "Olá! Tenho interesse em Feliz Aniversário do catálogo, no valor de R$ 290,00."
+    mensagem: "Olá! Tenho interesse em Cesta Feliz Aniversário do catálogo, no valor de R$ 290,00."
   },
   {
     nome: "Executive Box",
@@ -80,7 +80,7 @@ const PRODUCTS = [
     descricao: "Box de madeira com mini espumante, chocolate importado e opção de amêndoas ou queijo.",
     preco: "R$ 180,00",
     imagem: "assets/cesta-21.jpg",
-    mensagem: "Olá! Tenho interesse em Box Corporativa do catálogo, no valor de R$ 180,00."
+    mensagem: "Olá! Tenho interesse em Executive Box do catálogo, no valor de R$ 180,00."
   },
   {
     nome: "Tábua Mimo",
