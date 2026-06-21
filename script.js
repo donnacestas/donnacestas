@@ -3,12 +3,23 @@
 
   Para editar o catálogo, altere a lista PRODUCTS abaixo
   (nome, categoria, descrição, preço e imagem de cada cesta).
+
+  ORIGEM DA CAMPANHA (Google Ads):
+  Quando o visitante chega por um anúncio pago, a mensagem do WhatsApp
+  ganha um prefixo diferente para a Marina identificar o lead no WhatsApp.
+  A detecção é automática pelo parâmetro "gclid" (o Google Ads adiciona
+  sozinho quando o auto-tagging está ligado — padrão da conta) e também
+  aceita UTMs (utm_source=google + utm_medium=cpc) como reforço.
+  Para mudar o texto da campanha, edite CAMPAIGN_GREETING abaixo.
 */
 
 const WHATSAPP_NUMBER = "5548998279941";
 const INSTAGRAM_URL = "https://www.instagram.com/donnacestasfloripa/";
 const WHATSAPP_MESSAGE =
   "Olá! Gostaria de conhecer as opções de cestas da Donna Cestas.";
+
+// Prefixo aplicado às mensagens quando o lead vem de campanha paga.
+const CAMPAIGN_GREETING = "Oii! Vi a campanha da Donna Cestas no Google.";
 
 const PRODUCTS = [
   {
@@ -169,6 +180,38 @@ function whatsappLink(message) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
+// Detecta se o acesso veio de uma campanha paga do Google Ads.
+// Funciona sozinho via "gclid" (auto-tagging, padrão da conta) e também
+// aceita UTMs. A origem fica guardada na sessão para sobreviver à navegação.
+function isPaidCampaign() {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const medium = (params.get("utm_medium") || "").toLowerCase();
+
+    const fromUrl =
+      params.has("gclid") ||
+      (params.get("utm_source") === "google" && medium === "cpc") ||
+      ["cpc", "ppc", "paid", "paidsearch"].includes(medium);
+
+    if (fromUrl) {
+      sessionStorage.setItem("donna_campaign", "1");
+      return true;
+    }
+
+    return sessionStorage.getItem("donna_campaign") === "1";
+  } catch (error) {
+    return false;
+  }
+}
+
+// Marca a mensagem com a saudação de campanha quando o lead é pago.
+// Como toda mensagem começa com "Olá!", trocamos esse início pelo
+// prefixo da campanha, preservando o produto e o preço.
+function buildWhatsappMessage(message) {
+  if (!isPaidCampaign()) return message;
+  return message.replace(/^Olá!\s*/i, `${CAMPAIGN_GREETING} `);
+}
+
 function setupWhatsappLinks() {
   const targets = [
     "#headerWhatsapp",
@@ -180,7 +223,7 @@ function setupWhatsappLinks() {
 
   targets.forEach((selector) => {
     const link = $(selector);
-    if (link) link.href = whatsappLink(WHATSAPP_MESSAGE);
+    if (link) link.href = whatsappLink(buildWhatsappMessage(WHATSAPP_MESSAGE));
   });
 }
 
@@ -270,7 +313,7 @@ function renderProducts(category = "Todos", search = "") {
 
             <a
               class="product-button"
-              href="${whatsappLink(product.mensagem)}"
+              href="${whatsappLink(buildWhatsappMessage(product.mensagem))}"
               target="_blank"
               rel="noopener"
             >
