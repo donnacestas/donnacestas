@@ -80,7 +80,6 @@ const PRODUCTS = [
     descricao: "Tábua de MDF 30cm com queijo brie, queijo minas, salame, copa, nuts, chocolate, damasco, geleia de pimenta ou frutas vermelhas, baguete rústica e frutas da estação.",
     preco: "R$ 279,00",
     imagem: "assets/glamour.png",
-    aviso: "📷 Foto em breve — imagem do produto a ser adicionada.",
     mensagem: "Olá! Tenho interesse em Tábua Glamour do catálogo, no valor de R$ 279,00."
   },
   {
@@ -91,7 +90,6 @@ const PRODUCTS = [
     descricao: "Box cartonada com vinho ou espumante, queijo fino, geleia e chocolate importado. Embalada em celofane e laço, acompanha cartão. Consultar rótulos e cores.",
     preco: "R$ 279,00",
     imagem: "assets/wine.jpeg",
-    aviso: "📷 Foto em breve — imagem do produto a ser adicionada.",
     mensagem: "Olá! Tenho interesse em Box Wine do catálogo, no valor de R$ 279,00."
   },
   {
@@ -102,7 +100,6 @@ const PRODUCTS = [
     descricao: "Box cartonada com cafés drip coffee, chás sachê, bolachas decoradas, amigurumi e adesivo com nome do presenteado. Embalada em celofane e laço, acompanha cartão.",
     preco: "R$ 259,00",
     imagem: "assets/bvindas.jpeg",
-    aviso: "📷 Foto em breve — imagem do produto a ser adicionada.",
     mensagem: "Olá! Tenho interesse em Box Boas Vindas do catálogo, no valor de R$ 259,00."
   },
   {
