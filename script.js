@@ -28,9 +28,9 @@ const PRODUCTS = [
     etiqueta: "Café da manhã",
     selo: "Mini",
     descricao: "Cesta compacta em nicho de acrílico 12cm com croissant, pães de queijo, queijo, nutella, torradas, café e frutas.",
-    preco: "R$ 119,00",
+    preco: "R$ 139,00",
     imagem: "assets/cesta-26.jpg",
-    mensagem: "Olá! Tenho interesse em Café Cristal do catálogo, no valor de R$ 119,00."
+    mensagem: "Olá! Tenho interesse em Café Cristal do catálogo, no valor de R$ 139,00."
   },
   {
     nome: "Cesta Amanhecer",
@@ -38,9 +38,9 @@ const PRODUCTS = [
     etiqueta: "Café da manhã",
     selo: "P",
     descricao: "Café da manhã em nicho de madeira 25cm com croissant, mini baguete, charcutaria, queijos, suco, café e frutas.",
-    preco: "R$ 218,00",
+    preco: "R$ 229,00",
     imagem: "assets/cesta-13.jpg",
-    mensagem: "Olá! Tenho interesse em Cesta Amanhecer do catálogo, no valor de R$ 218,00."
+    mensagem: "Olá! Tenho interesse em Cesta Amanhecer do catálogo, no valor de R$ 229,00."
   },
   {
     nome: "Cesta Encanto",
@@ -48,9 +48,9 @@ const PRODUCTS = [
     etiqueta: "Café da manhã",
     selo: "M",
     descricao: "Cesta em nicho de madeira 30cm com itens de café, caseirinho, queijos, charcutaria, suco, cappuccino e frutas.",
-    preco: "R$ 284,00",
+    preco: "R$ 289,00",
     imagem: "assets/cesta-14.jpg",
-    mensagem: "Olá! Tenho interesse em Cesta Encanto do catálogo, no valor de R$ 284,00."
+    mensagem: "Olá! Tenho interesse em Cesta Encanto do catálogo, no valor de R$ 289,00."
   },
   {
     nome: "Cesta Elegance",
@@ -58,9 +58,9 @@ const PRODUCTS = [
     etiqueta: "Café da manhã",
     selo: "G",
     descricao: "Cesta maior em nicho de madeira 35cm com variedade de pães, queijos, charcutarias, suco, café, chá e frutas.",
-    preco: "R$ 358,00",
+    preco: "R$ 399,00",
     imagem: "assets/cesta-15.jpg",
-    mensagem: "Olá! Tenho interesse em Cesta Elegance do catálogo, no valor de R$ 358,00."
+    mensagem: "Olá! Tenho interesse em Cesta Elegance do catálogo, no valor de R$ 399,00."
   },
   {
     nome: "Cesta Feliz Aniversário",
@@ -73,44 +73,37 @@ const PRODUCTS = [
     mensagem: "Olá! Tenho interesse em Cesta Feliz Aniversário do catálogo, no valor de R$ 290,00."
   },
   {
-    nome: "Executive Box",
-    categoria: "Corporativas",
-    etiqueta: "Corporativa",
-    selo: "Empresas",
-    descricao: "Box de madeira com mini espumante, chocolate importado e opção de amêndoas ou queijo.",
-    preco: "R$ 180,00",
-    imagem: "assets/cesta-21.jpg",
-    mensagem: "Olá! Tenho interesse em Executive Box do catálogo, no valor de R$ 180,00."
-  },
-  {
-    nome: "Tábua Mimo",
+    nome: "Tábua Glamour",
     categoria: "Tábuas",
     etiqueta: "Tábua",
-    selo: "1 pessoa",
-    descricao: "Tábua de MDF redonda ideal para uma pessoa, com queijos, charcutaria, frutas, pepita de mel e geleia.",
-    preco: "R$ 159,00",
-    imagem: "assets/tabua-mimo.jpg",
-    mensagem: "Olá! Tenho interesse em Tábua Mimo do catálogo, no valor de R$ 159,00."
+    selo: "Até 2 pessoas",
+    descricao: "Tábua de MDF 30cm com queijo brie, queijo minas, salame, copa, nuts, chocolate, damasco, geleia de pimenta ou frutas vermelhas, baguete rústica e frutas da estação.",
+    preco: "R$ 279,00",
+    imagem: "assets/glamour.png",
+    aviso: "📷 Foto em breve — imagem do produto a ser adicionada.",
+    mensagem: "Olá! Tenho interesse em Tábua Glamour do catálogo, no valor de R$ 279,00."
   },
   {
-    nome: "Tábua Casal",
-    categoria: "Tábuas",
-    etiqueta: "Tábua",
-    selo: "Casal",
-    descricao: "Tábua de MDF redonda ideal para até duas pessoas, com queijos, charcutaria, frutas, pepita de mel, geleia e nuts.",
-    preco: "R$ 249,00",
-    imagem: "assets/tabua-casal.jpg",
-    mensagem: "Olá! Tenho interesse em Tábua Casal do catálogo, no valor de R$ 249,00."
-  },
-  {
-    nome: "Box Presentear",
+    nome: "Box Wine",
     categoria: "Presentes",
     etiqueta: "Presente",
     selo: "Especial",
-    descricao: "Caixa cartonada com vinho ou espumante, queijo, geleia de pimenta e chocolate importado.",
-    preco: "R$ 315,00",
-    imagem: "assets/presentes.jpg",
-    mensagem: "Olá! Tenho interesse em Box Presentear do catálogo, no valor de R$ 315,00."
+    descricao: "Box cartonada com vinho ou espumante, queijo fino, geleia e chocolate importado. Embalada em celofane e laço, acompanha cartão. Consultar rótulos e cores.",
+    preco: "R$ 279,00",
+    imagem: "assets/wine.jpeg",
+    aviso: "📷 Foto em breve — imagem do produto a ser adicionada.",
+    mensagem: "Olá! Tenho interesse em Box Wine do catálogo, no valor de R$ 279,00."
+  },
+  {
+    nome: "Box Boas Vindas",
+    categoria: "Presentes",
+    etiqueta: "Presente",
+    selo: "Especial",
+    descricao: "Box cartonada com cafés drip coffee, chás sachê, bolachas decoradas, amigurumi e adesivo com nome do presenteado. Embalada em celofane e laço, acompanha cartão.",
+    preco: "R$ 259,00",
+    imagem: "assets/bvindas.jpeg",
+    aviso: "📷 Foto em breve — imagem do produto a ser adicionada.",
+    mensagem: "Olá! Tenho interesse em Box Boas Vindas do catálogo, no valor de R$ 259,00."
   },
   {
     nome: "Mini bolinho bentô cake",
@@ -180,20 +173,25 @@ function whatsappLink(message) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
-// Detecta se o acesso veio de uma campanha paga do Google Ads,
-// olhando SOMENTE a URL atual (o gclid/UTM fica na URL durante toda a
-// visita, por ser página única). Nada é guardado entre visitas, para
-// que um acesso orgânico nunca herde a marcação de uma visita anterior.
+// Detecta se o acesso veio de uma campanha paga do Google Ads.
+// Funciona sozinho via "gclid" (auto-tagging, padrão da conta) e também
+// aceita UTMs. A origem fica guardada na sessão para sobreviver à navegação.
 function isPaidCampaign() {
   try {
     const params = new URLSearchParams(window.location.search);
     const medium = (params.get("utm_medium") || "").toLowerCase();
 
-    return (
+    const fromUrl =
       params.has("gclid") ||
       (params.get("utm_source") === "google" && medium === "cpc") ||
-      ["cpc", "ppc", "paid", "paidsearch"].includes(medium)
-    );
+      ["cpc", "ppc", "paid", "paidsearch"].includes(medium);
+
+    if (fromUrl) {
+      sessionStorage.setItem("donna_campaign", "1");
+      return true;
+    }
+
+    return sessionStorage.getItem("donna_campaign") === "1";
   } catch (error) {
     return false;
   }
