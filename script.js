@@ -31,6 +31,7 @@ const SITE_CONFIG = {
 
   campanha: {
     tema: "dia-dos-avos",
+    imagem: "assets/avos-cesta-memorias.jpeg",
     tag: "Dia dos Avós · 26 de julho",
     titulo: "Um carinho especial para quem cuidou de você.",
     texto:
@@ -338,6 +339,12 @@ function applyCampaign() {
     const el = $(selector);
     if (el && value != null) el.textContent = value;
   };
+
+  const heroImage = $("#campaignImage");
+  if (heroImage && data.imagem) {
+    heroImage.src = data.imagem;
+    heroImage.alt = data.titulo || heroImage.alt;
+  }
 
   setText("#navProductsLink", data.menuProdutos);
   setText("#campaignTag", data.tag);
