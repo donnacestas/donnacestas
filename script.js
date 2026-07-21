@@ -363,6 +363,33 @@ function applyCampaign() {
   }
 }
 
+// Troca as fotos da faixa do header pelas da campanha quando ativa.
+// O loop do marquee depende de duas metades idênticas (animação -50%),
+// então montamos uma sequência e a duplicamos.
+function setupHeaderMarquee() {
+  if (!isCampaignActive()) return;
+
+  const track = $("#headerPhotoTrack");
+  if (!track) return;
+
+  const imagens = CAMPAIGN_PRODUCTS
+    .filter((product) => product.categoria === "Cestas")
+    .map((product) => product.imagem);
+
+  if (!imagens.length) return;
+
+  const sequencia = [];
+  while (sequencia.length < 12) {
+    sequencia.push(...imagens);
+  }
+
+  const metade = sequencia.slice(0, 12);
+  track.innerHTML = metade
+    .concat(metade)
+    .map((src) => `<img src="${src}" alt="" />`)
+    .join("");
+}
+
 function setupWhatsappLinks() {
   const targets = [
     "#headerWhatsapp",
@@ -597,6 +624,7 @@ function setupCompactHeaderOnScroll() {
 }
 
 applyCampaign();
+setupHeaderMarquee();
 setupWhatsappLinks();
 renderCategories();
 renderProducts();

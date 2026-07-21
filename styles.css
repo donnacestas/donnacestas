@@ -2388,6 +2388,23 @@ body[data-theme="dia-dos-namorados"] .header-photo-marquee::after {
   background: linear-gradient(270deg, #5e0718, transparent);
 }
 
+body[data-theme="dia-dos-avos"] .header-photo-marquee {
+  background: linear-gradient(
+    90deg,
+    rgba(74, 49, 23, 0.98),
+    rgba(122, 86, 36, 0.88),
+    rgba(74, 49, 23, 0.98)
+  );
+}
+
+body[data-theme="dia-dos-avos"] .header-photo-marquee::before {
+  background: linear-gradient(90deg, #4a3117, transparent);
+}
+
+body[data-theme="dia-dos-avos"] .header-photo-marquee::after {
+  background: linear-gradient(270deg, #4a3117, transparent);
+}
+
 @media (max-width: 720px) {
   .header-photo-marquee {
     padding: 10px 0 12px;
