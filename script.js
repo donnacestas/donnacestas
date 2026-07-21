@@ -1,16 +1,20 @@
 /*
   CONFIGURAÇÃO
 
-  Para editar o catálogo, altere a lista PRODUCTS abaixo
-  (nome, categoria, descrição, preço e imagem de cada cesta).
+  CAMPANHA SAZONAL (ex: Dia dos Avós):
+  - Para ATIVAR a campanha, mude SITE_CONFIG.campanhaAtiva para true.
+  - Para DESATIVAR e voltar a loja normal, mude para false.
+  Quando ativa, o site troca a identidade visual (tema dia-dos-avos),
+  os textos e mostra a lista CAMPAIGN_PRODUCTS no lugar do catálogo normal.
+  Os textos da campanha ficam no bloco SITE_CONFIG.campanha abaixo.
 
-  ORIGEM DA CAMPANHA (Google Ads):
-  Quando o visitante chega por um anúncio pago, a mensagem do WhatsApp
-  ganha um prefixo diferente para a Marina identificar o lead no WhatsApp.
-  A detecção é automática pelo parâmetro "gclid" (o Google Ads adiciona
-  sozinho quando o auto-tagging está ligado — padrão da conta) e também
-  aceita UTMs (utm_source=google + utm_medium=cpc) como reforço.
-  Para mudar o texto da campanha, edite CAMPAIGN_GREETING abaixo.
+  Para editar o catálogo normal, altere a lista PRODUCTS.
+
+  ORIGEM DA CAMPANHA PAGA (Google Ads):
+  Independente da campanha sazonal, quando o visitante chega por um anúncio
+  pago, a mensagem do WhatsApp ganha um prefixo (CAMPAIGN_GREETING) para a
+  Marina identificar o lead. Detecção automática por "gclid" (auto-tagging)
+  e também por UTMs (utm_source=google + utm_medium=cpc).
 */
 
 const WHATSAPP_NUMBER = "5548998279941";
@@ -18,8 +22,37 @@ const INSTAGRAM_URL = "https://www.instagram.com/donnacestasfloripa/";
 const WHATSAPP_MESSAGE =
   "Olá! Gostaria de conhecer as opções de cestas da Donna Cestas.";
 
-// Prefixo aplicado às mensagens quando o lead vem de campanha paga.
+// Prefixo aplicado às mensagens quando o lead vem de campanha paga (Google Ads).
 const CAMPAIGN_GREETING = "Oii! Vi a campanha da Donna Cestas no Google.";
+
+const SITE_CONFIG = {
+  // Mude para true para ativar a campanha de Dia dos Avós.
+  campanhaAtiva: false,
+
+  campanha: {
+    tema: "dia-dos-avos",
+    tag: "Dia dos Avós · 26 de julho",
+    titulo: "Um carinho especial para quem cuidou de você.",
+    texto:
+      "Cestas artesanais de Dia dos Avós para celebrar quem sempre esteve por perto. Encomendas até 25/07, com entrega no dia 26/07.",
+    botao: "Encomendar pelo WhatsApp",
+    mensagemWhatsapp:
+      "Olá! Gostaria de encomendar uma cesta de Dia dos Avós da Donna Cestas.",
+    produtosTitulo: "Catálogo Dia dos Avós",
+    produtosSubtitulo:
+      "Escolha uma cesta especial e encomende pelo WhatsApp. Pedidos até 25/07.",
+    menuProdutos: "Dia dos Avós",
+    destaques: [
+      ["26 de julho", "Dia dos Avós"],
+      ["Pedidos até 25/07", "Pagamento antecipado"],
+      ["Entrega 26/07", "6h às 9h · Floripa, São José e Palhoça"]
+    ],
+    promoTag: "Encomende o seu",
+    promoTitulo: "Garanta sua cesta de Dia dos Avós",
+    promoTexto:
+      "Pedidos limitados pelo WhatsApp até 25/07 (sábado), mediante pagamento integral antecipado. Entregas em Florianópolis, São José e Palhoça no dia 26/07, entre 6h e 9h conforme a rota, devido à alta demanda. Itens pré-estabelecidos, sem alterações. Trabalhamos com PIX ou link de crédito (com acréscimo de taxa)."
+  }
+};
 
 const PRODUCTS = [
   {
@@ -164,6 +197,70 @@ const PRODUCTS = [
   }
 ];
 
+// Produtos exibidos quando a campanha de Dia dos Avós está ativa.
+const CAMPAIGN_PRODUCTS = [
+  {
+    nome: "Cafézinho do Vovô",
+    categoria: "Cestas",
+    etiqueta: "Dia dos Avós",
+    selo: "Mini",
+    descricao: "Croissant, stropwaffle, pães de queijo recheados, queijo, charcutaria, nutella, biscoitos finos, torradas finas, café drip coffee e frutas da estação. Montado em um lindo nicho de acrílico quadrado 12cm.",
+    preco: "R$ 139,00",
+    imagem: "assets/avos-cafezinho-do-vovo.jpeg",
+    mensagem: "Olá! Tenho interesse na cesta Cafézinho do Vovô do catálogo de Dia dos Avós, no valor de R$ 139,00."
+  },
+  {
+    nome: "Cafézinho da Vovó",
+    categoria: "Cestas",
+    etiqueta: "Dia dos Avós",
+    selo: "Mini",
+    descricao: "Croissant, stropwaffle, pães de queijo recheados, queijo, charcutaria, nutella, biscoitos finos, torradas finas, café drip coffee e frutas da estação. Montado em um lindo nicho de acrílico quadrado 12cm.",
+    preco: "R$ 139,00",
+    imagem: "assets/avos-cafezinho-da-vovo.jpeg",
+    mensagem: "Olá! Tenho interesse na cesta Cafézinho da Vovó do catálogo de Dia dos Avós, no valor de R$ 139,00."
+  },
+  {
+    nome: "Cesta Memórias",
+    categoria: "Cestas",
+    etiqueta: "Dia dos Avós",
+    selo: "1 pessoa",
+    descricao: "Croissant, stropwaffle, pães de queijo recheados, charcutaria, queijo, mini baguete rústica, geleia ou nutella, manteiga francesa, pepita de mel, biscoitos finos, torradas finas, suco 300ml, café drip coffee e frutas da estação. Ideal para até 1 pessoa.",
+    preco: "R$ 239,00",
+    imagem: "assets/avos-cesta-memorias.jpeg",
+    mensagem: "Olá! Tenho interesse na Cesta Memórias do catálogo de Dia dos Avós, no valor de R$ 239,00."
+  },
+  {
+    nome: "Cesta Raízes de Amor",
+    categoria: "Cestas",
+    etiqueta: "Dia dos Avós",
+    selo: "2 pessoas",
+    descricao: "Croissant, stropwaffle, pães de queijo recheados, mini baguete rústica, muffin, charcutaria, queijos, geleia ou nutella, manteiga francesa, mel, biscoitos finos, folhas de chocolate, torradas finas, suco 300ml, café drip coffee, cappuccino sachê e frutas da estação. Ideal para até 2 pessoas.",
+    preco: "R$ 289,00",
+    imagem: "assets/avos-cesta-raizes-de-amor.jpeg",
+    mensagem: "Olá! Tenho interesse na Cesta Raízes de Amor do catálogo de Dia dos Avós, no valor de R$ 289,00."
+  },
+  {
+    nome: "Foto polaroid",
+    categoria: "Adicionais",
+    etiqueta: "Adicional",
+    selo: "Foto",
+    descricao: "Foto polaroid para deixar o presente mais pessoal e afetivo.",
+    preco: "R$ 12,00",
+    imagem: "assets/polaroid.png",
+    mensagem: "Olá! Tenho interesse no adicional Foto polaroid, no valor de R$ 12,00."
+  },
+  {
+    nome: "Orquídea uma haste",
+    categoria: "Adicionais",
+    etiqueta: "Adicional",
+    selo: "Flor",
+    descricao: "Orquídea de uma haste para complementar a cesta com um toque elegante.",
+    preco: "R$ 110,00",
+    imagem: "assets/orquidea.png",
+    mensagem: "Olá! Tenho interesse no adicional Orquídea uma haste, no valor de R$ 110,00."
+  }
+];
+
 const $ = (selector) => document.querySelector(selector);
 
 function whatsappLink(message) {
@@ -202,6 +299,70 @@ function buildWhatsappMessage(message) {
   return message.replace(/^Olá!\s*/i, `${CAMPAIGN_GREETING} `);
 }
 
+// A campanha está ativa se o flag estiver ligado OU se a URL tiver
+// ?preview=avos (permite pré-visualizar no site no ar sem afetar os
+// visitantes reais, antes de ligar campanhaAtiva de verdade).
+function isCampaignActive() {
+  if (SITE_CONFIG.campanhaAtiva) return true;
+  try {
+    return new URLSearchParams(window.location.search).get("preview") === "avos";
+  } catch (error) {
+    return false;
+  }
+}
+
+// Produtos exibidos no momento: campanha ou catálogo normal.
+function getActiveProducts() {
+  return isCampaignActive() ? CAMPAIGN_PRODUCTS : PRODUCTS;
+}
+
+// Mensagem padrão dos botões gerais, conforme campanha ativa ou não.
+function activeWhatsappMessage() {
+  return isCampaignActive()
+    ? SITE_CONFIG.campanha.mensagemWhatsapp
+    : WHATSAPP_MESSAGE;
+}
+
+// Aplica a identidade da campanha (tema + textos) quando ativa.
+// Quando inativa, garante o tema da loja e não altera os textos do HTML.
+function applyCampaign() {
+  if (!isCampaignActive()) {
+    document.body.dataset.theme = "loja";
+    return;
+  }
+
+  const data = SITE_CONFIG.campanha;
+  document.body.dataset.theme = data.tema || "dia-dos-avos";
+
+  const setText = (selector, value) => {
+    const el = $(selector);
+    if (el && value != null) el.textContent = value;
+  };
+
+  setText("#navProductsLink", data.menuProdutos);
+  setText("#campaignTag", data.tag);
+  setText("#campaignTitle", data.titulo);
+  setText("#campaignText", data.texto);
+  setText("#heroWhatsapp", data.botao);
+  setText("#productsTitle", data.produtosTitulo);
+  setText("#productsSubtitle", data.produtosSubtitulo);
+  setText("#promoTag", data.promoTag);
+  setText("#promoTitle", data.promoTitulo);
+  setText("#promoText", data.promoTexto);
+
+  const highlights = $("#campaignHighlights");
+  if (highlights && Array.isArray(data.destaques)) {
+    highlights.innerHTML = data.destaques
+      .map(([title, subtitle]) => `
+        <div>
+          <strong>${title}</strong>
+          <span>${subtitle}</span>
+        </div>
+      `)
+      .join("");
+  }
+}
+
 function setupWhatsappLinks() {
   const targets = [
     "#headerWhatsapp",
@@ -213,12 +374,12 @@ function setupWhatsappLinks() {
 
   targets.forEach((selector) => {
     const link = $(selector);
-    if (link) link.href = whatsappLink(buildWhatsappMessage(WHATSAPP_MESSAGE));
+    if (link) link.href = whatsappLink(buildWhatsappMessage(activeWhatsappMessage()));
   });
 }
 
 function getCategories() {
-  return ["Todos", ...new Set(PRODUCTS.map((product) => product.categoria))];
+  return ["Todos", ...new Set(getActiveProducts().map((product) => product.categoria))];
 }
 
 function renderCategories() {
@@ -244,7 +405,7 @@ function renderProducts(category = "Todos", search = "") {
   const grid = $("#productsGrid");
   const searchTerm = search.trim().toLowerCase();
 
-  const filtered = PRODUCTS.filter((product) => {
+  const filtered = getActiveProducts().filter((product) => {
     const matchCategory = category === "Todos" || product.categoria === category;
     const matchSearch =
       !searchTerm ||
@@ -435,6 +596,7 @@ function setupCompactHeaderOnScroll() {
   window.addEventListener("resize", updateHeaderState);
 }
 
+applyCampaign();
 setupWhatsappLinks();
 renderCategories();
 renderProducts();

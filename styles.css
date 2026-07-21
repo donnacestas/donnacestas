@@ -1822,6 +1822,202 @@ body[data-theme="loja"] .final-cta p {
   color: rgba(255, 253, 248, 0.82);
 }
 
+/* =========================
+   TEMA DIA DOS AVÓS (bege / dourado / creme)
+   Ativa quando campanhaAtiva: true no script.js
+   ========================= */
+
+body[data-theme="dia-dos-avos"] .sales-bar {
+  background: #4a3117;
+}
+
+body[data-theme="dia-dos-avos"] .site-header {
+  background: linear-gradient(120deg, #4a3117 0%, #7a5624 100%);
+  box-shadow: 0 12px 35px rgba(74, 49, 23, 0.28);
+}
+
+body[data-theme="dia-dos-avos"] .nav a:hover {
+  color: #e6c47a;
+}
+
+body[data-theme="dia-dos-avos"] .campaign-hero {
+  background:
+    radial-gradient(
+      circle at 82% 18%,
+      rgba(198, 154, 69, 0.32),
+      transparent 260px
+    ),
+    radial-gradient(
+      circle at 48% 100%,
+      rgba(122, 86, 36, 0.16),
+      transparent 380px
+    ),
+    linear-gradient(110deg, #fdf7ea 0%, #fffdf8 50%, #f5e6c8 100%);
+}
+
+body[data-theme="dia-dos-avos"] .campaign-hero::before,
+body[data-theme="dia-dos-avos"] .campaign-hero::after {
+  color: rgba(198, 154, 69, 0.18);
+}
+
+body[data-theme="dia-dos-avos"] .campaign-pill,
+body[data-theme="dia-dos-avos"] .campaign-hero .eyebrow,
+body[data-theme="dia-dos-avos"] .eyebrow {
+  background: rgba(168, 127, 46, 0.16);
+  color: #8a6413;
+}
+
+body[data-theme="dia-dos-avos"] .campaign-hero h1,
+body[data-theme="dia-dos-avos"] .campaign-hero h2,
+body[data-theme="dia-dos-avos"] .campaign-hero h3,
+body[data-theme="dia-dos-avos"] h1,
+body[data-theme="dia-dos-avos"] h2,
+body[data-theme="dia-dos-avos"] h3 {
+  color: #4a3117;
+}
+
+body[data-theme="dia-dos-avos"] .hero-copy p {
+  color: #6b4a2b;
+}
+
+body[data-theme="dia-dos-avos"] .secondary {
+  background: #fffdf8;
+  color: #4a3117;
+  border: 1px solid rgba(168, 127, 46, 0.34);
+}
+
+body[data-theme="dia-dos-avos"] .secondary:hover {
+  background: #f5e6c8;
+  color: #4a3117;
+}
+
+body[data-theme="dia-dos-avos"] .primary,
+body[data-theme="dia-dos-avos"] .product-button {
+  background: #a87f2e;
+  color: #fff;
+  box-shadow: 0 16px 36px rgba(168, 127, 46, 0.28);
+}
+
+body[data-theme="dia-dos-avos"] .primary:hover,
+body[data-theme="dia-dos-avos"] .product-button:hover {
+  background: #7a5624;
+  box-shadow: 0 22px 44px rgba(74, 49, 23, 0.32);
+}
+
+body[data-theme="dia-dos-avos"] .hero-selling-points div {
+  background: rgba(255, 253, 248, 0.82);
+  border: 1px solid rgba(168, 127, 46, 0.24);
+}
+
+body[data-theme="dia-dos-avos"] .hero-selling-points strong {
+  color: #4a3117;
+}
+
+body[data-theme="dia-dos-avos"] .hero-selling-points span {
+  color: #7a5230;
+}
+
+body[data-theme="dia-dos-avos"] .price-badge {
+  background: #fff8e6;
+  color: #8a6413;
+  box-shadow: 0 18px 45px rgba(138, 100, 19, 0.22);
+}
+
+body[data-theme="dia-dos-avos"] .purchase-strip strong {
+  color: #4a3117;
+}
+
+body[data-theme="dia-dos-avos"] .purchase-strip span {
+  color: #7a5230;
+}
+
+body[data-theme="dia-dos-avos"] .category-tabs button {
+  color: #4a3117;
+  border-color: rgba(168, 127, 46, 0.2);
+}
+
+body[data-theme="dia-dos-avos"] .category-tabs button:hover,
+body[data-theme="dia-dos-avos"] .category-tabs button.active {
+  background: #a87f2e;
+  color: #fff;
+}
+
+body[data-theme="dia-dos-avos"] .product-tags span:first-child {
+  background: #6e4a24;
+}
+
+body[data-theme="dia-dos-avos"] .product-tags span:last-child {
+  background: #c69a45;
+}
+
+body[data-theme="dia-dos-avos"] .product-price {
+  color: #4a3117;
+}
+
+body[data-theme="dia-dos-avos"] .promo-card {
+  background:
+    linear-gradient(rgba(74, 49, 23, 0.82), rgba(74, 49, 23, 0.82)),
+    url("assets/avos-cesta-memorias.jpeg") center/cover;
+}
+
+body[data-theme="dia-dos-avos"] .steps {
+  background: #f5e6c8;
+}
+
+body[data-theme="dia-dos-avos"] .step {
+  background: #4a3117;
+}
+
+body[data-theme="dia-dos-avos"] .step strong {
+  color: #e6c47a;
+}
+
+body[data-theme="dia-dos-avos"] .final-cta {
+  background:
+    radial-gradient(circle at top, rgba(198, 154, 69, 0.24), transparent 360px),
+    #4a3117;
+}
+
+body[data-theme="dia-dos-avos"] .footer-institutional strong,
+body[data-theme="dia-dos-avos"] .footer-developed a {
+  color: #4a3117;
+  border-color: #a87f2e;
+}
+
+body[data-theme="dia-dos-avos"] .footer-institutional a:hover,
+body[data-theme="dia-dos-avos"] .footer-developed a:hover {
+  color: #8a6413;
+}
+
+body[data-theme="dia-dos-avos"] .institutional-content h1 {
+  color: #4a3117;
+}
+
+body[data-theme="dia-dos-avos"] .back-home-button {
+  color: #4a3117;
+}
+
+body[data-theme="dia-dos-avos"] .back-home-button:hover {
+  background: #f5e6c8;
+  border-color: rgba(168, 127, 46, 0.35);
+}
+
+body[data-theme="dia-dos-avos"] .promo-card h2,
+body[data-theme="dia-dos-avos"] .final-cta h2 {
+  color: #e6c47a;
+}
+
+body[data-theme="dia-dos-avos"] .promo-card .eyebrow,
+body[data-theme="dia-dos-avos"] .final-cta .eyebrow {
+  background: rgba(230, 196, 122, 0.16);
+  color: #e6c47a;
+}
+
+body[data-theme="dia-dos-avos"] .promo-card p,
+body[data-theme="dia-dos-avos"] .final-cta p {
+  color: rgba(255, 253, 248, 0.82);
+}
+
 @media (max-width: 720px) {
   .footer {
     align-items: center;
@@ -2228,6 +2424,10 @@ body[data-theme="dia-dos-namorados"] .site-header {
 body[data-theme="loja"] .site-header {
   background: #31452d !important;
   background-image: none !important;
+}
+
+body[data-theme="dia-dos-avos"] .site-header {
+  background: linear-gradient(120deg, #4a3117 0%, #7a5624 100%) !important;
 }
 
 .header-main,
