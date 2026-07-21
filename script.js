@@ -458,7 +458,7 @@ function renderProducts(category = "Todos", search = "") {
       const detailsId = `product-details-${index}`;
 
       return `
-        <article class="product-card">
+        <article class="product-card" style="--card-index: ${index}">
           <div class="product-image">
             <img src="${product.imagem}" alt="${product.nome}">
             ${product.ilustrativo ? '<span class="product-illustrative-badge">Foto ilustrativa</span>' : ''}
@@ -510,6 +510,16 @@ function renderProducts(category = "Todos", search = "") {
 
       button.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
+  });
+
+  // Fade suave das fotos conforme carregam (ou de imediato se já em cache).
+  grid.querySelectorAll(".product-image img").forEach((img) => {
+    if (img.complete && img.naturalWidth > 0) {
+      img.classList.add("is-loaded");
+    } else {
+      img.addEventListener("load", () => img.classList.add("is-loaded"), { once: true });
+      img.addEventListener("error", () => img.classList.add("is-loaded"), { once: true });
+    }
   });
 }
 
