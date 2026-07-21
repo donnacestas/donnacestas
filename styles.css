@@ -3378,6 +3378,21 @@ body[data-theme="dia-dos-namorados"] .social-toggle.active {
     linear-gradient(135deg, var(--campaign-gold), #b8894f);
 }
 
+body[data-theme="dia-dos-avos"] .social-toggle {
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.22), transparent 28px),
+    linear-gradient(135deg, #7a5624, #4a3117);
+  box-shadow:
+    0 18px 40px rgba(74, 49, 23, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+body[data-theme="dia-dos-avos"] .social-toggle.active {
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.24), transparent 28px),
+    linear-gradient(135deg, #c69a45, #a87f2e);
+}
+
 /* Correção final do header na nova paleta Dia dos Namorados */
 body[data-theme="dia-dos-namorados"] .site-header {
   background: #b80f1a !important;
