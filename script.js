@@ -27,7 +27,7 @@ const CAMPAIGN_GREETING = "Oii! Vi a campanha da Donna Cestas no Google.";
 
 const SITE_CONFIG = {
   // Mude para true para ativar a campanha de Dia dos Avós.
-  campanhaAtiva: false,
+  campanhaAtiva: true,
 
   campanha: {
     tema: "dia-dos-avos",
