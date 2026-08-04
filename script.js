@@ -26,32 +26,32 @@ const WHATSAPP_MESSAGE =
 const CAMPAIGN_GREETING = "Oii! Vi a campanha da Donna Cestas no Google.";
 
 const SITE_CONFIG = {
-  // Mude para true para ativar a campanha de Dia dos Avós.
-  campanhaAtiva: false,
+  // Mude para true para ativar a campanha de Dia dos Pais.
+  campanhaAtiva: true,
 
   campanha: {
-    tema: "dia-dos-avos",
-    imagem: "assets/avos-cesta-memorias.jpeg",
-    tag: "Dia dos Avós · 26 de julho",
-    titulo: "Um carinho especial para quem cuidou de você.",
+    tema: "dia-dos-pais",
+    imagem: "assets/amordepai.jpeg",
+    tag: "Dia dos Pais · Edição Presença",
+    titulo: "Valorizar quem esteve presente em cada fase da vida",
     texto:
-      "Cestas artesanais de Dia dos Avós para celebrar quem sempre esteve por perto. Encomendas até 25/07, com entrega no dia 26/07.",
+      "Neste Dia dos Pais, escolhemos a Presença. Há pessoas que transformam nossa caminhada apenas por estarem presentes. Homenageie quem sempre esteve ao seu lado.",
     botao: "Encomendar pelo WhatsApp",
     mensagemWhatsapp:
-      "Olá! Gostaria de encomendar uma cesta de Dia dos Avós da Donna Cestas.",
-    produtosTitulo: "Catálogo Dia dos Avós",
+      "Olá! Gostaria de encomendar uma cesta de Dia dos Pais da Donna Cestas.",
+    produtosTitulo: "Catálogo Dia dos Pais",
     produtosSubtitulo:
-      "Escolha uma cesta especial e encomende pelo WhatsApp. Pedidos até 25/07.",
-    menuProdutos: "Dia dos Avós",
+      "Escolha uma cesta especial e encomende pelo WhatsApp.",
+    menuProdutos: "Dia dos Pais",
     destaques: [
-      ["26 de julho", "Dia dos Avós"],
-      ["Pedidos até 25/07", "Pagamento antecipado"],
-      ["Entrega 26/07", "6h às 9h · Floripa, São José e Palhoça"]
+      ["09 de Agosto", "Dia dos Pais"],
+      ["Pedidos até 07/08", "Pagamento antecipado"],
+      ["Entrega 09/08", "6h às 10h · Floripa, São José e Palhoça"]
     ],
-    promoTag: "Encomende o seu",
-    promoTitulo: "Garanta sua cesta de Dia dos Avós",
+    promoTag: "Informações Importantes",
+    promoTitulo: "Pedidos Limitados",
     promoTexto:
-      "Pedidos limitados pelo WhatsApp até 25/07 (sábado), mediante pagamento integral antecipado. Entregas em Florianópolis, São José e Palhoça no dia 26/07, entre 6h e 9h conforme a rota, devido à alta demanda. Itens pré-estabelecidos, sem alterações. Trabalhamos com PIX ou link de crédito (com acréscimo de taxa)."
+      "Pedidos através do WhatsApp até 07/08 (ou conforme disponibilidade), mediante pagamento integral antecipado. Não será possível realizar alterações nos itens pré-estabelecidos. Entregas em Florianópolis, São José e Palhoça somente domingo (09/08) entre 6h-10h. Trabalhamos com PIX ou link de crédito (com acréscimo de taxa)."
   }
 };
 
@@ -198,47 +198,37 @@ const PRODUCTS = [
   }
 ];
 
-// Produtos exibidos quando a campanha de Dia dos Avós está ativa.
+// Produtos exibidos quando a campanha de Dia dos Pais está ativa.
 const CAMPAIGN_PRODUCTS = [
   {
-    nome: "Cafézinho do Vovô",
+    nome: "Amor de Pai",
     categoria: "Cestas",
-    etiqueta: "Dia dos Avós",
-    selo: "Mini",
-    descricao: "Croissant, stropwaffle, pães de queijo recheados, queijo, charcutaria, nutella, biscoitos finos, torradas finas, café drip coffee e frutas da estação. Montado em um lindo nicho de acrílico quadrado 12cm.",
-    preco: "R$ 139,00",
-    imagem: "assets/avos-cafezinho-do-vovo.jpeg",
-    mensagem: "Olá! Tenho interesse na cesta Cafézinho do Vovô do catálogo de Dia dos Avós, no valor de R$ 139,00."
-  },
-  {
-    nome: "Cafézinho da Vovó",
-    categoria: "Cestas",
-    etiqueta: "Dia dos Avós",
-    selo: "Mini",
-    descricao: "Croissant, stropwaffle, pães de queijo recheados, queijo, charcutaria, nutella, biscoitos finos, torradas finas, café drip coffee e frutas da estação. Montado em um lindo nicho de acrílico quadrado 12cm.",
-    preco: "R$ 139,00",
-    imagem: "assets/avos-cafezinho-da-vovo.jpeg",
-    mensagem: "Olá! Tenho interesse na cesta Cafézinho da Vovó do catálogo de Dia dos Avós, no valor de R$ 139,00."
-  },
-  {
-    nome: "Cesta Memórias",
-    categoria: "Cestas",
-    etiqueta: "Dia dos Avós",
+    etiqueta: "Dia dos Pais",
     selo: "1 pessoa",
-    descricao: "Croissant, stropwaffle, pães de queijo recheados, charcutaria, queijo, mini baguete rústica, geleia ou nutella, manteiga francesa, pepita de mel, biscoitos finos, torradas finas, suco 300ml, café drip coffee e frutas da estação. Ideal para até 1 pessoa.",
-    preco: "R$ 239,00",
-    imagem: "assets/avos-cesta-memorias.jpeg",
-    mensagem: "Olá! Tenho interesse na Cesta Memórias do catálogo de Dia dos Avós, no valor de R$ 239,00."
+    descricao: "Croissant, Mini Baguete, Cruffin recheado com doce de leite, Pães de Queijo recheados, Bolachas decorada Dia dos Pais, Salame, Queijo Minas Meia Cura, Geléia, Manteiga francesa, Torradas finas, Suco 300ml, Café drip coffee, Frutas da estação, Cartão Personalizado. Ideal para 1 pessoa.",
+    preco: "R$ 249,00",
+    imagem: "assets/amordepai.jpeg",
+    mensagem: "Olá! Tenho interesse na cesta Amor de Pai do catálogo de Dia dos Pais, no valor de R$ 249,00."
   },
   {
-    nome: "Cesta Raízes de Amor",
+    nome: "Essência de Pai",
     categoria: "Cestas",
-    etiqueta: "Dia dos Avós",
-    selo: "2 pessoas",
-    descricao: "Croissant, stropwaffle, pães de queijo recheados, mini baguete rústica, muffin, charcutaria, queijos, geleia ou nutella, manteiga francesa, mel, biscoitos finos, folhas de chocolate, torradas finas, suco 300ml, café drip coffee, cappuccino sachê e frutas da estação. Ideal para até 2 pessoas.",
-    preco: "R$ 289,00",
-    imagem: "assets/avos-cesta-raizes-de-amor.jpeg",
-    mensagem: "Olá! Tenho interesse na Cesta Raízes de Amor do catálogo de Dia dos Avós, no valor de R$ 289,00."
+    etiqueta: "Dia dos Pais",
+    selo: "2-3 pessoas",
+    descricao: "Croissant, Mini Baguetes, Cruffin recheado com doce de leite, Pães de Queijo recheados, Bolachas decoradas Dia dos Pais, Crostatine, Waffle, Chocolate, Salame, Queijo Minas Meia Cura, Geléia, Manteiga francesa, Torradas finas, Suco 300ml, Cafés drip coffee, Capuccino, Frutas da estação, Cartão Personalizado. Ideal para 2-3 pessoas.",
+    preco: "R$ 379,00",
+    imagem: "assets/essencia.jpeg",
+    mensagem: "Olá! Tenho interesse na cesta Essência de Pai do catálogo de Dia dos Pais, no valor de R$ 379,00."
+  },
+  {
+    nome: "Pai e Filhos",
+    categoria: "Cestas",
+    etiqueta: "Dia dos Pais",
+    selo: "3-4 pessoas",
+    descricao: "Croissants, Mini Baguetes, Cruffin recheado com doce de leite, Pães de Queijo recheados, Bolacha decoradas Dia dos Pais, Waffle, Crostatines, Chocolate, Salame, Queijo Minas Meia Cura, Geléia, Nutella, Manteiga francesa, Torradas finas, Suco 500ml, Cafés drip coffee, Capuccino, Frutas da estação, Cartão Personalizado. Ideal para 3-4 pessoas.",
+    preco: "R$ 489,00",
+    imagem: "assets/essencia.jpeg",
+    mensagem: "Olá! Tenho interesse na cesta Pai e Filhos do catálogo de Dia dos Pais, no valor de R$ 489,00."
   },
   {
     nome: "Foto polaroid",
@@ -246,19 +236,9 @@ const CAMPAIGN_PRODUCTS = [
     etiqueta: "Adicional",
     selo: "Foto",
     descricao: "Foto polaroid para deixar o presente mais pessoal e afetivo.",
-    preco: "R$ 12,00",
+    preco: "R$ 10,00",
     imagem: "assets/polaroid.png",
-    mensagem: "Olá! Tenho interesse no adicional Foto polaroid, no valor de R$ 12,00."
-  },
-  {
-    nome: "Orquídea uma haste",
-    categoria: "Adicionais",
-    etiqueta: "Adicional",
-    selo: "Flor",
-    descricao: "Orquídea de uma haste para complementar a cesta com um toque elegante.",
-    preco: "R$ 110,00",
-    imagem: "assets/orquidea.png",
-    mensagem: "Olá! Tenho interesse no adicional Orquídea uma haste, no valor de R$ 110,00."
+    mensagem: "Olá! Tenho interesse no adicional Foto polaroid, no valor de R$ 10,00."
   }
 ];
 
@@ -374,27 +354,11 @@ function applyCampaign() {
 // O loop do marquee depende de duas metades idênticas (animação -50%),
 // então montamos uma sequência e a duplicamos.
 function setupHeaderMarquee() {
-  if (!isCampaignActive()) return;
-
-  const track = $("#headerPhotoTrack");
-  if (!track) return;
-
-  const imagens = CAMPAIGN_PRODUCTS
-    .filter((product) => product.categoria === "Cestas")
-    .map((product) => product.imagem);
-
-  if (!imagens.length) return;
-
-  const sequencia = [];
-  while (sequencia.length < 12) {
-    sequencia.push(...imagens);
-  }
-
-  const metade = sequencia.slice(0, 12);
-  track.innerHTML = metade
-    .concat(metade)
-    .map((src) => `<img src="${src}" alt="" />`)
-    .join("");
+  // O usuário solicitou que as imagens do header continuem as originais, 
+  // mesmo durante a campanha. 
+  // if (!isCampaignActive()) return;
+  // ...
+  return;
 }
 
 function setupWhatsappLinks() {

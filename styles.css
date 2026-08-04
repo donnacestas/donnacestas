@@ -3510,3 +3510,411 @@ body[data-theme="dia-dos-namorados"] .instagram-section p {
     border-width: 5px;
   }
 }
+
+/* =========================
+   NOVA PALETA DIA DOS PAIS
+   campanhaAtiva: true
+   ========================= */
+
+body[data-theme="dia-dos-pais"] {
+  --campaign-primary: #15336d;
+  --campaign-primary-dark: #0a1f4a;
+  --campaign-soft: #dbe4f2;
+  --campaign-cream: #f4f7fc;
+  --campaign-gold: #c69a45;
+  --campaign-brown: #334360;
+}
+
+/* Topo / header */
+body[data-theme="dia-dos-pais"] .sales-bar {
+  background: var(--campaign-primary-dark);
+}
+
+body[data-theme="dia-dos-pais"] .site-header {
+  background: var(--campaign-primary) !important;
+  background-image: none !important;
+  box-shadow: 0 12px 35px rgba(21, 51, 109, 0.28) !important;
+}
+
+body[data-theme="dia-dos-pais"] .nav a:hover {
+  color: var(--campaign-gold);
+}
+
+/* Esteira de fotos no header */
+body[data-theme="dia-dos-pais"] .header-photo-marquee {
+  background: rgba(10, 31, 74, 0.18) !important;
+  border-top: 1px solid rgba(198, 154, 69, 0.26) !important;
+}
+
+body[data-theme="dia-dos-pais"] .header-photo-marquee::before {
+  background: linear-gradient(90deg, var(--campaign-primary), transparent) !important;
+}
+
+body[data-theme="dia-dos-pais"] .header-photo-marquee::after {
+  background: linear-gradient(270deg, var(--campaign-primary), transparent) !important;
+}
+
+/* Hero */
+body[data-theme="dia-dos-pais"] .campaign-hero {
+  background:
+    radial-gradient(
+      circle at 82% 18%,
+      rgba(219, 228, 242, 0.56),
+      transparent 260px
+    ),
+    radial-gradient(
+      circle at 48% 100%,
+      rgba(21, 51, 109, 0.28),
+      transparent 380px
+    ),
+    linear-gradient(
+      110deg,
+      #0a1f4a 0%,
+      #15336d 42%,
+      #2b57a6 72%,
+      #dbe4f2 100%
+    );
+}
+
+body[data-theme="dia-dos-pais"] .campaign-hero::before,
+body[data-theme="dia-dos-pais"] .campaign-hero::after {
+  color: rgba(255, 248, 244, 0.16);
+}
+
+body[data-theme="dia-dos-pais"] .campaign-pill,
+body[data-theme="dia-dos-pais"] .campaign-hero .eyebrow {
+  background: rgba(255, 248, 244, 0.9);
+  color: var(--campaign-primary);
+}
+
+body[data-theme="dia-dos-pais"] .campaign-hero h1,
+body[data-theme="dia-dos-pais"] .campaign-hero h2,
+body[data-theme="dia-dos-pais"] .campaign-hero h3 {
+  color: var(--campaign-cream);
+}
+
+body[data-theme="dia-dos-pais"] .hero-copy p {
+  color: rgba(255, 248, 244, 0.9);
+}
+
+/* Botões */
+body[data-theme="dia-dos-pais"] .primary,
+body[data-theme="dia-dos-pais"] .product-button {
+  background: var(--campaign-primary);
+  color: #fff;
+  box-shadow: 0 16px 36px rgba(21, 51, 109, 0.3);
+}
+
+body[data-theme="dia-dos-pais"] .primary:hover,
+body[data-theme="dia-dos-pais"] .product-button:hover {
+  background: var(--campaign-primary-dark);
+  box-shadow: 0 22px 44px rgba(10, 31, 74, 0.36);
+}
+
+body[data-theme="dia-dos-pais"] .secondary {
+  background: var(--campaign-cream);
+  color: var(--campaign-primary);
+  border: 1px solid rgba(198, 154, 69, 0.42);
+}
+
+body[data-theme="dia-dos-pais"] .secondary:hover {
+  background: var(--campaign-soft);
+  color: var(--campaign-primary-dark);
+}
+
+/* Destaques da hero */
+body[data-theme="dia-dos-pais"] .hero-selling-points div {
+  background: rgba(255, 248, 244, 0.18);
+  border: 1px solid rgba(255, 248, 244, 0.28);
+}
+
+body[data-theme="dia-dos-pais"] .hero-selling-points strong {
+  color: var(--campaign-cream);
+}
+
+body[data-theme="dia-dos-pais"] .hero-selling-points span {
+  color: rgba(255, 248, 244, 0.82);
+}
+
+/* Selo de preço */
+body[data-theme="dia-dos-pais"] .price-badge {
+  background: var(--campaign-cream);
+  color: var(--campaign-primary);
+  box-shadow: 0 18px 45px rgba(10, 31, 74, 0.28);
+}
+
+body[data-theme="dia-dos-pais"] .price-badge strong {
+  color: var(--campaign-primary);
+}
+
+/* Seção produtos */
+body[data-theme="dia-dos-pais"] .products-section {
+  background: #f4f7fc;
+}
+
+body[data-theme="dia-dos-pais"] .products-section .section-heading .eyebrow {
+  background: var(--campaign-cream);
+  color: var(--campaign-primary);
+  border: 1px solid rgba(21, 51, 109, 0.14);
+}
+
+body[data-theme="dia-dos-pais"] .products-section h2 {
+  color: var(--campaign-primary-dark);
+}
+
+body[data-theme="dia-dos-pais"] .products-section p {
+  color: var(--campaign-brown);
+}
+
+body[data-theme="dia-dos-pais"] .category-tabs button:hover,
+body[data-theme="dia-dos-pais"] .category-tabs button.active {
+  background: var(--campaign-primary);
+  color: #fff;
+}
+
+body[data-theme="dia-dos-pais"] .product-tags span:first-child {
+  background: var(--campaign-primary);
+}
+
+body[data-theme="dia-dos-pais"] .product-tags span:last-child {
+  background: var(--campaign-gold);
+}
+
+body[data-theme="dia-dos-pais"] .product-price {
+  color: var(--campaign-primary-dark);
+}
+
+/* Campanha limitada / informações importantes */
+body[data-theme="dia-dos-pais"] .promo-card {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(10, 31, 74, 0.9),
+      rgba(21, 51, 109, 0.76)
+    ),
+    url("assets/cesta-24.jpg") center/cover;
+}
+
+body[data-theme="dia-dos-pais"] .promo-card .eyebrow {
+  background: rgba(255, 248, 244, 0.92);
+  color: var(--campaign-primary);
+}
+
+body[data-theme="dia-dos-pais"] .promo-card h2 {
+  color: var(--campaign-cream);
+}
+
+body[data-theme="dia-dos-pais"] .promo-card p {
+  color: rgba(255, 248, 244, 0.92);
+}
+
+body[data-theme="dia-dos-pais"] .promo-rules {
+  background: rgba(219, 228, 242, 0.9);
+  border: 1px solid rgba(255, 248, 244, 0.3);
+}
+
+body[data-theme="dia-dos-pais"] .promo-rules li {
+  color: var(--campaign-primary-dark);
+}
+
+body[data-theme="dia-dos-pais"] .promo-card .btn {
+  background: var(--campaign-cream);
+  color: var(--campaign-primary);
+  box-shadow: 0 18px 42px rgba(10, 31, 74, 0.28);
+}
+
+body[data-theme="dia-dos-pais"] .promo-card .btn:hover {
+  background: var(--campaign-soft);
+  color: var(--campaign-primary-dark);
+}
+
+/* Como funciona */
+body[data-theme="dia-dos-pais"] .steps {
+  background: #f4f7fc;
+}
+
+body[data-theme="dia-dos-pais"] .steps .section-heading h2 {
+  color: var(--campaign-primary-dark);
+}
+
+body[data-theme="dia-dos-pais"] .steps .section-heading .eyebrow {
+  background: rgba(21, 51, 109, 0.1);
+  color: var(--campaign-primary);
+}
+
+body[data-theme="dia-dos-pais"] .step {
+  background: var(--campaign-primary-dark);
+}
+
+body[data-theme="dia-dos-pais"] .step strong {
+  color: var(--campaign-gold);
+}
+
+/* Área de entrega */
+body[data-theme="dia-dos-pais"] .delivery-area-section {
+  background:
+    radial-gradient(circle at top left, rgba(219, 228, 242, 0.38), transparent 340px),
+    #f4f7fc;
+}
+
+body[data-theme="dia-dos-pais"] .delivery-area-card {
+  background:
+    linear-gradient(110deg, #f4f7fc 0%, #fffdf8 45%, #dbe4f2 100%);
+  border-color: rgba(21, 51, 109, 0.14);
+}
+
+body[data-theme="dia-dos-pais"] .delivery-area-content h2 {
+  color: var(--campaign-primary-dark);
+}
+
+body[data-theme="dia-dos-pais"] .delivery-area-content p {
+  color: var(--campaign-brown);
+}
+
+body[data-theme="dia-dos-pais"] .delivery-cities span {
+  color: var(--campaign-primary);
+  border-color: rgba(21, 51, 109, 0.14);
+}
+
+body[data-theme="dia-dos-pais"] .delivery-note {
+  color: var(--campaign-primary);
+}
+
+body[data-theme="dia-dos-pais"] .delivery-icon {
+  background: var(--campaign-cream);
+  color: var(--campaign-primary);
+}
+
+/* Feedbacks */
+body[data-theme="dia-dos-pais"] .feedbacks-section {
+  background:
+    radial-gradient(circle at top left, rgba(219, 228, 242, 0.36), transparent 340px),
+    #f4f7fc;
+}
+
+body[data-theme="dia-dos-pais"] .google-rating-card {
+  border-color: rgba(198, 154, 69, 0.34);
+}
+
+body[data-theme="dia-dos-pais"] .google-rating-card span,
+body[data-theme="dia-dos-pais"] .feedback-stars {
+  color: var(--campaign-gold);
+}
+
+body[data-theme="dia-dos-pais"] .google-rating-card strong,
+body[data-theme="dia-dos-pais"] .feedback-card h3,
+body[data-theme="dia-dos-pais"] .feedback-card strong {
+  color: var(--campaign-primary);
+}
+
+body[data-theme="dia-dos-pais"] .feedback-avatar {
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.28), transparent 28px),
+    linear-gradient(135deg, var(--campaign-primary), var(--campaign-primary-dark));
+}
+
+/* Instagram */
+body[data-theme="dia-dos-pais"] .instagram-section {
+  background:
+    radial-gradient(circle at top left, rgba(219, 228, 242, 0.34), transparent 340px),
+    #f4f7fc;
+}
+
+body[data-theme="dia-dos-pais"] .instagram-card {
+  border-color: rgba(21, 51, 109, 0.12);
+}
+
+body[data-theme="dia-dos-pais"] .instagram-content h2 {
+  color: var(--campaign-primary-dark);
+}
+
+body[data-theme="dia-dos-pais"] .instagram-content p {
+  color: var(--campaign-brown);
+}
+
+/* CTA final */
+body[data-theme="dia-dos-pais"] .final-cta {
+  background:
+    radial-gradient(circle at top, rgba(198, 154, 69, 0.18), transparent 360px),
+    var(--campaign-primary-dark);
+}
+
+body[data-theme="dia-dos-pais"] .final-cta h2 {
+  color: var(--campaign-gold);
+}
+
+body[data-theme="dia-dos-pais"] .final-cta .eyebrow {
+  background: rgba(255, 248, 244, 0.14);
+  color: var(--campaign-gold);
+}
+
+body[data-theme="dia-dos-pais"] .final-cta p {
+  color: rgba(255, 248, 244, 0.78);
+}
+
+/* Rodapé e institucional */
+body[data-theme="dia-dos-pais"] .footer-institutional strong,
+body[data-theme="dia-dos-pais"] .footer-developed a {
+  color: var(--campaign-primary);
+  border-color: var(--campaign-gold);
+}
+
+body[data-theme="dia-dos-pais"] .footer-institutional a:hover,
+body[data-theme="dia-dos-pais"] .footer-developed a:hover {
+  color: var(--campaign-primary-dark);
+}
+
+body[data-theme="dia-dos-pais"] .institutional-content h1 {
+  color: var(--campaign-primary);
+}
+
+body[data-theme="dia-dos-pais"] .back-home-button {
+  color: var(--campaign-primary);
+}
+
+body[data-theme="dia-dos-pais"] .back-home-button:hover {
+  background: var(--campaign-soft);
+  border-color: rgba(21, 51, 109, 0.26);
+}
+
+/* Botão flutuante */
+body[data-theme="dia-dos-pais"] .social-toggle {
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.22), transparent 28px),
+    linear-gradient(135deg, var(--campaign-primary), var(--campaign-primary-dark));
+}
+
+body[data-theme="dia-dos-pais"] .social-toggle.active {
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.24), transparent 28px),
+    linear-gradient(135deg, var(--campaign-gold), #b8894f);
+}
+
+body[data-theme="dia-dos-pais"] .campaign-toggle {
+  background: rgba(255, 248, 244, 0.14) !important;
+  border-color: rgba(255, 248, 244, 0.32) !important;
+}
+
+body[data-theme="dia-dos-pais"] .campaign-toggle:hover {
+  background: rgba(255, 248, 244, 0.22) !important;
+}
+
+body[data-theme="dia-dos-pais"] .delivery-area-section .eyebrow,
+body[data-theme="dia-dos-pais"] .feedbacks-section .eyebrow,
+body[data-theme="dia-dos-pais"] .instagram-section .eyebrow {
+  background: #f4f7fc;
+  color: var(--campaign-primary);
+  border: 1px solid rgba(21, 51, 109, 0.16);
+}
+
+body[data-theme="dia-dos-pais"] .delivery-area-section h2,
+body[data-theme="dia-dos-pais"] .feedbacks-section h2,
+body[data-theme="dia-dos-pais"] .instagram-section h2 {
+  color: var(--campaign-primary-dark);
+}
+
+body[data-theme="dia-dos-pais"] .delivery-area-section p,
+body[data-theme="dia-dos-pais"] .feedbacks-section p,
+body[data-theme="dia-dos-pais"] .instagram-section p {
+  color: var(--campaign-brown);
+}
