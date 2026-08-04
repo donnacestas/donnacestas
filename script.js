@@ -236,7 +236,7 @@ const CAMPAIGN_PRODUCTS = [
     etiqueta: "Adicional",
     selo: "Foto",
     descricao: "Foto polaroid para deixar o presente mais pessoal e afetivo.",
-    preco: "R$ 10,00",
+    preco: "R$ 12,00",
     imagem: "assets/polaroid.png",
     mensagem: "Olá! Tenho interesse no adicional Foto polaroid, no valor de R$ 10,00."
   }
