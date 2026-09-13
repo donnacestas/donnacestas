@@ -10,6 +10,10 @@
 
   Para editar o catálogo normal, altere a lista PRODUCTS.
 
+  ESCOLHA POR OCASIÃO ("O que você quer dizer?"):
+  A lista OCASIOES define os motivos de presente e quais produtos de
+  PRODUCTS aparecem em cada um. Ao renomear um produto, atualize o nome lá.
+
   ORIGEM DA CAMPANHA PAGA (Google Ads):
   Independente da campanha sazonal, quando o visitante chega por um anúncio
   pago, a mensagem do WhatsApp ganha um prefixo (CAMPAIGN_GREETING) para a
@@ -20,7 +24,7 @@
 const WHATSAPP_NUMBER = "5548998279941";
 const INSTAGRAM_URL = "https://www.instagram.com/donnacestasfloripa/";
 const WHATSAPP_MESSAGE =
-  "Olá! Gostaria de conhecer as opções de cestas da Donna Cestas.";
+  "Olá! Gostaria de ajuda para escolher um presente da Donna Cestas.";
 
 // Prefixo aplicado às mensagens quando o lead vem de campanha paga (Google Ads).
 const CAMPAIGN_GREETING = "Oii! Vi a campanha da Donna Cestas no Google.";
@@ -242,6 +246,145 @@ const CAMPAIGN_PRODUCTS = [
   }
 ];
 
+/*
+  "O QUE VOCÊ QUER DIZER?" — escolha do presente pelo motivo.
+  Cada ocasião lista, pelo NOME exato do card em PRODUCTS, o que aparece
+  quando o visitante escolhe aquele motivo (na ordem da lista). Adicionais
+  vão para o bloco "Complete o presente". Sem "produtos", mostra todas as
+  cestas e presentes (sem adicionais).
+  A ocasião com "urgente: true" vira a faixa de destaque abaixo dos cards.
+  Link direto (bom para anúncios): ?ocasiao=te-amo, ?ocasiao=aniversario...
+*/
+const OCASIOES = [
+  {
+    id: "te-amo",
+    emoji: "❤️",
+    frase: "Quero dizer “te amo”",
+    resumo: "Presentes românticos",
+    titulo: "Para dizer “te amo”",
+    subtitulo:
+      "Presentes românticos para quem faz o seu dia melhor. Complete com flores ou uma foto de vocês.",
+    produtos: [
+      "Box Wine",
+      "Tábua Glamour",
+      "Cesta Encanto",
+      "Cesta Amanhecer",
+      "Café Cristal",
+      "Buquê P flores do campo",
+      "Foto polaroid",
+      "Balão bubble",
+      "Orquídea uma haste"
+    ],
+    mensagem:
+      "Olá! Quero um presente romântico para dizer “te amo”. Pode me ajudar a escolher?"
+  },
+  {
+    id: "aniversario",
+    emoji: "🎂",
+    frase: "Quero desejar feliz aniversário",
+    resumo: "Cestas e bentô cake",
+    titulo: "Para desejar feliz aniversário",
+    subtitulo:
+      "Uma surpresa logo cedo ou um mimo para celebrar o dia. Bentô cake e balão deixam tudo mais festivo.",
+    produtos: [
+      "Cesta Feliz Aniversário",
+      "Cesta Amanhecer",
+      "Cesta Encanto",
+      "Box Wine",
+      "Mini bolinho bentô cake",
+      "Balão bubble",
+      "Foto polaroid"
+    ],
+    mensagem:
+      "Olá! Quero presentear alguém de aniversário. Pode me ajudar a escolher?"
+  },
+  {
+    id: "agradecer",
+    emoji: "💐",
+    frase: "Quero agradecer",
+    resumo: "Mimos para dizer obrigado",
+    titulo: "Para agradecer",
+    subtitulo:
+      "Para a mãe, a amiga ou quem te ajudou: um jeito carinhoso de dizer obrigado.",
+    produtos: [
+      "Café Cristal",
+      "Box Boas Vindas",
+      "Cesta Amanhecer",
+      "Box Wine",
+      "Orquídea uma haste",
+      "Girassol",
+      "Buquê P flores do campo"
+    ],
+    mensagem:
+      "Olá! Quero um presente para agradecer alguém. Pode me ajudar a escolher?"
+  },
+  {
+    id: "surpreender",
+    emoji: "☕",
+    frase: "Quero surpreender alguém",
+    resumo: "Café da manhã e box",
+    titulo: "Para surpreender alguém",
+    subtitulo:
+      "Café da manhã entregue na porta ou um box especial: a surpresa que ninguém espera.",
+    produtos: [
+      "Café Cristal",
+      "Cesta Amanhecer",
+      "Cesta Encanto",
+      "Cesta Elegance",
+      "Box Boas Vindas",
+      "Box Wine",
+      "Balão bubble",
+      "Girassol"
+    ],
+    mensagem:
+      "Olá! Quero surpreender alguém com um presente. Pode me ajudar a escolher?"
+  },
+  {
+    id: "casal",
+    emoji: "🥂",
+    frase: "Quero presentear um casal",
+    resumo: "Tábuas e box para dois",
+    titulo: "Para presentear um casal",
+    subtitulo:
+      "Para aproveitar a dois: tábuas, vinho e cestas pensadas para dividir.",
+    produtos: [
+      "Tábua Glamour",
+      "Box Wine",
+      "Cesta Encanto",
+      "Cesta Elegance",
+      "Foto polaroid"
+    ],
+    mensagem: "Olá! Quero presentear um casal. Pode me ajudar a escolher?"
+  },
+  {
+    id: "colaborador",
+    emoji: "💼",
+    frase: "Quero presentear um colaborador",
+    resumo: "Presentes corporativos",
+    titulo: "Para presentear colaboradores",
+    subtitulo:
+      "Boas-vindas, datas especiais e agradecimentos para a equipe ou clientes. Pedidos em quantidade? Peça um orçamento.",
+    produtos: ["Box Boas Vindas", "Café Cristal", "Box Wine"],
+    mensagem:
+      "Olá! Quero presentes para colaboradores da minha empresa. Pode me passar um orçamento?",
+    botao: "Pedir orçamento no WhatsApp"
+  },
+  {
+    id: "esqueci",
+    urgente: true,
+    emoji: "😅",
+    frase: "Esqueci a data",
+    resumo:
+      "Calma, a gente te ajuda. Chame no WhatsApp e vemos na hora o que ainda dá para entregar.",
+    titulo: "Esqueceu a data? A gente te ajuda",
+    subtitulo:
+      "Chame no WhatsApp: vemos na hora o que conseguimos entregar e no melhor horário.",
+    mensagem:
+      "Olá! Esqueci a data 😅 Preciso de um presente o quanto antes. O que vocês conseguem entregar?",
+    botao: "Chamar agora no WhatsApp"
+  }
+];
+
 const $ = (selector) => document.querySelector(selector);
 
 function whatsappLink(message) {
@@ -400,7 +543,9 @@ function renderProducts(category = "Todos", search = "") {
   const grid = $("#productsGrid");
   const searchTerm = search.trim().toLowerCase();
 
-  const filtered = getActiveProducts().filter((product) => {
+  const filtered = activeOcasiao
+    ? getOcasiaoProducts(activeOcasiao)
+    : getActiveProducts().filter((product) => {
     const matchCategory = category === "Todos" || product.categoria === category;
     const matchSearch =
       !searchTerm ||
@@ -421,7 +566,7 @@ function renderProducts(category = "Todos", search = "") {
     return;
   }
 
-  grid.innerHTML = filtered
+  const cards = filtered
     .map((product, index) => {
       const detailsId = `product-details-${index}`;
 
@@ -468,8 +613,23 @@ function renderProducts(category = "Todos", search = "") {
           </div>
         </article>
       `;
-    })
-    .join("");
+    });
+
+  // Na escolha por ocasião, os adicionais ganham um título próprio.
+  const firstAddon = activeOcasiao
+    ? filtered.findIndex((product) => product.categoria === "Adicionais")
+    : -1;
+
+  if (firstAddon > 0) {
+    cards.splice(firstAddon, 0, `
+      <div class="products-subheading">
+        <strong>Complete o presente</strong>
+        <span>Um detalhe a mais que deixa tudo ainda mais especial.</span>
+      </div>
+    `);
+  }
+
+  grid.innerHTML = cards.join("");
 
   grid.querySelectorAll(".product-details-toggle").forEach((button) => {
     button.addEventListener("click", () => {
@@ -491,6 +651,154 @@ function renderProducts(category = "Todos", search = "") {
   });
 }
 
+// Ocasião escolhida em "O que você quer dizer?" (null = catálogo completo).
+let activeOcasiao = null;
+let catalogDefaults = null;
+
+// Produtos da ocasião na ordem configurada, com os adicionais sempre no fim.
+function getOcasiaoProducts(ocasiao) {
+  const list = ocasiao.produtos
+    ? ocasiao.produtos
+        .map((nome) => {
+          const product = PRODUCTS.find((item) => item.nome === nome);
+          if (!product) {
+            console.warn(`Ocasião "${ocasiao.id}": produto "${nome}" não existe em PRODUCTS.`);
+          }
+          return product;
+        })
+        .filter(Boolean)
+    : PRODUCTS.filter((product) => product.categoria !== "Adicionais");
+
+  return [
+    ...list.filter((product) => product.categoria !== "Adicionais"),
+    ...list.filter((product) => product.categoria === "Adicionais")
+  ];
+}
+
+function selectOcasiao(id, { scroll = false } = {}) {
+  activeOcasiao = OCASIOES.find((item) => item.id === id) || null;
+
+  const heading = activeOcasiao
+    ? {
+        eyebrow: "selecionamos para você",
+        title: activeOcasiao.titulo,
+        subtitle: activeOcasiao.subtitulo
+      }
+    : catalogDefaults;
+
+  $("#productsEyebrow").textContent = heading.eyebrow;
+  $("#productsTitle").textContent = heading.title;
+  $("#productsSubtitle").textContent = heading.subtitle;
+
+  $("#categoryTabs").classList.toggle("hidden", Boolean(activeOcasiao));
+  $("#intentBar").classList.toggle("hidden", !activeOcasiao);
+
+  document.querySelectorAll(".ocasiao-card").forEach((card) => {
+    const pressed = Boolean(activeOcasiao) && card.dataset.ocasiao === activeOcasiao.id;
+    card.setAttribute("aria-pressed", pressed ? "true" : "false");
+  });
+
+  if (activeOcasiao) {
+    const link = $("#intentWhatsapp");
+    link.href = whatsappLink(buildWhatsappMessage(activeOcasiao.mensagem));
+    link.textContent = activeOcasiao.botao || "Quero uma sugestão no WhatsApp";
+    link.dataset.ocasiao = activeOcasiao.id;
+  } else {
+    document.querySelectorAll("#categoryTabs button").forEach((button, index) => {
+      button.classList.toggle("active", index === 0);
+    });
+  }
+
+  renderProducts();
+  updateOcasiaoUrl();
+
+  if (scroll) $("#produtos").scrollIntoView({ behavior: "smooth" });
+}
+
+// Mantém ?ocasiao= na URL (preservando gclid/UTMs) para o link poder ser
+// compartilhado ou usado como página de destino de anúncio.
+function updateOcasiaoUrl() {
+  try {
+    const url = new URL(window.location.href);
+    if (activeOcasiao) url.searchParams.set("ocasiao", activeOcasiao.id);
+    else url.searchParams.delete("ocasiao");
+    history.replaceState(null, "", url);
+  } catch (error) {
+    // URL é só conveniência; a escolha funciona sem ela.
+  }
+}
+
+function setupOcasioes() {
+  const section = $("#ocasioes");
+  if (!section) return;
+
+  // Em campanha sazonal o catálogo é outro: esconde a escolha por ocasião.
+  if (isCampaignActive()) {
+    section.classList.add("hidden");
+    $("#navOcasioesLink").classList.add("hidden");
+    const heroLink = $("#heroHelpLink");
+    heroLink.textContent = "Ver opções de cestas";
+    heroLink.href = "#produtos";
+    return;
+  }
+
+  const clean = (el) => el.textContent.replace(/\s+/g, " ").trim();
+  catalogDefaults = {
+    eyebrow: clean($("#productsEyebrow")),
+    title: clean($("#productsTitle")),
+    subtitle: clean($("#productsSubtitle"))
+  };
+
+  $("#ocasioesGrid").innerHTML = OCASIOES.filter((item) => !item.urgente)
+    .map((item) => `
+      <button class="ocasiao-card" type="button" data-ocasiao="${item.id}" aria-pressed="false">
+        <span class="ocasiao-emoji" aria-hidden="true">${item.emoji}</span>
+        <span class="ocasiao-frase">${item.frase}</span>
+        <span class="ocasiao-resumo">${item.resumo}</span>
+        <span class="ocasiao-arrow" aria-hidden="true">→</span>
+      </button>
+    `)
+    .join("");
+
+  const urgente = OCASIOES.find((item) => item.urgente);
+  const urgentBox = $("#ocasiaoUrgente");
+
+  if (urgente && urgentBox) {
+    urgentBox.innerHTML = `
+      <span class="ocasiao-emoji" aria-hidden="true">${urgente.emoji}</span>
+      <div>
+        <strong>${urgente.frase}</strong>
+        <p>${urgente.resumo}</p>
+      </div>
+      <div class="ocasiao-urgente-actions">
+        <a
+          class="btn primary"
+          id="urgentWhatsapp"
+          href="${whatsappLink(buildWhatsappMessage(urgente.mensagem))}"
+          target="_blank"
+          rel="noopener"
+        >${urgente.botao || "Falar no WhatsApp"}</a>
+        <button class="btn secondary" type="button" data-ocasiao="${urgente.id}">
+          Ver opções
+        </button>
+      </div>
+    `;
+    urgentBox.classList.remove("hidden");
+  }
+
+  section.addEventListener("click", (event) => {
+    const trigger = event.target.closest("button[data-ocasiao]");
+    if (trigger) selectOcasiao(trigger.dataset.ocasiao, { scroll: true });
+  });
+
+  $("#intentClear").addEventListener("click", () => selectOcasiao(null));
+
+  const fromUrl = new URLSearchParams(window.location.search).get("ocasiao");
+  if (fromUrl && OCASIOES.some((item) => item.id === fromUrl)) {
+    selectOcasiao(fromUrl, { scroll: true });
+  }
+}
+
 function setupMenu() {
   const button = $("#menuButton");
   const nav = $("#nav");
@@ -510,6 +818,8 @@ function setupSearch() {
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
+
+    if (activeOcasiao) selectOcasiao(null);
 
     document.querySelectorAll("#categoryTabs button").forEach((button, index) => {
       button.classList.toggle("active", index === 0);
@@ -606,6 +916,7 @@ setupHeaderMarquee();
 setupWhatsappLinks();
 renderCategories();
 renderProducts();
+setupOcasioes();
 setupMenu();
 setupSearch();
 setupInstitutionalPages();

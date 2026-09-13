@@ -3918,3 +3918,288 @@ body[data-theme="dia-dos-pais"] .feedbacks-section p,
 body[data-theme="dia-dos-pais"] .instagram-section p {
   color: var(--campaign-brown);
 }
+
+/* =========================================================
+   "O QUE VOCÊ QUER DIZER?" — escolha do presente pelo motivo.
+   Só aparece no modo loja; em campanha a seção fica oculta.
+   ========================================================= */
+
+.ocasioes-section {
+  background: linear-gradient(180deg, #f7f7f5 0%, #fffdf8 100%);
+}
+
+/* Título do hero mais longo: evita palavra solta no fim da linha */
+body[data-theme="loja"] .campaign-hero h1 {
+  text-wrap: balance;
+}
+
+.ocasioes-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.ocasiao-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 16px;
+  row-gap: 4px;
+  padding: 22px 52px 22px 22px;
+  text-align: left;
+  color: var(--text);
+  background: #fff;
+  border: 1px solid rgba(88, 114, 79, 0.14);
+  border-radius: 22px;
+  box-shadow: 0 10px 28px rgba(49, 69, 45, 0.07);
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.ocasiao-emoji {
+  grid-row: span 2;
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--green-soft);
+  font-size: 1.6rem;
+  line-height: 1;
+  transition: background 0.25s ease;
+}
+
+.ocasiao-frase {
+  align-self: end;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--green-dark);
+}
+
+.ocasiao-resumo {
+  align-self: start;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.ocasiao-arrow {
+  position: absolute;
+  top: 50%;
+  right: 22px;
+  transform: translateY(-50%);
+  color: var(--gold-dark);
+  font-weight: 900;
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease;
+}
+
+.ocasiao-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(201, 162, 11, 0.45);
+  box-shadow: 0 18px 40px rgba(49, 69, 45, 0.12);
+}
+
+.ocasiao-card:hover .ocasiao-arrow {
+  transform: translate(4px, -50%);
+}
+
+.ocasiao-card:focus-visible,
+.intent-chip:focus-visible {
+  outline: 3px solid rgba(201, 162, 11, 0.6);
+  outline-offset: 3px;
+}
+
+.ocasiao-card[aria-pressed="true"] {
+  background: var(--green-dark);
+  border-color: var(--green-dark);
+  box-shadow: 0 18px 40px rgba(49, 69, 45, 0.24);
+}
+
+.ocasiao-card[aria-pressed="true"] .ocasiao-emoji {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.ocasiao-card[aria-pressed="true"] .ocasiao-frase {
+  color: #fffdf8;
+}
+
+.ocasiao-card[aria-pressed="true"] .ocasiao-resumo {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.ocasiao-card[aria-pressed="true"] .ocasiao-arrow {
+  color: #d8b84e;
+}
+
+/* "Esqueci a data" — faixa de urgência abaixo dos cards */
+.ocasiao-urgente {
+  max-width: 1180px;
+  margin: 16px auto 0;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 16px 20px;
+  padding: 20px 22px;
+  background: var(--cream);
+  border: 1px dashed rgba(154, 122, 7, 0.45);
+  border-radius: 22px;
+}
+
+.ocasiao-urgente .ocasiao-emoji {
+  grid-row: auto;
+  background: #fff;
+}
+
+.ocasiao-urgente strong {
+  display: block;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.7rem;
+  line-height: 1;
+  color: var(--brown);
+}
+
+.ocasiao-urgente p {
+  margin: 6px 0 0;
+  color: var(--brown-soft);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.ocasiao-urgente-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Barra do catálogo quando uma ocasião está escolhida */
+.intent-bar {
+  max-width: 1220px;
+  margin: -12px auto 28px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.intent-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 11px 18px;
+  border: 1px solid rgba(88, 114, 79, 0.2);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--green-dark);
+  font-size: 0.92rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.intent-chip:hover {
+  background: var(--green-soft);
+}
+
+.intent-chip-whatsapp {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+
+.intent-chip-whatsapp:hover {
+  background: var(--green-dark);
+}
+
+.products-subheading {
+  grid-column: 1 / -1;
+  margin: 22px 0 4px;
+  text-align: center;
+}
+
+.products-subheading strong {
+  display: block;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--green-dark);
+}
+
+.products-subheading span {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 900px) {
+  .ocasioes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .ocasioes-grid {
+    gap: 10px;
+  }
+
+  .ocasiao-card {
+    grid-template-columns: 1fr;
+    align-content: start;
+    padding: 16px 14px;
+    border-radius: 18px;
+  }
+
+  .ocasiao-emoji {
+    grid-row: auto;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 6px;
+    font-size: 1.3rem;
+  }
+
+  .ocasiao-frase {
+    font-size: 1.22rem;
+  }
+
+  .ocasiao-resumo {
+    font-size: 0.78rem;
+  }
+
+  .ocasiao-arrow {
+    display: none;
+  }
+
+  .ocasiao-urgente {
+    grid-template-columns: auto 1fr;
+    padding: 18px 16px;
+  }
+
+  .ocasiao-urgente .ocasiao-emoji {
+    margin-bottom: 0;
+  }
+
+  .ocasiao-urgente-actions {
+    grid-column: 1 / -1;
+  }
+
+  .ocasiao-urgente-actions .btn {
+    flex: 1 1 auto;
+  }
+
+  .intent-chip {
+    padding: 10px 14px;
+    font-size: 0.85rem;
+  }
+}

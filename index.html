@@ -120,6 +120,7 @@
       </div>
 
       <nav class="nav" id="nav">
+        <a href="#ocasioes" id="navOcasioesLink">Por ocasião</a>
         <a href="#produtos" id="navProductsLink">Catálogo</a>
         <a href="#como-funciona">Como comprar</a>
         <a href="#area-entrega">Área de entrega</a>
@@ -161,12 +162,12 @@
           <span class="campaign-pill" id="campaignTag">Donna Cestas</span>
 
           <h1 id="campaignTitle">
-            Todos os dias é dia de presentear.
+            Precisa presentear alguém? A gente resolve.
           </h1>
 
           <p id="campaignText">
-            Cestas e presentes personalizados para aniversários, datas
-            comemorativas, empresas e momentos únicos.
+            Conte o que você quer dizer e a gente indica o presente certo,
+            montado com carinho e com cartão personalizado.
           </p>
 
           <div class="hero-actions">
@@ -176,10 +177,12 @@
               target="_blank"
               rel="noopener"
             >
-              Encomendar pelo WhatsApp
+              Pedir sugestão no WhatsApp
             </a>
 
-            <a class="btn secondary" href="#produtos">Ver opções de cestas</a>
+            <a class="btn secondary" id="heroHelpLink" href="#ocasioes">
+              Me ajude a escolher
+            </a>
           </div>
 
           <div class="hero-selling-points" id="campaignHighlights">
@@ -209,15 +212,50 @@
 
       </section>
 
+      <section class="section ocasioes-section" id="ocasioes">
+        <div class="section-heading">
+          <span class="eyebrow">presentear sem erro</span>
+
+          <h2>O que você quer dizer?</h2>
+
+          <p>
+            Conte o motivo do presente e mostramos as opções certas para ele,
+            sem precisar olhar o catálogo inteiro.
+          </p>
+        </div>
+
+        <div class="ocasioes-grid" id="ocasioesGrid"></div>
+
+        <div class="ocasiao-urgente hidden" id="ocasiaoUrgente"></div>
+      </section>
+
       <section class="section products-section" id="produtos">
         <div class="section-heading">
-          <span class="eyebrow">nosso catálogo</span>
+          <span class="eyebrow" id="productsEyebrow">nosso catálogo</span>
 
           <h2 id="productsTitle">Catálogo Donna Cestas</h2>
 
           <p id="productsSubtitle">
-            Escolha uma opção e fale direto no WhatsApp com uma mensagem pronta.
+            Prefere ver tudo? Navegue por tipo de presente e peça direto no
+            WhatsApp com uma mensagem pronta.
           </p>
+        </div>
+
+        <div class="intent-bar hidden" id="intentBar">
+          <a class="intent-chip" href="#ocasioes">← Escolher outro motivo</a>
+
+          <button class="intent-chip" id="intentClear" type="button">
+            Ver catálogo completo
+          </button>
+
+          <a
+            class="intent-chip intent-chip-whatsapp"
+            id="intentWhatsapp"
+            target="_blank"
+            rel="noopener"
+          >
+            Quero uma sugestão no WhatsApp
+          </a>
         </div>
 
         <div class="category-tabs" id="categoryTabs"></div>
@@ -252,39 +290,40 @@
       <section class="section steps" id="como-funciona">
         <div class="section-heading">
           <span class="eyebrow">como funciona</span>
-          <h2>Compra simples, direta e personalizada</h2>
+          <h2>Presentear sem complicação</h2>
         </div>
 
         <div class="steps-grid">
           <article class="step">
             <strong>01</strong>
 
-            <h3>Escolha a cesta</h3>
+            <h3>Conte o que quer dizer</h3>
 
             <p>
-             Acesse o catálogo.
+              Amor, aniversário, agradecimento ou aquela data que quase passou:
+              escolha o motivo e veja as opções certas.
             </p>
           </article>
 
           <article class="step">
             <strong>02</strong>
 
-            <h3>Personalize</h3>
+            <h3>Deixe do seu jeito</h3>
 
             <p>
-              Escolha a opção que mais combina
-              com que você quer presentear.
+              Cartão com a sua mensagem, flores, balão, foto polaroid ou bentô
+              cake para completar o presente.
             </p>
           </article>
 
           <article class="step">
             <strong>03</strong>
 
-            <h3>Finalize o pedido</h3>
+            <h3>A gente entrega</h3>
 
             <p>
-              No whatsapp você informa:
-              data, forma de pagamento e horário de entrega.
+              No WhatsApp você combina data, horário e pagamento. O resto é
+              com a gente.
             </p>
           </article>
         </div>
@@ -589,12 +628,11 @@
       <section class="final-cta section" id="contato">
         <span class="eyebrow">pedido personalizado</span>
 
-        <h2>Quer montar uma cesta do seu jeito?</h2>
+        <h2>Não achou o presente ideal?</h2>
 
         <p>
-          Fale com a Donna Cestas pelo WhatsApp e monte uma opção especial para
-          aniversários, datas comemorativas, empresas ou qualquer momento
-          importante.
+          Conte pra gente quem vai receber e o que você quer dizer. A Donna
+          monta uma opção especial para o seu momento.
         </p>
 
         <a
