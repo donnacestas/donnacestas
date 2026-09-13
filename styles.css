@@ -2788,7 +2788,8 @@ body[data-theme="dia-dos-namorados"]
   display: flex;
   width: max-content;
   gap: 26px;
-  animation: feedbackScroll 36s linear infinite;
+  /* ~9s por card: ao incluir/remover depoimentos, ajuste na mesma proporção */
+  animation: feedbackScroll 63s linear infinite;
   will-change: transform;
 }
 
@@ -2830,7 +2831,7 @@ body[data-theme="dia-dos-namorados"]
 
   .feedbacks-track {
     gap: 14px;
-    animation-duration: 34s;
+    animation-duration: 60s;
   }
 
   .feedbacks-track .feedback-card {
