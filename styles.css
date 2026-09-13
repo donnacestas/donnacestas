@@ -3924,8 +3924,52 @@ body[data-theme="dia-dos-pais"] .instagram-section p {
    Só aparece no modo loja; em campanha a seção fica oculta.
    ========================================================= */
 
+/* Faixa "Pedido rápido / Cartão incluso" centralizada na linha entre o
+   hero e a seção seguinte. translateY(-50%) não depende da altura. */
+.purchase-strip {
+  margin-top: 0;
+  transform: translateY(-50%);
+}
+
+/* Folga para a metade de cima da faixa não encostar nos destaques
+   do hero (preenchidos em campanha sazonal) */
+.campaign-hero {
+  padding-bottom: calc(clamp(22px, 3.5vw, 84px) + 28px);
+}
+
+/* Começa transparente para emendar com o fundo do body sob a faixa */
 .ocasioes-section {
-  background: linear-gradient(180deg, #f7f7f5 0%, #fffdf8 100%);
+  padding-top: clamp(24px, 3vw, 48px);
+  background: linear-gradient(180deg, rgba(255, 253, 248, 0) 0%, #fffdf8 100%);
+}
+
+@media (max-width: 720px) {
+  .campaign-hero {
+    padding-bottom: 76px;
+  }
+
+  /* No celular a faixa fica em 2 colunas compactas em vez de empilhar */
+  .purchase-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .purchase-strip div {
+    padding: 16px 10px;
+    border-bottom: 0;
+    border-right: 1px solid rgba(122, 62, 18, 0.12);
+  }
+
+  .purchase-strip div:last-child {
+    border-right: 0;
+  }
+
+  .purchase-strip strong {
+    font-size: 0.95rem;
+  }
+
+  .purchase-strip span {
+    font-size: 0.8rem;
+  }
 }
 
 /* Título do hero mais longo: evita palavra solta no fim da linha */
