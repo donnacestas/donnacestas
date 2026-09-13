@@ -250,23 +250,20 @@ function whatsappLink(message) {
 
 // Detecta se o acesso veio de uma campanha paga do Google Ads.
 // Funciona sozinho via "gclid" (auto-tagging, padrão da conta) e também
-// aceita UTMs. A origem fica guardada na sessão para sobreviver à navegação.
+// aceita UTMs. Olha só a URL atual: o site é de página única, então os
+// parâmetros continuam na URL durante a visita. Não usar sessionStorage —
+// no celular a aba fica aberta por dias e marcava visitas orgânicas
+// seguintes como se fossem do anúncio.
 function isPaidCampaign() {
   try {
     const params = new URLSearchParams(window.location.search);
     const medium = (params.get("utm_medium") || "").toLowerCase();
 
-    const fromUrl =
+    return (
       params.has("gclid") ||
       (params.get("utm_source") === "google" && medium === "cpc") ||
-      ["cpc", "ppc", "paid", "paidsearch"].includes(medium);
-
-    if (fromUrl) {
-      sessionStorage.setItem("donna_campaign", "1");
-      return true;
-    }
-
-    return sessionStorage.getItem("donna_campaign") === "1";
+      ["cpc", "ppc", "paid", "paidsearch"].includes(medium)
+    );
   } catch (error) {
     return false;
   }
