@@ -2764,7 +2764,9 @@ body[data-theme="dia-dos-namorados"]
 .feedbacks-marquee {
   width: min(96vw, 1360px);
   max-width: 1360px;
-  margin: auto;
+  /* Mais largo que o padding da seção: margens negativas centralizam sem
+     empurrar para a direita (o que gerava rolagem horizontal) */
+  margin-inline: calc(50% - min(48vw, 680px));
   overflow: hidden;
   position: relative;
   padding: 8px 0 18px;
