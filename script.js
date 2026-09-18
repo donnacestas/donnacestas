@@ -600,7 +600,6 @@ function renderProducts(category = "Todos", search = "") {
 
             ${product.aviso ? `<p class="product-note">${product.aviso}</p>` : '<p class="product-note product-note-placeholder">Foto real do produto.</p>'}
 
-            <strong class="product-price">${product.preco}</strong>
 
             <a
               class="product-button"
@@ -812,23 +811,6 @@ function setupMenu() {
   });
 }
 
-function setupSearch() {
-  const form = $("#searchForm");
-  const input = $("#searchInput");
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    if (activeOcasiao) selectOcasiao(null);
-
-    document.querySelectorAll("#categoryTabs button").forEach((button, index) => {
-      button.classList.toggle("active", index === 0);
-    });
-
-    renderProducts("Todos", input.value);
-    document.querySelector("#produtos").scrollIntoView({ behavior: "smooth" });
-  });
-}
 
 function setupInstitutionalPages() {
   const main = document.querySelector("main");
@@ -918,7 +900,7 @@ renderCategories();
 renderProducts();
 setupOcasioes();
 setupMenu();
-setupSearch();
+
 setupInstitutionalPages();
 setupCompactHeaderOnScroll();
 
