@@ -8,7 +8,9 @@
   os textos e mostra a lista CAMPAIGN_PRODUCTS no lugar do catálogo normal.
   Os textos da campanha ficam no bloco SITE_CONFIG.campanha abaixo.
 
-  Para editar o catálogo normal, altere a lista PRODUCTS.
+  Para editar o catálogo normal, altere a lista PRODUCTS. A mensagem do
+  WhatsApp de cada produto é gerada pelo nome (ver productMessage) e não
+  inclui preço.
 
   ESCOLHA POR OCASIÃO ("O que você quer dizer?"):
   A lista OCASIOES define os motivos de presente e quais produtos de
@@ -68,7 +70,6 @@ const PRODUCTS = [
     descricao: "Cesta compacta em nicho de acrílico 12cm com croissant, pães de queijo, queijo, nutella, torradas, café e frutas.",
     preco: "R$ 139,00",
     imagem: "assets/cesta-26.jpg",
-    mensagem: "Olá! Tenho interesse em Café Cristal do catálogo, no valor de R$ 139,00."
   },
   {
     nome: "Cesta Amanhecer",
@@ -78,7 +79,6 @@ const PRODUCTS = [
     descricao: "Café da manhã em nicho de madeira 25cm com croissant, mini baguete, charcutaria, queijos, suco, café e frutas.",
     preco: "R$ 229,00",
     imagem: "assets/cesta-13.jpg",
-    mensagem: "Olá! Tenho interesse em Cesta Amanhecer do catálogo, no valor de R$ 229,00."
   },
   {
     nome: "Cesta Encanto",
@@ -88,7 +88,6 @@ const PRODUCTS = [
     descricao: "Cesta em nicho de madeira 30cm com itens de café, caseirinho, queijos, charcutaria, suco, cappuccino e frutas.",
     preco: "R$ 289,00",
     imagem: "assets/cesta-14.jpg",
-    mensagem: "Olá! Tenho interesse em Cesta Encanto do catálogo, no valor de R$ 289,00."
   },
   {
     nome: "Cesta Elegance",
@@ -98,7 +97,6 @@ const PRODUCTS = [
     descricao: "Cesta maior em nicho de madeira 35cm com variedade de pães, queijos, charcutarias, suco, café, chá e frutas.",
     preco: "R$ 399,00",
     imagem: "assets/cesta-15.jpg",
-    mensagem: "Olá! Tenho interesse em Cesta Elegance do catálogo, no valor de R$ 399,00."
   },
   {
     nome: "Cesta Feliz Aniversário",
@@ -108,7 +106,6 @@ const PRODUCTS = [
     descricao: "Cesta em nicho de madeira 35cm com mini bolinho bentô, croissant, queijos, charcutaria, suco, café e frutas.",
     preco: "R$ 290,00",
     imagem: "assets/cesta-17.jpg",
-    mensagem: "Olá! Tenho interesse em Cesta Feliz Aniversário do catálogo, no valor de R$ 290,00."
   },
   {
     nome: "Tábua Glamour",
@@ -118,7 +115,6 @@ const PRODUCTS = [
     descricao: "Tábua de MDF 30cm com queijo brie, queijo minas, salame, copa, nuts, chocolate, damasco, geleia de pimenta ou frutas vermelhas, baguete rústica e frutas da estação.",
     preco: "R$ 279,00",
     imagem: "assets/glamour.png",
-    mensagem: "Olá! Tenho interesse em Tábua Glamour do catálogo, no valor de R$ 279,00."
   },
   {
     nome: "Box Wine",
@@ -128,7 +124,6 @@ const PRODUCTS = [
     descricao: "Box cartonada com vinho ou espumante, queijo fino, geleia e chocolate importado. Embalada em celofane e laço, acompanha cartão. Consultar rótulos e cores.",
     preco: "R$ 279,00",
     imagem: "assets/wine.jpeg",
-    mensagem: "Olá! Tenho interesse em Box Wine do catálogo, no valor de R$ 279,00."
   },
   {
     nome: "Box Boas Vindas",
@@ -138,7 +133,6 @@ const PRODUCTS = [
     descricao: "Box cartonada com cafés drip coffee, chás sachê, bolachas decoradas, amigurumi e adesivo com nome do presenteado. Embalada em celofane e laço, acompanha cartão.",
     preco: "R$ 259,00",
     imagem: "assets/bvindas.jpeg",
-    mensagem: "Olá! Tenho interesse em Box Boas Vindas do catálogo, no valor de R$ 259,00."
   },
   {
     nome: "Mini bolinho bentô cake",
@@ -148,7 +142,6 @@ const PRODUCTS = [
     descricao: "Mini bolinho bentô cake personalizado para complementar a cesta.",
     preco: "R$ 100,00",
     imagem: "assets/bento-cake.png",
-    mensagem: "Olá! Tenho interesse no adicional Mini bolinho bentô cake, no valor de R$ 100,00."
   },
   {
     nome: "Balão bubble",
@@ -158,7 +151,6 @@ const PRODUCTS = [
     descricao: "Balão bubble para deixar o presente ainda mais especial.",
     preco: "R$ 80,00",
     imagem: "assets/balao.png",
-    mensagem: "Olá! Tenho interesse no adicional Balão bubble, no valor de R$ 80,00."
   },
   {
     nome: "Orquídea uma haste",
@@ -168,7 +160,6 @@ const PRODUCTS = [
     descricao: "Orquídea de uma haste para complementar a cesta com um toque elegante.",
     preco: "R$ 110,00",
     imagem: "assets/orquidea.png",
-    mensagem: "Olá! Tenho interesse no adicional Orquídea uma haste, no valor de R$ 110,00."
   },
   {
     nome: "Girassol",
@@ -178,7 +169,6 @@ const PRODUCTS = [
     descricao: "Girassol para complementar o presente com delicadeza e carinho.",
     preco: "R$ 50,00",
     imagem: "assets/girassol.png",
-    mensagem: "Olá! Tenho interesse no adicional Girassol, no valor de R$ 50,00."
   },
   {
     nome: "Foto polaroid",
@@ -188,7 +178,6 @@ const PRODUCTS = [
     descricao: "Foto polaroid para deixar o presente mais pessoal e afetivo.",
     preco: "R$ 12,00",
     imagem: "assets/polaroid.png",
-    mensagem: "Olá! Tenho interesse no adicional Foto polaroid, no valor de R$ 12,00."
   },
   {
     nome: "Buquê P flores do campo",
@@ -198,7 +187,6 @@ const PRODUCTS = [
     descricao: "Buquê pequeno de flores do campo para complementar a cesta.",
     preco: "R$ 120,00",
     imagem: "assets/buque.png",
-    mensagem: "Olá! Tenho interesse no adicional Buquê P flores do campo, no valor de R$ 120,00."
   }
 ];
 
@@ -212,7 +200,6 @@ const CAMPAIGN_PRODUCTS = [
     descricao: "Croissant, Mini Baguete, Cruffin recheado com doce de leite, Pães de Queijo recheados, Bolachas decorada Dia dos Pais, Salame, Queijo Minas Meia Cura, Geléia, Manteiga francesa, Torradas finas, Suco 300ml, Café drip coffee, Frutas da estação, Cartão Personalizado. Ideal para 1 pessoa.",
     preco: "R$ 249,00",
     imagem: "assets/amordepai.jpeg",
-    mensagem: "Olá! Tenho interesse na cesta Amor de Pai do catálogo de Dia dos Pais, no valor de R$ 249,00."
   },
   {
     nome: "Essência de Pai",
@@ -222,7 +209,6 @@ const CAMPAIGN_PRODUCTS = [
     descricao: "Croissant, Mini Baguetes, Cruffin recheado com doce de leite, Pães de Queijo recheados, Bolachas decoradas Dia dos Pais, Crostatine, Waffle, Chocolate, Salame, Queijo Minas Meia Cura, Geléia, Manteiga francesa, Torradas finas, Suco 300ml, Cafés drip coffee, Capuccino, Frutas da estação, Cartão Personalizado. Ideal para 2-3 pessoas.",
     preco: "R$ 379,00",
     imagem: "assets/essencia.jpeg",
-    mensagem: "Olá! Tenho interesse na cesta Essência de Pai do catálogo de Dia dos Pais, no valor de R$ 379,00."
   },
   {
     nome: "Pai e Filhos",
@@ -232,7 +218,6 @@ const CAMPAIGN_PRODUCTS = [
     descricao: "Croissants, Mini Baguetes, Cruffin recheado com doce de leite, Pães de Queijo recheados, Bolacha decoradas Dia dos Pais, Waffle, Crostatines, Chocolate, Salame, Queijo Minas Meia Cura, Geléia, Nutella, Manteiga francesa, Torradas finas, Suco 500ml, Cafés drip coffee, Capuccino, Frutas da estação, Cartão Personalizado. Ideal para 3-4 pessoas.",
     preco: "R$ 489,00",
     imagem: "assets/essencia.jpeg",
-    mensagem: "Olá! Tenho interesse na cesta Pai e Filhos do catálogo de Dia dos Pais, no valor de R$ 489,00."
   },
   {
     nome: "Foto polaroid",
@@ -242,7 +227,6 @@ const CAMPAIGN_PRODUCTS = [
     descricao: "Foto polaroid para deixar o presente mais pessoal e afetivo.",
     preco: "R$ 12,00",
     imagem: "assets/polaroid.png",
-    mensagem: "Olá! Tenho interesse no adicional Foto polaroid, no valor de R$ 10,00."
   }
 ];
 
@@ -410,6 +394,16 @@ function isPaidCampaign() {
   } catch (error) {
     return false;
   }
+}
+
+// Mensagem do botão "Pedir no WhatsApp" de cada produto, montada a partir
+// do nome — assim nunca desalinha do card nem leva preço. Para um texto
+// específico, defina "mensagem" no produto (deve começar com "Olá!").
+function productMessage(product) {
+  if (product.mensagem) return product.mensagem;
+  return product.categoria === "Adicionais"
+    ? `Olá! Tenho interesse no adicional ${product.nome}.`
+    : `Olá! Tenho interesse em ${product.nome} do catálogo.`;
 }
 
 // Marca a mensagem com a saudação de campanha quando o lead é pago.
@@ -603,7 +597,7 @@ function renderProducts(category = "Todos", search = "") {
 
             <a
               class="product-button"
-              href="${whatsappLink(buildWhatsappMessage(product.mensagem))}"
+              href="${whatsappLink(buildWhatsappMessage(productMessage(product)))}"
               target="_blank"
               rel="noopener"
             >
