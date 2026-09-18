@@ -711,7 +711,7 @@ function selectOcasiao(id, { scroll = false } = {}) {
   renderProducts();
   updateOcasiaoUrl();
 
-  if (scroll) $("#produtos").scrollIntoView({ behavior: "smooth" });
+  if (scroll) scrollToSection($("#produtos"));
 }
 
 // Mantém ?ocasiao= na URL (preservando gclid/UTMs) para o link poder ser
@@ -796,6 +796,36 @@ function setupOcasioes() {
   if (fromUrl && OCASIOES.some((item) => item.id === fromUrl)) {
     selectOcasiao(fromUrl, { scroll: true });
   }
+}
+
+// Rola até uma seção descontando o header fixo. A conta usa a altura ATUAL
+// do header: se ele encolher no caminho (a faixa de fotos some ao sair do
+// hero), o conteúdo sobe exatamente essa diferença e a seção para logo
+// abaixo do header compacto. Um scroll-margin fixo no CSS não acerta os
+// dois casos (header cheio x já compacto).
+function scrollToSection(target) {
+  const header = document.querySelector(".site-header");
+  const headerHeight = header ? header.getBoundingClientRect().height : 0;
+  const top = target.getBoundingClientRect().top + window.scrollY - headerHeight - 16;
+
+  window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+}
+
+function setupAnchorScroll() {
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest('a[href^="#"]');
+    if (!link) return;
+
+    const id = link.getAttribute("href").slice(1);
+    const target = id && document.getElementById(id);
+    // Alvo oculto (ex.: página institucional aberta): comportamento padrão
+    if (!target || target.offsetParent === null) return;
+
+    event.preventDefault();
+    // "#id" relativo mantém a query (gclid/UTM/ocasiao) na URL
+    history.replaceState(null, "", `#${id}`);
+    scrollToSection(target);
+  });
 }
 
 function setupMenu() {
@@ -900,7 +930,7 @@ renderCategories();
 renderProducts();
 setupOcasioes();
 setupMenu();
-
+setupAnchorScroll();
 setupInstitutionalPages();
 setupCompactHeaderOnScroll();
 
