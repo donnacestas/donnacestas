@@ -4461,3 +4461,11 @@ footer {
     scroll-margin-top: 185px;
   }
 }
+
+/* Títulos dos passos "Como funciona": a regra de cor por tema
+   (body[data-theme] h3) vencia o branco de .step h3 e deixava o texto da
+   mesma cor do fundo do card, invisível. */
+body[data-theme] .step h3 {
+  color: #fff;
+}
+
