@@ -12,6 +12,11 @@
   WhatsApp de cada produto é gerada pelo nome (ver productMessage) e não
   inclui preço.
 
+  MAIS DE UMA PÁGINA:
+  Este arquivo roda tanto na home quanto nas páginas de produto (ex.:
+  cesta-de-cafe-da-manha.html). Cada bloco só age se encontrar os
+  elementos da sua página, então nada quebra onde a seção não existe.
+
   ESCOLHA POR OCASIÃO ("O que você quer dizer?"):
   A lista OCASIOES define os motivos de presente e quais produtos de
   PRODUCTS aparecem em cada um. Ao renomear um produto, atualize o nome lá.
@@ -516,6 +521,8 @@ function getCategories() {
 
 function renderCategories() {
   const tabs = $("#categoryTabs");
+  if (!tabs) return;
+
   tabs.innerHTML = getCategories()
     .map((category, index) => `
       <button class="${index === 0 ? "active" : ""}" data-category="${category}">
@@ -535,6 +542,8 @@ function renderCategories() {
 
 function renderProducts(category = "Todos", search = "") {
   const grid = $("#productsGrid");
+  if (!grid) return;
+
   const searchTerm = search.trim().toLowerCase();
 
   const filtered = activeOcasiao
@@ -560,53 +569,7 @@ function renderProducts(category = "Todos", search = "") {
     return;
   }
 
-  const cards = filtered
-    .map((product, index) => {
-      const detailsId = `product-details-${index}`;
-
-      return `
-        <article class="product-card" style="--card-index: ${index}">
-          <div class="product-image">
-            <img src="${product.imagem}" alt="${product.nome}">
-            ${product.ilustrativo ? '<span class="product-illustrative-badge">Foto ilustrativa</span>' : ''}
-            <div class="product-tags">
-              <span>${product.etiqueta}</span>
-              <span>${product.selo}</span>
-            </div>
-          </div>
-
-          <div class="product-content">
-            <h3>${product.nome}</h3>
-
-            <button
-              class="product-details-toggle"
-              type="button"
-              aria-expanded="false"
-              aria-controls="${detailsId}"
-            >
-              <span>Ver itens</span>
-              <span class="product-details-arrow" aria-hidden="true">⌄</span>
-            </button>
-
-            <div class="product-details" id="${detailsId}">
-              <p class="product-description">${product.descricao}</p>
-            </div>
-
-            ${product.aviso ? `<p class="product-note">${product.aviso}</p>` : '<p class="product-note product-note-placeholder">Foto real do produto.</p>'}
-
-
-            <a
-              class="product-button"
-              href="${whatsappLink(buildWhatsappMessage(productMessage(product)))}"
-              target="_blank"
-              rel="noopener"
-            >
-              Pedir no WhatsApp
-            </a>
-          </div>
-        </article>
-      `;
-    });
+  const cards = filtered.map((product, index) => productCardHTML(product, index));
 
   // Na escolha por ocasião, os adicionais ganham um título próprio.
   const firstAddon = activeOcasiao
@@ -623,7 +586,61 @@ function renderProducts(category = "Todos", search = "") {
   }
 
   grid.innerHTML = cards.join("");
+  activateProductCards(grid);
+}
 
+// Card de produto. Reaproveitado pelo catálogo da home e pelas páginas de
+// produto (ex.: /cesta-de-cafe-da-manha), que passam uma mensagem própria
+// de WhatsApp para identificar de onde veio o lead.
+function productCardHTML(product, index, message) {
+  const detailsId = `product-details-${index}`;
+  const texto = message || productMessage(product);
+
+  return `
+    <article class="product-card" style="--card-index: ${index}">
+      <div class="product-image">
+        <img src="${product.imagem}" alt="${product.nome}">
+        ${product.ilustrativo ? '<span class="product-illustrative-badge">Foto ilustrativa</span>' : ''}
+        <div class="product-tags">
+          <span>${product.etiqueta}</span>
+          <span>${product.selo}</span>
+        </div>
+      </div>
+
+      <div class="product-content">
+        <h3>${product.nome}</h3>
+
+        <button
+          class="product-details-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="${detailsId}"
+        >
+          <span>Ver itens</span>
+          <span class="product-details-arrow" aria-hidden="true">⌄</span>
+        </button>
+
+        <div class="product-details" id="${detailsId}">
+          <p class="product-description">${product.descricao}</p>
+        </div>
+
+        ${product.aviso ? `<p class="product-note">${product.aviso}</p>` : '<p class="product-note product-note-placeholder">Foto real do produto.</p>'}
+
+        <a
+          class="product-button"
+          href="${whatsappLink(buildWhatsappMessage(texto))}"
+          target="_blank"
+          rel="noopener"
+        >
+          Pedir no WhatsApp
+        </a>
+      </div>
+    </article>
+  `;
+}
+
+// Liga o "Ver itens" e o fade das fotos nos cards recém-inseridos.
+function activateProductCards(grid) {
   grid.querySelectorAll(".product-details-toggle").forEach((button) => {
     button.addEventListener("click", () => {
       const card = button.closest(".product-card");
@@ -825,6 +842,7 @@ function setupAnchorScroll() {
 function setupMenu() {
   const button = $("#menuButton");
   const nav = $("#nav");
+  if (!button || !nav) return;
 
   button.addEventListener("click", () => {
     nav.classList.toggle("open");
@@ -937,7 +955,9 @@ instagramLinks.forEach((link) => {
 const socialToggle = document.querySelector("#socialToggle");
 const socialOptions = document.querySelector("#socialOptions");
 
-socialToggle.addEventListener("click", () => {
-  socialOptions.classList.toggle("open");
-  socialToggle.classList.toggle("active");
-});
+if (socialToggle && socialOptions) {
+  socialToggle.addEventListener("click", () => {
+    socialOptions.classList.toggle("open");
+    socialToggle.classList.toggle("active");
+  });
+}
