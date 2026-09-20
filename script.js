@@ -374,6 +374,38 @@ const OCASIOES = [
   }
 ];
 
+/*
+  PÁGINAS DE PRODUTO (ex.: /cesta-de-cafe-da-manha)
+
+  Cada página HTML declara <body data-landing="cafe-da-manha"> e recebe
+  daqui os modelos que mostra. Os produtos vêm de PRODUCTS pelo nome, então
+  preço, foto e descrição continuam sendo editados num lugar só.
+
+  "origem" entra nas mensagens de WhatsApp da página para a Marina saber
+  de onde veio o lead. Para criar outra página, copie o HTML, troque o
+  data-landing e adicione a entrada correspondente aqui.
+*/
+const LANDINGS = {
+  "cafe-da-manha": {
+    origem: "Vim pela página de café da manhã",
+    produtos: [
+      "Café Cristal",
+      "Cesta Amanhecer",
+      "Cesta Encanto",
+      "Cesta Elegance",
+      "Cesta Feliz Aniversário"
+    ],
+    adicionais: [
+      "Mini bolinho bentô cake",
+      "Buquê P flores do campo",
+      "Balão bubble",
+      "Foto polaroid",
+      "Girassol",
+      "Orquídea uma haste"
+    ]
+  }
+};
+
 const $ = (selector) => document.querySelector(selector);
 
 function whatsappLink(message) {
@@ -436,11 +468,64 @@ function getActiveProducts() {
   return isCampaignActive() ? CAMPAIGN_PRODUCTS : PRODUCTS;
 }
 
-// Mensagem padrão dos botões gerais, conforme campanha ativa ou não.
+// Configuração da página de produto atual (null na home).
+function getLanding() {
+  const key = document.body.dataset.landing;
+  return (key && LANDINGS[key]) || null;
+}
+
+// Mensagem padrão dos botões gerais. Numa página de produto, todos os
+// botões carregam a origem do lead; na home, depende da campanha.
 function activeWhatsappMessage() {
+  const landing = getLanding();
+  if (landing) {
+    return `Olá! ${landing.origem} e gostaria de ajuda para escolher uma cesta.`;
+  }
+
   return isCampaignActive()
     ? SITE_CONFIG.campanha.mensagemWhatsapp
     : WHATSAPP_MESSAGE;
+}
+
+// Mensagem do card dentro de uma página de produto: origem + produto.
+function landingProductMessage(landing, product) {
+  const item =
+    product.categoria === "Adicionais"
+      ? `no adicional ${product.nome}`
+      : `em ${product.nome}`;
+
+  return `Olá! ${landing.origem} e tenho interesse ${item}.`;
+}
+
+// Monta as grades da página de produto a partir de PRODUCTS.
+function setupLanding() {
+  const landing = getLanding();
+  if (!landing) return;
+
+  const byName = (nomes) =>
+    (nomes || [])
+      .map((nome) => {
+        const product = PRODUCTS.find((item) => item.nome === nome);
+        if (!product) {
+          console.warn(`Página "${document.body.dataset.landing}": produto "${nome}" não existe em PRODUCTS.`);
+        }
+        return product;
+      })
+      .filter(Boolean);
+
+  const fill = (grid, produtos, offset) => {
+    if (!grid || !produtos.length) return;
+    grid.innerHTML = produtos
+      .map((product, index) =>
+        productCardHTML(product, offset + index, landingProductMessage(landing, product))
+      )
+      .join("");
+    activateProductCards(grid);
+  };
+
+  const principais = byName(landing.produtos);
+  fill($("#landingGrid"), principais, 0);
+  fill($("#landingAddons"), byName(landing.adicionais), principais.length);
 }
 
 // Aplica a identidade da campanha (tema + textos) quando ativa.
@@ -940,6 +1025,7 @@ setupHeaderMarquee();
 setupWhatsappLinks();
 renderCategories();
 renderProducts();
+setupLanding();
 setupOcasioes();
 setupMenu();
 setupAnchorScroll();

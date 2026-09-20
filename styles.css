@@ -4469,3 +4469,36 @@ body[data-theme] .step h3 {
   color: #fff;
 }
 
+/* =========================
+   Páginas de produto (ex.: /cesta-de-cafe-da-manha)
+   ========================= */
+.landing-addons-heading {
+  margin-top: clamp(38px, 5vw, 64px);
+}
+
+.landing-proof {
+  background: #fffdf8;
+}
+
+/* Sem carrossel: a página mostra 3 depoimentos fixos */
+.landing-feedbacks {
+  max-width: 1180px;
+  margin: 26px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .landing-feedbacks {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+  }
+}
+
+/* Título das páginas de produto: mais compacto que o da home, que usa
+   frases curtas */
+body[data-landing] .campaign-hero h1 {
+  font-size: clamp(2.6rem, 4.4vw, 4.4rem);
+}
