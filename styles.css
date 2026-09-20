@@ -4502,3 +4502,20 @@ body[data-theme] .step h3 {
 body[data-landing] .campaign-hero h1 {
   font-size: clamp(2.6rem, 4.4vw, 4.4rem);
 }
+
+/* Link de apoio abaixo do subtítulo de uma seção */
+.section-link {
+  margin-top: 10px;
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+.section-link a {
+  color: #9a7a07;
+  border-bottom: 1px solid rgba(154, 122, 7, 0.4);
+}
+
+.section-link a:hover {
+  color: #31452d;
+  border-bottom-color: #31452d;
+}
