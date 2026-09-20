@@ -386,6 +386,24 @@ const OCASIOES = [
   data-landing e adicione a entrada correspondente aqui.
 */
 const LANDINGS = {
+  aniversario: {
+    origem: "Vim pela página de presente de aniversário",
+    produtos: [
+      "Cesta Feliz Aniversário",
+      "Cesta Amanhecer",
+      "Cesta Encanto",
+      "Cesta Elegance",
+      "Box Wine"
+    ],
+    adicionais: [
+      "Mini bolinho bentô cake",
+      "Balão bubble",
+      "Buquê P flores do campo",
+      "Foto polaroid",
+      "Girassol"
+    ]
+  },
+
   "cafe-da-manha": {
     origem: "Vim pela página de café da manhã",
     produtos: [
