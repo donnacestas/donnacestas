@@ -695,23 +695,31 @@ function productCardHTML(product, index, message) {
       <div class="product-content">
         <h3>${product.nome}</h3>
 
-        <button
-          class="product-details-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="${detailsId}"
-        >
-          <span>Ver itens</span>
-          <span class="product-details-arrow" aria-hidden="true">⌄</span>
-        </button>
+        <div class="product-slot">
+          <button
+            class="product-details-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="${detailsId}"
+          >
+            <span>Ver itens</span>
+            <span class="product-details-arrow" aria-hidden="true">⌄</span>
+          </button>
 
-        <div class="product-details" id="${detailsId}">
-          <div class="product-details-inner">
-            <p class="product-description">${product.descricao}</p>
+          <div class="product-details" id="${detailsId}">
+            <div class="product-details-inner">
+              <p class="product-description">${product.descricao}</p>
+            </div>
+
+            <button
+              class="product-details-close"
+              type="button"
+              aria-label="Fechar itens da ${product.nome}"
+            >×</button>
           </div>
         </div>
 
-        ${product.aviso ? `<p class="product-note">${product.aviso}</p>` : '<p class="product-note product-note-placeholder">Foto real do produto.</p>'}
+        ${product.aviso ? `<p class="product-note">${product.aviso}</p>` : ""}
 
         <a
           class="product-button"
@@ -726,14 +734,41 @@ function productCardHTML(product, index, message) {
   `;
 }
 
+// Fecha o pop-up de itens aberto (em qualquer grade da página).
+function closeProductDetails(except) {
+  document.querySelectorAll(".product-card.details-open").forEach((card) => {
+    if (card === except) return;
+    card.classList.remove("details-open");
+    const toggle = card.querySelector(".product-details-toggle");
+    if (toggle) toggle.setAttribute("aria-expanded", "false");
+  });
+}
+
 // Liga o "Ver itens" e o fade das fotos nos cards recém-inseridos.
+// Os itens abrem num pop-up sobreposto: o card não muda de tamanho e as
+// cestas vizinhas ficam paradas. Só um fica aberto por vez.
 function activateProductCards(grid) {
   grid.querySelectorAll(".product-details-toggle").forEach((button) => {
     button.addEventListener("click", () => {
       const card = button.closest(".product-card");
-      const isOpen = card.classList.toggle("details-open");
+      const willOpen = !card.classList.contains("details-open");
 
-      button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      closeProductDetails(card);
+      card.classList.toggle("details-open", willOpen);
+      button.setAttribute("aria-expanded", willOpen ? "true" : "false");
+    });
+  });
+
+  grid.querySelectorAll(".product-details-close").forEach((button) => {
+    button.addEventListener("click", () => {
+      const card = button.closest(".product-card");
+      card.classList.remove("details-open");
+
+      const toggle = card.querySelector(".product-details-toggle");
+      if (toggle) {
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.focus();
+      }
     });
   });
 
@@ -926,6 +961,19 @@ function setupAnchorScroll() {
   });
 }
 
+// Clique fora ou Esc fecham o pop-up de itens.
+function setupProductDetailsDismiss() {
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".product-card.details-open")) {
+      closeProductDetails();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeProductDetails();
+  });
+}
+
 function setupMenu() {
   const button = $("#menuButton");
   const nav = $("#nav");
@@ -1030,6 +1078,7 @@ renderProducts();
 setupLanding();
 setupOcasioes();
 setupMenu();
+setupProductDetailsDismiss();
 setupAnchorScroll();
 setupInstitutionalPages();
 setupCompactHeaderOnScroll();

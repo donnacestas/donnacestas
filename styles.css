@@ -4521,35 +4521,107 @@ body[data-landing] .campaign-hero h1 {
 }
 
 /* =========================
-   Abertura de "Ver itens" sem esticar as cestas vizinhas
-   Antes a grade alinhava todos os cards pela mesma altura (stretch) e o
-   card tinha height: 100%: ao abrir um, os outros da linha cresciam
-   junto e ficavam com um vão branco. Agora cada card cresce sozinho e a
-   altura do texto anima de 0fr a 1fr.
+   "Ver itens" abre um pop-up dentro do card
+   O card nunca muda de tamanho: a lista aparece sobreposta, entre o
+   titulo e o botao do WhatsApp, e as cestas vizinhas ficam paradas.
    ========================= */
-.products-grid {
-  align-items: start;
+.product-slot {
+  position: relative;
+  margin: 12px 0 10px;
 }
 
-.product-card {
-  height: auto;
+.product-details-toggle {
+  margin: 0;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    opacity 0.18s ease;
 }
 
+.product-card.details-open .product-details-toggle {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Ancorado pela base, logo acima do botão, crescendo para cima conforme
+   o texto. Assim nada fica reservado no card fechado. */
 .product-details {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.32s ease;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Cobre sempre o titulo inteiro (titulo 42 + margem 12 + botao 42),
+     nunca pela metade, e cresce para cima conforme o texto */
+  min-height: 96px;
+  max-height: 210px;
+  z-index: 4;
+  display: flex;
+  padding: 12px 30px 12px 13px;
+  border-radius: 14px;
+  background: #fffdf8;
+  border: 1px solid rgba(75, 42, 18, 0.16);
+  box-shadow: 0 16px 34px rgba(49, 69, 45, 0.18);
+  opacity: 0;
+  transform: translateY(-6px) scale(0.98);
+  pointer-events: none;
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
 }
 
 .product-card.details-open .product-details {
-  grid-template-rows: 1fr;
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
 }
 
-/* Wrapper sem padding: é ele que fecha até zero. O recuo e o fundo ficam
-   no texto, dentro dele, para não sobrar altura com o card fechado. */
+/* Descrição longa rola dentro do pop-up em vez de crescer o card */
 .product-details-inner {
-  overflow: hidden;
-  min-height: 0;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.product-details .product-description {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.product-details-close {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #8a6b3d;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.product-details-close:hover {
+  background: rgba(138, 107, 61, 0.14);
+  color: #4b2a12;
+}
+
+/* Sem o espaço invisível que sobrou dos preços, o botão fica colado embaixo */
+.product-note {
+  margin: 0 0 10px;
+}
+
+.product-button {
+  margin-top: auto;
 }
 
 @media (prefers-reduced-motion: reduce) {
