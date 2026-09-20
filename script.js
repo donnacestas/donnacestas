@@ -706,7 +706,9 @@ function productCardHTML(product, index, message) {
         </button>
 
         <div class="product-details" id="${detailsId}">
-          <p class="product-description">${product.descricao}</p>
+          <div class="product-details-inner">
+            <p class="product-description">${product.descricao}</p>
+          </div>
         </div>
 
         ${product.aviso ? `<p class="product-note">${product.aviso}</p>` : '<p class="product-note product-note-placeholder">Foto real do produto.</p>'}

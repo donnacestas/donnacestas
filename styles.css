@@ -4519,3 +4519,41 @@ body[data-landing] .campaign-hero h1 {
   color: #31452d;
   border-bottom-color: #31452d;
 }
+
+/* =========================
+   Abertura de "Ver itens" sem esticar as cestas vizinhas
+   Antes a grade alinhava todos os cards pela mesma altura (stretch) e o
+   card tinha height: 100%: ao abrir um, os outros da linha cresciam
+   junto e ficavam com um vão branco. Agora cada card cresce sozinho e a
+   altura do texto anima de 0fr a 1fr.
+   ========================= */
+.products-grid {
+  align-items: start;
+}
+
+.product-card {
+  height: auto;
+}
+
+.product-details {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.32s ease;
+}
+
+.product-card.details-open .product-details {
+  grid-template-rows: 1fr;
+}
+
+/* Wrapper sem padding: é ele que fecha até zero. O recuo e o fundo ficam
+   no texto, dentro dele, para não sobrar altura com o card fechado. */
+.product-details-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-details {
+    transition: none;
+  }
+}
